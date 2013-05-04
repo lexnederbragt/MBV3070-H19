@@ -54,11 +54,11 @@ NOTE: python scripts should be saved with the file ending .py.
 Q: what happened after you saved it? Did you see anything in the other window?
 Q: try changing the file and save it. What happened then?
 
-# Working with strings.
+# String methods
 
-Your example string in this case is "ATG GGC ATG GGC".
+Strings can be created by putting single, double or triple quotation marks around a piece of text. In this case we will be using the example string "ATG GGC ATG GGC" to demonstrate some string methods.
 
-We will now use the string methods count, replace, split and find on it. 
+We will first count the number of Cs, replace a T with a U, split the text on whitespace and then find the occurrence of the first C.
 
 ```python
    "ATG GGC ATG GGC".count("C")
@@ -69,12 +69,14 @@ We will now use the string methods count, replace, split and find on it.
 
 Q: Why the first C is in position 5?
 
-Modify to find the number of Ts.
-Modify to find where the first T is.
+Q: How would you find the number of Ts?
+Q: How wold you find the position of the first T?
 
-## Assigning values
+## Using variables
 
 In a programming situation, we usually have data that we want to do something to. We want to be able to work on the data without having to specify it directly, like we did with the numbers and "Hello World" above. Instead of specifying the data directly, we can use variables instead. Variables contains data that we can do things to. Many languages require us to specify what kind the data a variable should contain should be, like strings or numbers. Python does not require this, we can use them directly. This is called dynamic typing.
+
+When you give a variable a value, you are assigning that value to that variable. 
 
 ```python
    a = 1
@@ -86,18 +88,18 @@ In a programming situation, we usually have data that we want to do something to
 ```
 
 Variables in Python are not typed as you can see. They can be thought of as being just names. However, beware that Python does not assume default variables - you have to assign them before use:
+
 ```python
    print b
-```
 
-What happens when we try to "combine" two Python variables: string and integer:
+```
+Python also has what is called strong typing, this means that python will protest if you do something that the datatype does not allow for. As an example, what happens when we try to "combine" two Python variables, string and integer:
+
 ```python
-   string = "text"
+   string = "green"
    number = 4
    print string + number 
 ```
-Q: Can you think of what happened here? 
-
 
 ## Type conversion
 
@@ -108,38 +110,5 @@ Sometimes a number can be interpreted as a text string when you need it to work 
    print '2' + str('3')
    print string + str(number)
 ```
-
-
-## String operations
-
-Python provides a number of very useful methods for string variables.
-We can check the string length:
-
-```python
-   a = 'Manchester'
-   print len(a)
-```
-
-We can also split the string - splitting at space:
-```python
-   a = 'Thomas Mann'
-   b = a.split()
-   print b
-```
-
-Or by any other character:
-```python
-   a = 'Thomas-Mann'
-   b = a.split('-')
-   print b
-```
-
-
-In order to list all Python built-in methods for string:
-```python
-   dir(str)
-```
-
-
 
 Next: [Data Types](1_Data_Types.md)
