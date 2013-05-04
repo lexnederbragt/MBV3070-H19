@@ -14,7 +14,7 @@ NOTE: a line anywere in python that is preceeded with a # is a comment and is ig
 
 ## The python interpreter
 
-Let's bring up the Python interpreter. This is what it looks like on cygwin - linux is pretty similar:
+Let's bring up the Python interpreter. You do this by starting IDLE on your windows machine. This is what you see when you open the program: !!!
 ```python
    Python 2.7.3 (default, Dec 18 2012, 13:50:09)
    [GCC 4.5.3] on cygwin
@@ -38,14 +38,44 @@ We can also work with strings in python:
 ```
 Strings can actually be added together.
 
-Q: what happens if you don't include the space in Thomas?
+Q: what happens if you don't include the space in Ada?
 
+## Python as a calculator
+We are first going to use python as a simple calculator. Look at the operators that was shown for numbers at the lecture and test all of them.
+
+Q: Explain the difference between 11/2 and 11.0/2.
+
+## Creating your first script !!
+
+In IDLE, go to XX and do YY. You will get up a new window. Type in some of the commands that you typed in earlier when you used python as a calculator. Save the file as first.py.
+
+NOTE: python scripts should be saved with the file ending .py. 
+
+Q: what happened after you saved it? Did you see anything in the other window?
+Q: try changing the file and save it. What happened then?
+
+# Working with strings.
+
+Your example string in this case is "ATG GGC ATG GGC".
+
+We will now use the string methods count, replace, split and find on it. 
+
+```python
+   "ATG GGC ATG GGC".count("C")
+   "ATG GGC ATG GGC".replace("T", "U")
+   "ATG GGC ATG GGC".split()
+   "ATG GGC ATG GGC".find("C")
+```
+
+Q: Why the first C is in position 5?
+
+Modify to find the number of Ts.
+Modify to find where the first T is.
 
 ## Assigning values
 
-In a programming situation, we usually have data that we want to do something to. We want to be able to work on the data without having to specify it directly, like we did with the numbers and "Hello World" above. Instead of specifying the data directly, we can use variables instead. Variables contains data that we can do things to. Many languages require you to specify what kind the data a variable should contain should be, like strings or numbers. Python does not require this, we can use them directly.
+In a programming situation, we usually have data that we want to do something to. We want to be able to work on the data without having to specify it directly, like we did with the numbers and "Hello World" above. Instead of specifying the data directly, we can use variables instead. Variables contains data that we can do things to. Many languages require us to specify what kind the data a variable should contain should be, like strings or numbers. Python does not require this, we can use them directly. This is called dynamic typing.
 
-Python does not require us to declare variables as they are created when we first use them:
 ```python
    a = 1
    print a
@@ -64,9 +94,10 @@ What happens when we try to "combine" two Python variables: string and integer:
 ```python
    string = "text"
    number = 4
-   print string * number 
+   print string + number 
 ```
-Q: what was the output here?
+Q: Can you think of what happened here? 
+
 
 ## Type conversion
 
@@ -77,24 +108,6 @@ Sometimes a number can be interpreted as a text string when you need it to work 
    print '2' + str('3')
    print string + str(number)
 ```
-
-Python supports typical (and popular) arithmetic operations: 
-Adding:
-```python
-   print 10 + 3
-```
-
-Integer division:
-```python
-   print 10 / 3
-```
-
-Reminder:
-```python
-   print 10 % 3
-```
-
-
 
 
 ## String operations
