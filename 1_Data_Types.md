@@ -1,272 +1,155 @@
-# Python 1: Data Types: Lists, Dictionaries, Sets, Tuples, and Reading Files
+# Python 1: Data Types: Lists, Sequence methods and Dictionaries
 
 * * * * *
 
 **Based on lecture materials by Milad Fatenejad, Joshua R. Smith, and Will
 Trimble**
 
-One of the useful features of Python are its compound data types. The main two are lists and dictionaries, but I'll mention sets
-and tuples as well. I'll also go over reading text data from files. 
+Modified by Karin Lagesen
+
+One of the useful features of Python are its compound data types. The main two are lists and dictionaries.
 
 ## Lists
 
-A list is an ordered, indexable collection of data. Lets say you have
-collected some current and voltage data that looks like this:
+A list is an ordered, indexable collection of data. Lets say you have collected data on the AT content of some proteins:
 
 ```
-voltage:
--2.0
--1.0
-0.0
-1.0
-2.0
-
-current:
--1.0
--0.5
-0.0
-0.5
-1.0
+AT_content:
+0.53
+0.4
+0.3
+0.8
+0.6
 ```
 
-So you could put that data into lists like
+So you could put that data into a list like this:
 
 ```python
-voltageList = [-2.0, -1.0, 0.0, 1.0, 2.0]
-
-currentList = [-1.0, -0.5, 0.0, 0.5, 1.0]
+at_content = [0.5, 0.4, 0.3, 0.8, 0.6]
 ```
-
-We can check the voltageList type (obviously it is of type list):
+We can add to the list by using append:
 
 ```python
-type(voltageList)
-<type 'list'>
+at_content.append(0.4)
 ```
-
-Python lists have the charming (annoying?) feature that they are indexed
-from zero. Therefore, to find the value of the first item in voltageList:
+Let's say we have multiple values we want to add. These are kept in a separate list. There are two ways of adding to a list, append and extend. Let's try both:
 
 ```python
-voltageList[0]
--2.0
+add_items = [0.1, 0.2]
+at_content.append(add_items)
+```
+Q: what happened here?
+
+Create a new list, at_content2, with the same numbers as before. Try doing the same as above with extend instead of append. What happens?
+
+Q: would you use append or extend in this situation? Can you explain the difference between the two?
+
+
+## Sequence methods
+
+Lists and strings are both what we call "sequence types". These are types where the order of elements are important. These can be manipulated using the same methods. 
+
+### Indices
+
+We can access elements in lists and strings using indices. Python indices go from zero. Therefore, to find the value of the first item in at_content, we do this:
+
+```python
+at_content[0]
 ```
 
 And to find the value of the third item
 
 ```python
-voltageList[2]
-0.0
+at_content[2]
 ```
 
-Lists can be indexed from the back using a negative index. The last item of
-currentList
+Lists can be indexed from the back using a negative index. The last item of at_content is accessed like this:
 
 ```python
-currentList[-1]
+at_content[-1]
 1.0
 ```
 
 and the next-to-last
 
 ```python
-currentList[-2]
+at_content[-2]
 0.5
 ```
 
-You can "slice" items from within a list. Lets say we wanted the second
-through fourth items from voltageList
+### Slicing
+
+You can "slice" items from within a list. Lets say we wanted the second through fourth items from at_content
 
 ```python
-voltageList[1:4]
-[-1.0, 0.0, 1.0]
+at_content[1:4]
 ```
 
 Or from the third item to the end
 
 ```python
-voltageList[2:]
-[0.0, 1.0, 2.0]
+at_content[2:]
 ```
 
 and so on.
 
-### Append and Extend
+### The in operator
 
-Just like strings have methods, lists do too.
+We can figure out if an element is in a sequence typed object, i.e. list or string with the in operator. 
 
-```python
-dir(list)
-```
-
-One useful method is append. Lets say we want to stick the following data
-on the end of both our lists.
-
-```
-voltage:
-3.0
-4.0
-
-current:
-1.5
-2.0
-```
-
-If you want to append items to the end of a list, use the append method.
+Let's make a string and figure out whether certain things are in the string:
 
 ```python
-voltageList.append(3.)
-
-voltageList.append(4.)
-
-voltageList
-[-2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0]
+teststring = "AUGUAGGGAUGG"
+"A" in teststring
+"AUG" in teststring
 ```
+Q: can you find out if there were any Ts in this string? If there are none, what does that tell you?
 
-You can see how that approach might be tedious in certain cases. If you
-want to concatenate a list onto the end of another one, use extend.
+### Concatenation
+
+We can use the + sign to concatenate strings and lists.
+
+First with lists:
 
 ```python
-currentList.extend([1.5, 2.0])
-
-currentList
-[-1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0]
+list1 = ["A", "B", "C", "D"]
+list2 = [1, 2, 3, 4]
+list1 + list2
 ```
 
-Question: Is it possible to extend the currentList with the values from the voltageList without typing all the values from the voltageList?
+and now for strings:
 
-### Length of Lists
+```python
+text1 = "Watson"
+text2 = "Crick"
+text1 + text2
+```
+
+Q: what would you do to the strings above to introduce a space between Watson and Crick?
+
+### Length, minimum and maximums
 
 Sometimes you want to know how many items are in a list. Use the len command.
 
 ```python
-len(voltageList)
-7
+len(at_content)
 ```
 
-### Heterogeneous Data
-
-Lists can contain hetergeneous data.
+Next, we can find the minimum and the maximum of at_content.
 
 ```python
-dataList = ["experiment: current vs. voltage", \
-   ....:             "run", 47, \
-   ....:             "temperature", 372.756, \
-   ....:             "current", [-1.0, -0.5, 0.0, 0.5, 1.0], \
-   ....:             "voltage", [-2.0, -1.0, 0.0, 1.0, 2.0]]
-
+min(at_content)
+max(at_content)
 ```
 
-We've got strings, ints, floats, and even other lists in there. The slashes
-are there so we can continue on the next line. They aren't necessary but
-they can sometimes make things look better.
-
-## Assigning Variables to Other Variables
-
-Something that might cause you headaches in the future is how python deals
-with assignment of one variable to another. When you set a variable equal
-to another, both variables point to the same thing. Changing the first one
-ends up changing the second. Be careful about this fact.
+NOTE: when using min and max on a string, the min and max are found by looking at each character in lexicographic order. Lets try:
 
 ```python
-a = [1,2]
-
-b = a
-
-a.append(10)
-
-b
-[1, 2, 10]
+text3 = "TtAaGgCc"
+min(text3)
+max(text3)
 ```
-
-There's a ton more to know about lists, but lets press on. Check out Dive
-Into Python or the help documentation for more info.
-
-## Reading From Files
-
-At this point it is useful to take a detour regarding files. Lets say you
-have a file with some current and voltage data and some metadata.
-
-```
-data.dat:
-
-experiment: current vs. voltage
-run: 47
-temperature: 372.756
-current: [-1.0, -0.5, 0.0, 0.5, 1.0]
-voltage: [-2.0, -1.0, 0.0, 1.0, 2.0]
-```
-
-We can read this data into a list type variable pretty easily.
-
-```python
-f = open("data.dat")
-
-ivdata = f.readlines()
-
-f.close()
-
-ivdata
-
-['experiment: current vs. voltage\n',
- 'run: 47\n',
- 'temperature: 372.756\n',
- 'current: [-1.0, -0.5, 0.0, 0.5, 1.0]\n',
- 'voltage: [-2.0, -1.0, 0.0, 1.0, 2.0]\n',
- '\n']
-```
-
-Right now the data in ivdata isn't in a particularly useful format, but you
-can imagine that with some additional programming we could straighten it
-out. We will eventually do that.
-
-## Tuples
-
-Tuples are another of python's basic compound data types that are almost
-like lists. The difference is that a tuple is immutable; once you set the
-data in it, the tuple cannot be changed. You define a tuple as follows.
-
-```python
-tup = ("red", "white", "blue")
-
-type(tup)
-<type 'tuple'>
-```
-
-You can slice and index the tuple exactly like you would a list. Tuples are
-used in the inner workings of python, and a tuple can be used as a key in a
-dictionary, whereas a list cannot as we will see in a moment.
-
-## Sets
-
-Most introductary python courses do not go over sets this early (or at
-all), but I've found this data type to be useful. The python set type is
-similar to the idea of a mathematical set: it is an unordered collection of
-unique things. Consider:
-
-```python
-fruit = set(["apple", "banana", "pear", "banana"]) #You have to use a list to create a set.
-```
-
-Since sets contain only unique items, there's only one banana in the set
-fruit.
-
-You can do things like intersections, unions, etc. on sets just like in
-math. Here's an example of an intersection of two sets (the common items in
-both sets).
-
-```python
-firstBowl = set(["apple", "banana", "pear", "peach"])
-
-secondBowl = set(["peach", "watermelon", "orange", "apple"])
-
-set.intersection(firstBowl, secondBowl)
-set(['apple', 'peach'])
-```
-
-You can check out more info using the help docs. We won't be returning to
-sets, but its good for you to know they exist.
-
 ## Dictionaries
 
 Recall our file data.dat which contained our current-voltage data and also
