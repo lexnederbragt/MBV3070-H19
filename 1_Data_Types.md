@@ -64,14 +64,12 @@ Lists can be indexed from the back using a negative index. The last item of at_c
 
 ```python
 at_content[-1]
-1.0
 ```
 
 and the next-to-last
 
 ```python
 at_content[-2]
-0.5
 ```
 
 ### Slicing
