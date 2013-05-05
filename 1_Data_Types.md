@@ -2,10 +2,7 @@
 
 * * * * *
 
-**Based on lecture materials by Milad Fatenejad, Joshua R. Smith, and Will
-Trimble**
-
-Modified by Karin Lagesen
+**Written by Karin Lagesen**
 
 One of the useful features of Python are its compound data types. The main two are lists and dictionaries.
 
