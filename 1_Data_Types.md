@@ -150,92 +150,118 @@ text3 = "TtAaGgCc"
 min(text3)
 max(text3)
 ```
+
+## Open reading frame GC dinucleotide frequency
+
+Given the DNA string "CGAGATGGCAGCACGAGCACAGGA", do the following:
+
+1. Figure out how to find where the open reading frame starts (starts with ATG).
+2. Slice the string, so that only the open reading frame remains (no stop codons in the string, so just stop at the end).
+3. Count the number of GC dinucleotides in the open reading frame.
+4. Figure out the percentage of GC dinucleotides in the string, out of all the dinucleotides in it.
+
+
 ## Dictionaries
 
-Recall our file data.dat which contained our current-voltage data and also
-some metadata. We were able to import the data as a list, but clearly the
-list type is not the optial choice for a data model. The dictionary is a
-much better choice. A python dictionary is a collection of key, value
-pairs. The key is a way to name the data, and the value is the data itself.
-Here's a way to create a dictionary that contains all the data in our
-data.dat file in a more sensible way than a list.
+A python dictionary is a collection of key, value pairs. The key is a way to name the data, and the value is the data itself.
 
-```python
-dataDict = {"experiment": "current vs. voltage", \
-                   "run": 47, \
-                   "temperature": 372.756, \
-                   "current": [-1.0, -0.5, 0.0, 0.5, 1.0], \
-                   "voltage": [-2.0, -1.0, 0.0, 1.0, 2.0]}
+Today we are going to create a dictionary that contains part of the genetic code. We are going to take this table here and create a dictonary from it:
+
+```
+ATA                I
+ATG                M
+ACA                T
+AAC                N
+CGA                R
+CAG                Q
 ```
 
-This model is clearly better because you no longer have to remember that
-the run number is in the second position of the list, you just refer
-directly to "run":
+Now we are going to create a dictionary from this, using the codons as keys and the one-letter amino acids as values. This will enable us to translate from DNA to protein.
+
 
 ```python
-dataDict["run"]
-47
+codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
+               "AAC":"N", "CGA":"R", "CAG":"Q", }
+
 ```
 
-If you wanted the voltage data list:
+Dictionaries are very good for storing data where the relationship between elements matter. In this case, the important thing is the relationship between the codon and the amino acid. The order of the codons do not matter.
+
+So, let's manipulate this dictionary a bit. 
+
+
+### Lookup
+
+A dictionary is often used to look up the value of a certain key. In this case, let's find out which amino acid you would get from ATA:
+
 
 ```python
-dataDict["voltage"]
-[-2.0, -1.0, 0.0, 1.0, 2.0]
+codon_table["ATA"]
 ```
 
-Or perhaps you wanted the last element of the current data list
+Let's try another one, CCG:
 
 ```python
-dataDict["current"][-1]
-1.0
+codon_table["CCG"]
 ```
+Oups -  that did not work did it? Can you figure out what went wrong?
 
-Once a dictionary has been created, you can change the values of the data
-if you like.
+### The in operator, and adding to the list
+
+From the last example it seems it would be useful to be able to tell whether a key is part of a dictionary. We can do this using the in operator, just like we did for lists:
 
 ```python
-dataDict["temperature"] = 3275.39
+"AAC" in codon_table
+"CCG" in codon_table
 ```
 
-You can also add new keys to the dictionary.
+So, CCG is not in the table. Let's add it. CCG codes for P, proline. Adding a new key-value pair to a dictionary simply means defining it:
 
 ```python
-dataDict["user"] = "Johann G. von Ulm"
+codon_table["CCG"] = "P"
 ```
 
-Dictionaries, like strings, lists, and all the rest, have built-in methods.
-Lets say you wanted all the keys from a particular dictionary.
+Let's now look at what we have in the dictionary:
 
 ```python
-dataDict.keys()
-['run', 'temperature', 'current', 'experiment', 'user', 'voltage']
+print codon_table
 ```
 
-also, values
+As you can see the new codon is in there. Let's redo the test, just to make sure our eyes are not deceiving us:
 
 ```python
-dataDict.values()
- 
-[47,
- 3275.39,
- [-1.0, -0.5, 0.0, 0.5, 1.0],
- 'current vs. voltage',
- 'Johann G. von Ulm',
- [-2.0, -1.0, 0.0, 1.0, 2.0]]
+"CCG" in codon_table
 ```
 
-The help documentation has more information about what dictionaries can do.
+###Keys and values
 
-Its worth mentioning that the value part of a dictionary can be any kind of
-data, even another dictionary, or some complex nested structure. The same
-is true about a list: they can contain complex data types.
+We can access all the keys and the values of a dictionary using the keys() and the values() methods:
 
-Since tuples are immutable, they can be used as keys for dictionaries.
-Lists are mutable, and therefore cannot.
+```python
+codon_table.keys()
+codon_table.values()
+```
 
-When you architect software in python, most data will end up looking either
-like a list or a dictionary. These two data types are very important in
-python and you'll end up using them all the time.
+## Translate a DNA sequence
+
+Given the DNA string "ATGACAATACGACAGGGC", you will now figure out how to translate it to protein. Note: each triplet in the string is actually present in the dictionary.
+
+## Finding out more
+
+All python data types like lists, strings and dictionaries have help documentation available in the interpreter. Try typing in
+
+```python
+help(dict)
+```
+
+The python webpages also have a lot of information, and a very good tutorial:
+
+[The python tutorial](http://docs.python.org/2/tutorial)
+
+A lot of the material taught in this course draws heavily on this book:
+
+[Python for Bioinformatics by Sebastian Bassi](http://www.amazon.com/Bioinformatics-Chapman-Mathematical-Computational-Biology/dp/1584889292)
+
+
 
 Previous: [Variable types](0_Variables_Types.md) Next: [Flow control](2_Flow_Control.md)
