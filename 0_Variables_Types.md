@@ -91,6 +91,29 @@ Variables in Python are not typed as you can see. They can be thought of as bein
 ```
 Q: what happened when you typed in b, without assigning a value to b first?
 
+## Strings are immutable
+
+When working with strings, it is important to note that a string is immutable, it cannot be changed. Let's see what consequences this has:
+
+```python
+   first_string = "ATCATCATC"
+   first_string.replace("T", "U")
+   print first_string
+```
+
+As you can see, the string itself has not changed! If you want to modify a string, you need to assign the modified string to a new variable.
+
+```python
+   second_string = first_string.replace("T", "U")
+   print second_string
+   print first_string
+```
+
+As you can see, second_string now contains the modified string, while first_string remains the same.
+
+
+## Dynamic and strong typing
+
 Python also has what is called strong typing, this means that python will protest if you do something that the datatype does not allow for. As an example, what happens when we try to concatenate, i.e. combine two Python variables, string and integer:
 
 ```python
