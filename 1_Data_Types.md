@@ -24,6 +24,19 @@ So you could put that data into a list like this:
 ```python
 at_content = [0.5, 0.4, 0.3, 0.8, 0.6]
 ```
+
+### Sorting a list 
+
+A list can be sorted in place, like this:
+
+```python
+   at_content.sort()
+   print at_content
+```
+
+
+### Adding to a list
+
 We can add to the list by using append:
 
 ```python
@@ -35,6 +48,7 @@ Let's say we have multiple values we want to add. These are kept in a separate l
 add_items = [0.1, 0.2]
 at_content.append(add_items)
 ```
+
 Q: what happened here?
 
 Create a new list, at_content2, with the same numbers as before. Try doing the same as above with extend instead of append. What happens?
@@ -87,6 +101,9 @@ at_content[2:]
 ```
 
 and so on.
+
+Q: can you now figure out 
+
 
 ### The in operator
 
@@ -239,7 +256,9 @@ codon_table.values()
 
 ## Translate a DNA sequence
 
-Given the DNA string "ATGACAATACGACAGGGC", you will now figure out how to translate it to protein. Note: each triplet in the string is actually present in the dictionary.
+Given the DNA string "ATGACAATACGACAGGGC", you will now figure out how to translate it to protein. Note: each triplet in the string is actually present in the dictionary. 
+
+Tip: try sorting out how you would do it on paper before trying it on the computer.
 
 ## Finding out more
 
@@ -277,7 +296,7 @@ In the code there are words missing. Fill them in and run the script.
 	mrna = seq._______("T", "U")
 	start = mrna.find("___")
 	stop = mrna.____("UAA")
-	_____ mrna[start:stop]
+	print mrna[_____:stop]
 ```
 
 ### CG frequency
