@@ -193,9 +193,11 @@ Now we are going to create a dictionary from this, using the codons as keys and 
 
 ```python
 codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
-               "AAC":"N", "CGA":"R", "CAG":"Q", }
+               "AAC":"N", "CGA":"R", "CAG":"Q" }
 
 ```
+NOTE: you only need the \ if you want to write this one over two lines, in that case you write first \ and then press enter before entering the rest.
+
 
 Dictionaries are very good for storing data where the relationship between elements matter. In this case, the important thing is the relationship between the codon and the amino acid. The order of the codons do not matter.
 
@@ -256,7 +258,7 @@ codon_table.values()
 
 ## Translate a DNA sequence
 
-Given the DNA string "ATGACAATACGACAGGGC", you will now figure out how to translate it to protein. Note: each triplet in the string is actually present in the dictionary. 
+Given the DNA string "ATGACAATACGACAGCCG", you will now figure out how to translate it to protein. Note: each triplet in the string is actually present in the dictionary. 
 
 Tip: try sorting out how you would do it on paper before trying it on the computer.
 
