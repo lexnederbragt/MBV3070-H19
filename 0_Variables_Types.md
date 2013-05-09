@@ -64,7 +64,7 @@ We will first count the number of Cs, replace a T with a U, split the text on wh
    "ATG GGC ATG GGC".find("C")
 ```
 
-Q: Why the first C is in position 5?
+Q: Why the first C is in position 6?
 
 Q: How would you find the number of Ts?
 Q: How would you find the position of the first T?
