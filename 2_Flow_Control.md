@@ -1,26 +1,30 @@
-# Python 2 : Flow Control - Loops, Conditionals, etc
+# Python 2 : Control flow - Boolean expressions, if statements, for loops and while.
 
-**Based on Lecture Materials By: Milad Fatenejad and Katy Huff**
 
-Conditionals
 ============
 
-A conditional (if statement) is some statement that in general says : 
-"When some boolean is true, do the following. Elsewise, do this other
-thing."
+## Boolean expressions
 
-Many equivalence test statements exist in Python that are similar in
-other languages:
+A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of these are similar to those found in other languages. 
 
 ```python
-  i=1
-  j=2
-  i==j # i is equal to j : FALSE
-  i<j  # i is less than j
-  i<=j # i is less than or equal to j : TRUE
-  i>j  # i is greater than j
-  i>=j # i is greater than or equal to j : FALSE
-  i!=j # i is not equal to j : TRUE
+  a = 1
+  b = 2
+  a == b # are the two the same?
+  a < b  # is a less than b?
+  a <= b # is a less than or equal to b?
+  a > b # is a larger than b?
+  a >= b # is a larger or greater than b?
+  a != b # 
+```
+
+Note, we can also test the results of doing something, like this:
+
+```python
+  word = "Hello"
+  print len(word) < 10 # is the length of this word shorter than 10?
+  beatles=["George", "Ringo","John", "Paul"]
+  print len(beatles) == 4 # are there four members in beatles?
 ```
 
 However, python has other equivalence test statements that are fairly
@@ -29,12 +33,22 @@ unique to python. To check whether an object is contained in a list :
 ```python
   beatle="John"
   beatles=["George", "Ringo","John", "Paul"]
-  print beatle in beatles # is John one of the beatles? : TRUE
-  print "Tom" not in beatles # this is also TRUE. 
+  print beatle in beatles # is John in the list beatles? 
+  print "Tom" in beatles # is there somebody in the list beatles called Tom?
 ```
 
-Conditionals (if statements) are also really easy to use in python. Take
-a look at the following example:
+We can also combine these with and, or and not. Let's see how this works:!!!!!!!!
+
+```python
+  print beatle
+  print beatle in beatles and len(beatles) == 4 # is "John" in beatles, and are there four entries in the beatles list?
+  print lala
+```
+
+
+## If statements
+
+If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run.
 
 ```python
 
@@ -50,267 +64,120 @@ a look at the following example:
   print sign
 ```
 
-The behavior of this code snippet should be pretty clear, but there is
-something peculiar. How does Python know where the if-statement ends?
-Other languages, like FORTRAN, MatLab, and C/C++ all have some way of
-delimiting blocks of code. For example, in MatLab you begin an if
-statement with the word "if" and you end it with "end if". In C/C++ you
-delimit blocks with curly braces. Python uses ''indentation'' to delimit
-code blocks. The **indentation** above is NOT just to make things look
-pretty - it tells Python what the body of the if-statement is. This is
-true when ever we create any code blocks, such as the bodies of loops,
-functions or classes.
+Q: what is printed at the end when this piece of code is run?
+Q: what would you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"_
 
+Also note, Python uses ''indentation'' to delimit code blocks. The **indentation** above is NOT just to make things look pretty - it tells Python what the body of the if-statement is. This is true whenever we create any code blocks. 
+
+
+### GCdecider.py - Figuring out if a DNA string has more or less than 50 % GC content. !!!
+
+Use the slides from last week, and look at the exercises from last week too. 
+
+Define the following DNA string "ATGGCATGGCATGGC" as the variable DNA. Figure out the GC content of the string. If the GC content is above or equal to 50%, print out the following "GC content is above or equal to 50%", otherwise print out "GC content is below 50%". Save the code as a script (open New File to get a script shell, and remember to save the file as GCdecider.py) and run it using "Run Module". Also try to input another string and see what happens.
+
+
+For Loops with lists
+=====================
+
+**for** loops in python are really used to iterate over sequences of things (they can be used for much more, but
+for now this definition will do). 
+
+Let's start with a very simple list, and see how for behaves. 
+
+```python
+  forlist = [1, 2 ,3,"a", 5, 9, "c"]
+  for elem in forlist:
+      print elem
+```
+
+Let's try this with a list of words instead:
+
+```python
+  words = ["green plants", "yellow sun", "blue water"]
+  for word in words:
+    print word
+```
+
+Some things to note: each element will be used in the for loop in the order in which they appear in the list. Also, you absolutely need both the : and the tab, otherwise the for loop will not work. 
+
+Q: what happens when you use a for loop to iterate over a string?
+
+We can also create what is called nested for loops, this is when we have a loop within another one:
+
+```python
+  numbers = [1, 2, 3, 4, 5]
+  words = ["green plants", "yellow sun", "blue water"]
+  for num in numbers:
+      for word in words:
+          print num, word
+```
+
+
+
+For Loops with Dictionaries
+=====================================
+
+With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys work like a list. 
+
+```python
+  asp = ["GAU", "GAC"]
+  glu = ["GAA", "GAG"]
+  pro = ["CCU", "CCG", "CCA", "CCT"]
+  codondict = {}
+  codondict["asp"] = asp
+  codondict["glu"] = glu
+  codondict["pro"] = pro
+  for key in codondict:
+    print key, codondict[key]
+
+```
+This way we see both the keys and their values. 
+
+
+Combining for loops and if statements
+========================================
+
+A lot of the power in a programming language becomes even more apparent when we combine elements of the language. One very common thing to do is to use an if statement to decide what to do with something in a for loop. In this case, we will skip all words in a list that contains the character #. This is often used when we want to skip certain lines in files.
+
+```python
+    words = ["gre#en", "yellow",  "sun", "#blue",  "water"]
+    for word in words:
+        if "#" not in word:
+             print word
+```
+
+Some comments: we here use **not** in front of **in**. This means that we are looking for sentences _without_ the # character. If we were to do it the other way around, we would end up with this code:
+
+```python
+    words = ["gre#en", "yellow",  "sun", "#blue",  "water"]
+    for word in words:
+        if "#" in word:
+             pass
+        else:
+             print word
+```
+
+First of all, as you can see, this uses a lot more lines, and are inefficient due to this. Also, we are forced to use the instruction "pass" here - this instruction tells python to do nothing. If you need to use pass anywhere, your code should probably be changed.
+
+### task.
 
 
 While Loops
 ===========
 
-Lets start by looking at while loops since they function like while
-loops in many other languages. The example below takes a list of
-integers and computes the product of each number in the list up to the
--1 element.
-
-A while loop will repeat the instructions within itself until the
-conditional that defines it is no longer true.
+With while loops, we iterate over something until a bolean expressions goes from being false to being true. The first thing we need to make sure of before we start is that we have something that is true that can become false. It is very common to se counters used with while loops, i.e. a variable that counts up (or down) until a certain value, which causes the expression to become false, and the loop terminates. 
 
 ```python
-  mult = 1
-  sequence = [1, 5, 7, 9, 3, -1, 5, 3]
-  while sequence[0] is not -1:
-      mult = mult * sequence[0]
-      del sequence[0]
-
-  print mult
+   count = 0
+   while  count < 9 :
+       print 'The count is:', count
+       count = count + 1
 ```
 
-Some new syntax has been introduced in this example.
+Here, we start with defining count as having the value 0. In the while loop, we first check if count is less than 9. If it is, we print what the count is, and increase the value of the count. Note - if we don't increase the value of count, it will never be equal to 9, and the loop will continue forever.
 
--   On line 3 We begin the while loop. Notice that instead of using the
-    not-equals symbol, !=, we can simply enter "is not" which is easier
-    to read. This while loop will execute until sequence[0]= -1 . That
-    is, until deletes all of the entries of the sequence that come
-    before -1.
+##task
 
--   On line 4, we compute the product of the elements just to make this
-    more interesting.
+Use the while loop to chain together the codons in the dictionary above. 
 
--   On line 5, we use the \`del\` keyword to remove the first element of
-    the list, shifting every element down one.
-
-**Watch Out**
-
-Since a while loop will continue until its conditional is no longer
-true, a **poorly formed** while loop might repeat forever. For example :
-
-```python
-  i=1
-  print "Well, there's egg and bacon, egg and spam, egg bacon and"
-  while i is 1:
-    print "spam "
-  print "When will this be printed?!" 
-```
-
-Since the variable **i** never changes within the while loop, we can
-expect that the conditional, **i=1** will remain true forever and the
-while loop will just go round and round, as if this restaurant offered
-nothing but spam. (If you try this at home, please note that one way to
-interrupt a non-terminating process is **ctrl+c** or **ctrl+z**.
-
-To create nested if loops, the indentation (preferably two or four
-spaces) should increase for each looping level. Let's put the following source code in a file and save it as "script.py".
-
-```python
-  weapons=["surprise","fear","ruthless efficiency","an almost fanatical devotion..."]
-  tries=0
-  script=""
-  while tries < len(weapons) :
-      i=0
-      while i<tries :
-          script += weapons[i]
-          script += " and "
-          i+=1
-      script += weapons[tries]
-      script += ". "
-      if tries == len(weapons) - 1 :
-          script += " and nice red uniforms."
-      tries +=1
-  print script
-```
-
-For Loops
-=========
-
-For loops in python operate a little differently from other languages.
-Lets start with a simple example which prints all of the numbers from 0
-to 9:
-
-```python
-
-  for i in range(10):
-      print i
-```
-
-You may be wondering how this works. Start by using help(range) to see
-what the range function does.
-
-    Help on built-in function range in module __builtin__:
-
-    range(...)
-        range([start,] stop[, step]) -> list of integers
-
-        Return a list containing an arithmetic progression of integers.
-        range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
-        When step is given, it specifies the increment (or decrement).
-        For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
-        These are exactly the valid indices for a list of 4 elements.
-
-Range is a function that returns a list containing a sequence of
-integers. So, range(10) returns the list [0,1,2,3,4,5,6,7,8,9]. The for
-loop then simply iterates over that list, setting i to each value.
-
-For Loops with Lists and Dictionaries
-=====================================
-
-With range, we learned that **for** loops in python are really used to
-iterate over sequences of things (they can be used for much more, but
-for now this definition will do). Try entering the following to see what
-happens:
-
-```python
-
-  for c in ["one", 2, "three", 4, "five"]:
-      print c
-```
-
-this is equivalent to:
-
-```python
-
-  c = ["one", 2, "three", 4, "five"]
-  for i in range(len(c)):
-      print c[i]
-```
-
-With a list, then, it's clear that we can use the **in** keyword to
-indicate a list of things. What about a nested loops around a list of
-lists?
-
-```python
-  italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-  argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
-  india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-  us = ["Chicago", "Austin", "New York", "San Fran"]
-  nations = [italy, argentina, india, us]
-  nationnames = ["italy","argentina", "india", "us"]
-  for nation in nations :
-      print nationnames[nations.index(nation)] + ": "
-      for city in nation :
-          print "  " + city 
-```
-
-Of course, this information is better stored in a dictionary, isn't it?
-The data makes more sense if the keys were the nation names and the
-values were lists of cities. Importantly, python has given us a tool
-specifically for dictionary looping.
-
-The syntax for looping through the keys and values of a dictionary is :
-
-    for key, value in dictionary.iteritems():
-
-Importantly, you don't have to use the words key and value. That's just
-what will fill those variables. Here, we rewrite the previous loop using
-this clever syntax.
-
-```python
-  italy = ["Rome", "Pisa", "Florence", "Venice", "Trieste"]
-  argentina = ["Mendoza", "Buenos Aires", "Patagonia"]
-  india = ["Ahmedabad","Kolkata", "Chennai", "Jaipur", "Surat"]
-  us = ["Chicago", "Austin", "New York", "San Fran"]
-  nations = {"italy":italy, "argentina":argentina, "india":india, "us":us}
-  for nation, cities in nations.iteritems() :
-      print nation + " : "
-      for city in cities :
-          print "  " + city 
-```
-
-break, continue, and else
-=========================
-
-A break statement cuts off a loop from within an inner loop. It helps
-avoid infinite loops by cutting off loops when they're clearly going
-nowhere.
-
-```python
-  reasonable = 10
-  for n in range(1,2000):
-      if n == reasonable :
-          break
-      print n
-```
-
-Something you might want to do instead of breaking is to continue to the
-next iteration of a loop, giving up on the current one..
-
-```python
-  reasonable = 10
-  for n in range(1,2000):
-      if n == reasonable :
-        continue
-      print n
-```
-
-What is the difference between the output of these two?
-
-Importantly, Python allows you to use an else statement in a for loop.
-
-That is :
-
-```python
-  knights={"Sir Belvedere":"the Wise", "Sir Lancelot":"the Brave", \
-          "Sir Galahad":"the Pure", "Sir Robin":"the Brave", "The Black Knight":"John Clease"} 
-
-  favorites=knights.keys()
-  favorites.remove("Sir Robin")
-  for name, title in knights.iteritems() : 
-      string = name + ", "
-      for fav in favorites :
-          if fav == name :
-              string += title
-              break
-      else:
-          string += title + ", but not quite so brave as Sir Lancelot." 
-      print string
-```
-
-Final Example
-=============
-
-We've seen a lot so far. Lets work through a slightly lengthier example
-together. I'll use some of the concepts we already saw and introduce a
-few new concepts. To run the example, you'll need to locate a short file
-containing phone numbers. The file is in your repository is called phonenums.txt.
-
-
-This example opens a text file containing a list of phone numbers. The
-phone numbers are in the format \#\#\#\#-\#\#\#-\#\#\#, one to a line.
-The example code loops through each line in the file and counts the
-number of times each area code appears. The answer is stored in a
-dictionary, where the area code is the key and the number of times it
-occurs is the value.
-
-```python
-
-  areacodes = {} # Create an empty dictionary
-  f = open("phonenums.txt") # Open the text file
-  for line in f: # iterate through the text file, one line at a time (think of the file as a list of lines)
-      ac = line.split('-')[0] # Split phone number, first element is the area code
-      if not ac in areacodes: # Check if it is already in the dictionary
-        areacodes[ac] = 1 # If not, add it to the dictionary
-      else:
-        areacodes[ac] += 1 # Add one to the dictionary entry
-  
-  print areacodes # Print the answer
-```
-
-Previous: [Data types](1_Data_Types.md) Next: [Functions and modules](3_Functions_and_Modules.md)
