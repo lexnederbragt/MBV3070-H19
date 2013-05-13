@@ -176,11 +176,34 @@ while count < 9 :
 ```
 
 Here, we start with defining count as having the value 0. In the while loop, we first check if count is less than 9. If it is, we print what the count is, and increase the value of the count. Note - if we don't increase the value of count, it will never be equal to 9, and the loop will continue forever.
+
+## Translate proteins
+
+Last week we translated proteins manually. Now, we can do it a bit more efficiently. First, let's define a dictionary which can translate between them, and a DNA string to translate:
+
+```python
+codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
+               "AAC":"N", "CGA":"R", "CAG":"Q" }
+dna = "ATGCAGAACATA"
+```
+
+First, define a new variable that will contain the protein string, and a counter with a value of 0. Next, use a while loop to iterate over triplets of the string. Use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string. 
+
+```python
+protein = ""
+counter = 0
+while counter < len(dna) - 2:
+	codon = dna[counter:counter + 3]
+	protein = protein + codon_table[codon]
+	counter = counter + 3
+print protein
+```
+
+Q: it is often common to test things several times, especially when working in the interactive shell. What mistake regarding the counter can you imagine happening if you test several times?
  
 
-## Homework
 
-## Testing if a list of DNA strings contains something else than DNA characters.
+## Homework: Testing if a list of DNA strings contains something else than DNA characters.
 
 Sometimes you will see that a DNA string contains non-ATGC letters, these are most often IUPAC letters. In a situation where you want to translate DNA, these would have to be deconvoluted first. In this case we are just going to skip the strings that contain something else than DNA.
 
