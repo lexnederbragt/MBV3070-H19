@@ -8,14 +8,14 @@
 A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of these are similar to those found in other languages. 
 
 ```python
-  a = 1
-  b = 2
-  a == b # are the two the same?
-  a < b  # is a less than b?
-  a <= b # is a less than or equal to b?
-  a > b # is a larger than b?
-  a >= b # is a larger or greater than b?
-  a != b # 
+a = 1
+b = 2
+a == b # are the two the same?
+a < b  # is a less than b?
+a <= b # is a less than or equal to b?
+a > b # is a larger than b?
+a >= b # is a larger or greater than b?
+a != b # 
 ```
 
 Note, we can also test the results of doing something, like this:
@@ -26,6 +26,8 @@ Note, we can also test the results of doing something, like this:
   beatles=["George", "Ringo","John", "Paul"]
   print len(beatles) == 4 # are there four members in beatles?
 ```
+
+
 
 However, python has other equivalence test statements that are fairly
 unique to python. To check whether an object is contained in a list :
@@ -48,7 +50,7 @@ We can also combine these with and, or and not. Let's see how this works:!!!!!!!
 
 ## If statements
 
-If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run.
+If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run, and what would be printed in the end.
 
 ```python
 
@@ -65,7 +67,7 @@ If statements are a way to select which parts of a piece of code that should be 
 ```
 
 Q: what is printed at the end when this piece of code is run?
-Q: what would you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"_
+Q: what would you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"?
 
 Also note, Python uses ''indentation'' to delimit code blocks. The **indentation** above is NOT just to make things look pretty - it tells Python what the body of the if-statement is. This is true whenever we create any code blocks. 
 
@@ -74,14 +76,15 @@ Also note, Python uses ''indentation'' to delimit code blocks. The **indentation
 
 Use the slides from last week, and look at the exercises from last week too. 
 
-Define the following DNA string "ATGGCATGGCATGGC" as the variable DNA. Figure out the GC content of the string. If the GC content is above or equal to 50%, print out the following "GC content is above or equal to 50%", otherwise print out "GC content is below 50%". Save the code as a script (open New File to get a script shell, and remember to save the file as GCdecider.py) and run it using "Run Module". Also try to input another string and see what happens.
+Define the following DNA string "ATGGCATGGCATGGC" as the variable DNA. Figure out the GC content of the string. If the GC content is above or equal to 50%, print out the following "GC content is above or equal to 50%", otherwise print out "GC content is below 50%". 
+
+Save the code as a script (open New File to get a script shell, and remember to save the file as GCdecider.py) and run it using "Run Module". Also try to input another string and see what happens.
 
 
 For Loops with lists
 =====================
 
-**for** loops in python are really used to iterate over sequences of things (they can be used for much more, but
-for now this definition will do). 
+**for** loops in python are used to iterate over sequences of things (they can be used for much more, but for now this definition will do). 
 
 Let's start with a very simple list, and see how for behaves. 
 
@@ -112,23 +115,23 @@ We can also create what is called nested for loops, this is when we have a loop 
       for word in words:
           print num, word
 ```
-
+Explain to yourself what happens here. How are the elements from each of the two lists combined?
 
 
 For Loops with Dictionaries
 =====================================
 
-With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys work like a list. 
+With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys in a dictionary work like a list. 
 
 ```python
-  asp = ["GAU", "GAC"]
-  glu = ["GAA", "GAG"]
-  pro = ["CCU", "CCG", "CCA", "CCT"]
-  codondict = {}
-  codondict["asp"] = asp
-  codondict["glu"] = glu
-  codondict["pro"] = pro
-  for key in codondict:
+asp = ["GAU", "GAC"]
+glu = ["GAA", "GAG"]
+pro = ["CCU", "CCG", "CCA", "CCT"]
+codondict = {}
+codondict["asp"] = asp
+codondict["glu"] = glu
+codondict["pro"] = pro
+for key in codondict:
     print key, codondict[key]
 
 ```
