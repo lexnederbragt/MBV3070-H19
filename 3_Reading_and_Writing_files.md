@@ -146,7 +146,29 @@ lines = fh.readlines()
 fh.close()
 ```
 
-So, now we have a list containing all of the lines in this file. Now we need to get this into one string containing the mRNA. This string will be contained in the variable mRNA. Again - some code is missing and has been replaced with underscores. Figure out how this should be, and run the code.
+So, now we have a list containing all of the lines in this file. Now we need to get this into one string containing the mRNA. This string will be contained in the variable mRNA. 
+
+
+#### The += syntax. 
+
+We are introducing a small piece of new syntax here, when we want to add something to a variable that is already defined, we can use += to do it. This means that
+
+```python
+string = "something"
+string = string + " something else"
+```
+can be written as 
+
+```python
+string = "something"
+string += " something else"
+```
+
+This also goes for numbers, where **counter = counter + 1** can rather be written **as counter += 1**.
+
+#### Back to the mRNA sequence
+
+Below is the code necessary, with some text replaced wih underscores. Figure out how this should be, and run the code.
 
 ```python
 mRNA = "" # create empty string to contain the mRNA
@@ -164,7 +186,9 @@ Q: after we have translated the DNA string, we will want to print it out to a ne
 
 ## Translate proteins
 
-So, now we have the translation table, and the DNA. Now we are going to translate it to protein. Again some text has been replaced by underscores.
+So, now we have the translation table, and the mRNA. Now we are going to translate it to protein. What we do here is to slice the mRNA into codons and use them to look up the amino acid in the codon table. Then, we stick that onto the string that contains the protein. 
+
+Again, some text has been replaced by underscores. Figure out what goes in the underscores, and run the code. 
 
 ```python
 protein = ""
@@ -173,7 +197,7 @@ while _______ < len(mRNA) - _:
 	codon = ____[counter:counter + 3]
 	aminoacid = codon_table[_____]
 	protein = ______ + aminoacid
-	counter = counter + _
+	counter += __
 print protein
 ```
 
@@ -189,11 +213,27 @@ Q: what do we add to the counter at the end, and why? What would happen if we di
 
 Last, but not least, let's get this output to file. Let's first figure out how to get it nicely formatted. In this case, in our file we should have a header line followed by the amino acids, 60 per line. 
 
+
 ```python
 output = lines[0] + "\n" # we first add the header from the mRNA file
-i = 0
-while i < len(protein):
+counter = 0
+while counter < len(protein):
+	output += protein[counter:counter+60] + "\n"
+	counter += 60
+print output
+```
 
+So, now we have the output we want, and we can print it to a file. We first open it, then write to it, and then close it again.
+
+```python
+fo = open("protein.fsa", "w")
+fo.write(output)
+fo.close()
+```
+
+## Homework
+
+Take the code shown in this example and create a script from it. Run it using IDLE. Submit both the code and the resulting protein.fsa file. 
 
 
 
