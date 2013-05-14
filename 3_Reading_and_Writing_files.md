@@ -187,6 +187,15 @@ Q: what do we add to the counter at the end, and why? What would happen if we di
 
 ## Printing the results to file. 
 
+Last, but not least, let's get this output to file. Let's first figure out how to get it nicely formatted. In this case, in our file we should have a header line followed by the amino acids, 60 per line. 
+
+```python
+output = lines[0] + "\n" # we first add the header from the mRNA file
+i = 0
+while i < len(protein):
+
+
+
 
 
 
