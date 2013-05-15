@@ -10,7 +10,7 @@ print mrna[start:stop]
 
 ```python
 dna = "CGCTACGGACGTAGCCAGCGA"
-GC = dna.count("GC")
-GC_dinuc = GC*100.0/(len(dna)-1)
-print GC_dinuc
+CG = dna.count("CG")
+CG_dinuc = CG*100.0/(len(dna)-1)
+print CG_dinuc
 ```
