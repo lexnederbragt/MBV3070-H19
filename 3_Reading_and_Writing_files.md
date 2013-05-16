@@ -175,7 +175,7 @@ mRNA = "" # create empty string to contain the mRNA
 for line __ lines[__]:
 	text = line.replace(____, __)
 	mRNA = mRNA + ____
-print text
+print mRNA
 ```
 
 Q: what are we removing from the input line, and why?
