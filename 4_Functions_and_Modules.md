@@ -156,5 +156,3 @@ fo.write(fastastring)
 fo.close()
 
 ```
-
-Previous: [Flow control](2_Flow_Control.md)
