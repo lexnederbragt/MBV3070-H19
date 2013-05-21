@@ -31,7 +31,7 @@ def get_sequence(lines):
    # Return the dna string
 
 
-fh = open("XXXX", "r")
+fh = open("hbb.fsa", "r")
 readlines = fh.readlines()
 fh.close()
 
@@ -80,13 +80,13 @@ from the command line, a variable that is called __name__ is set to have the val
 to test on this variable with an if statement, and if it is true, whatever is inside of it is run. In this case, we test the function. This variable
 will not be __name__ if we use this script inside of another script.
 
-We are now going to import these functions into a different script:
+We are now going to import these functions into a different script. Note, when we do `import modulename`, we have to prepend the function with the module name, like this: modulename.functionname.
 
 
 ```python
 import dna_functions
 
-fh = open('XXX".txt', "r")
+fh = open("hbb.fsa", "r")
 lines = fh.readlines()
 fh.close()
 
