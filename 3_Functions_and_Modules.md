@@ -38,7 +38,7 @@ fh.close()
 sequence = get_sequence(readlines)
 at_content = get_atcontent(sequence)
 
-print at_content
+print "The AT content is", at_content
 ```
 
 The keyword for defining a function is def. After that we have the function name followed by any arguments in paranthesis. After that comes the code that the function performs. Input to the function is available in the arguments passed to it.
@@ -50,7 +50,7 @@ Run the script. What is the AT content of the string?
 Add the two following two functions to the script above:
 
 ```python
-def get_dinucleotide_freq(dinucleotide, dna_string)
+def get_dinucleotide_freq(dinucleotide, dna_string):
    # Return the dinucleotide frequency
    # of the dinucleotide that is passed to the 
    # function in the dinucleotide parameter
@@ -114,14 +114,14 @@ def read_fasta(lines):
     # Return a string containing the fasta
     # sequence found in the file
     
-def read_translationtable(lines)
+def read_translationtable(lines):
     # Input: readlines on a filehandle input
     # This file contains codon-aminoacid paris
     # Create a dictionary where the codon is
     # the key, and the aminoacid is the value
     # return the dictionary
     
-def translate(sequence, translationtable)
+def translate(sequence, translationtable):
     # sequence is a dna string, translationtable
     # is a dictionary where codons are the key
     # and the aminoacids are the values.
@@ -155,5 +155,6 @@ fo = open("hbb_proteins.fsa", "w")
 fo.write(fastastring)
 fo.close()
 
+```
 
 Previous: [Flow control](2_Flow_Control.md)
