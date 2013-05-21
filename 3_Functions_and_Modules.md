@@ -9,7 +9,7 @@ but also why do it. The goal is to show you how and why modularisation of the so
 
 ##Writing our own functions
 
-So far we have used the python interactive Python shell and also written Python scripts (typing up the source code in a file and then running it from the Python prompt). We will now show how to "package" this source code into functions. This will allow us to reuse the same code easily multiple times (without having to run it each time manually).
+So far we have used the python interactive Python shell and also written Python scripts (typing up the source code in a file and then running it in IDLE). We will now show how to "package" this source code into functions. This will allow us to reuse the same code easily multiple times (without having to run it each time manually).
 
 Put the following code in a script file named dna_functions.py
 
@@ -71,7 +71,7 @@ In the same file, after the functions, add the following:
 
 if __name__ == "__main__":
 ```
-Add the rest of the code, from opening the input file and so on, after this if statement. Note: you need to indent it properly!
+Move the rest of the code, from opening the input file and so on, after this if statement. Note: you need to indent it properly!
 
 Now run this script just like it is. You should get the same results as before.
 
@@ -83,133 +83,77 @@ will not be __name__ if we use this script inside of another script.
 We are now going to import these functions into a different script:
 
 
-
-!!!!!!
 ```python
 import dna_functions
 
-f = open('XXX".txt', "r")
-for l in f:
-   print get_initials(l)
-f.close()
+fh = open('XXX".txt', "r")
+lines = fh.readlines()
+fh.close()
+
+##Now, using the lines above as input, do the follwing:
+
+# 1. get the sequence as a string
+# 2. calculate the AT content, and print it
+# 3. calculate the "CG" dinucleotide frequency, and print it
+# 4. transcribe it, and print the results
+
 ```
 
 What happens here is that Python goes into the dna_functions file and gets the functions that we specified, and uses that inside of this script. We get at the function by using the import statement. 
 
-**Getting input from the command line**
 
-What if we want to process different files and provide the name of the input file on the command line? We need to pass the file name as one of the Python arguments, and to do that, we have to access a special list that is called sys.argv. This list is available from the sys module, so we have to import that one. The list sys.argv contains everything that is put in on the command line, therefore the first element in this list is actually the name of the script. Anything after the name gets put in position 1, 2 and so forth of this list. Let's try to specify the input to the previous program on the command line:
+** Exercise**
+
+Look at the translation script you created last week, and fill in the following functions:
+
 
 ```python
-import sys
-from namehandler import get_initials
 
-def main():
-  f = open(sys.argv[1])
-  for l in f:
-     print get_initials(l)
-  f.close()
+def read_fasta(lines):
+    # Input: readlines on a filehandle input
+    # Return a string containing the fasta
+    # sequence found in the file
+    
+def read_translationtable(lines)
+    # Input: readlines on a filehandle input
+    # This file contains codon-aminoacid paris
+    # Create a dictionary where the codon is
+    # the key, and the aminoacid is the value
+    # return the dictionary
+    
+def translate(sequence, translationtable)
+    # sequence is a dna string, translationtable
+    # is a dictionary where codons are the key
+    # and the aminoacids are the values.
+    # Iterate over the string, get codons, and
+    # translate to protein. 
+    # return the protein string
+    
+def create_fasta_string(header, sequence):
+    # header is a fasta header with a >
+    # sequence is a string that we want
+    # to print, 60 characters to a line
+    # Create a fasta outut formatted string
+    # return string
+    
 
-if __name__ == "__main__":
-   main()
-```
+fh = open("hbb.fsa", "r")
+fastalines = fh.readlines()
+fh.close()
+header = fastalines[:1]
+sequence = read_fasta(lines)
 
-So, the input file is to be found in sys.argv[1]. 
+fh = open("translationtable.txt","r")
+tablelines = fh.readlines()
+fh.close()
+translationtable = read_translationtable(tablelines)
 
+protein = translate(sequence, translationtable)
+fastastring = create_fasta_string(header, protein)
 
-Previous: [Flow control](2_Flow_Control.md) Next: [Final exercise](4_Conflict.md)
-
-#Python 3 : Functions and Modules
------------------------
-
-A function is a block of code that performs a specifc task. In this section we
-will learn how to write our own functions and modules, and import them. The example used in this section is a simple one. But the main purpose of this part of the tutorial is not only to show you how to write our own functions and modules but also why do it. The goal is to show you how and why modularisation of the source code is a good programming practice.
-
-##Writing our own functions
-
-So far we have used Python prompt and write Python scripts (typing up the source code in a file and then running it from the Python prompt). We will now show how to "package" this source code into functions. This will allow us to reuse the same code easily multiple times (without having to run it each time manually).
-
-Let's say we want to extract people's initials from their full name. The code below should do it.
-
-```python
-   def get_initials(full_name):
-      names = full_name.split() 
-      initial = ''
-      i = 0
-      while i < len(names):
-         initial=initial+(names[i][0]) #From each part of the name we get the first letter
-         i = i+1
-      return initial
-   
-   a = 'Thomas Mann'
-   b = 'James Bond'
-   print get_initials(a)
-   print get_initials(b)
-   print get_initials('Anna Karenina')
-```
-
-Now instead of rerunning the code for each person, we just had to call our function. Note that our function takes one argument (full_name). 
-
-We can now use our function with the data file [famousauthors.txt](famousauthors.txt).
-
-##Importing Python modules
-
-First, let's save our function in a file named "namehandler.py" (deleting the last 5 lines - beginning from b='Thomas Mann'). Now, we can import our function from our own module:
-
-```python
-  from namehandler import get_initials
-
-  f = open('famousauthors.txt')
-  for l in f:
-     print get_initials(l)
-  f.close()
-```
-
-In some Python code you may notice the following statements `from module import *`. This means that all names defined in the module are imported. However, this is not a good practice as the code becomes more difficult to read. 
-
-
-What if we want to process different files and provide the name of the file with the input data not in the source code but in the command line? We need to pass the file name as one of the Python arguments:
-
-```python
-import sys
-from namehandler import get_initials
-
-def main():
-  f = open(sys.argv[1])
-  for l in f:
-     print get_initials(l)
-  f.close()
-
-
-if __name__ == "__main__":
-   main()
-```
-
-
-
-##Exercise
-
-You probably noticed that there are two authors whose initials were not correctly extracted. It's Erich von Däniken and Gérard de Villiers. How can we modify our function to address this problem? Hint: check the methods available for string variables ( dir(str) ).
-
-
-####Solution:
-
-```python
-  def get_initials(line):
-      names = line.split()
-      initial = ''
-      i = 0
-      while i < len(names):
-         if not names[i][0].islower():
-             initial=initial+(names[i][0])
-             i = i+1
-         else:
-             i = i+1
-      return initial
-```
-
-
-
+fo = open("hbb_proteins.fsa", "w")
+fo.write(fastastring)
+fo.close()
 
 
 Previous: [Flow control](2_Flow_Control.md)
