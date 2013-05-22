@@ -90,7 +90,7 @@ You will now try to access all of the attributes that this object has. Hint: to 
 
 First, from now on we are working in a script file. So, the code below goes in a file that you save and then run.
 
-Second, download this genbank file and save it in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
+Second, download [this genbank file](mb.gbk) and save it in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
 
 ```python
 from Bio import SeqIO # Have to import the module to have access to it.
@@ -118,7 +118,7 @@ We are now going to create a script that will let us print out fasta sequences w
 
 #### Reading in files ####
 
-We first need a genbank file to work with. Download [mb.gbk](this one) and save it as mb.gbk
+We first need a genbank file to work with. Download [this one](mb.gbk) and save it as mb.gbk
 
 Next, save the following in a script file named name_with_organism.py
 
