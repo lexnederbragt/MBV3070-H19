@@ -4,22 +4,29 @@ We are now going to explore the Biopython package a bit.
 
 You can find a full listing of everything here:
 
+http://biopython.org/DIST/docs/api/
 
-http://www.biopython.org/XX
 
 ### Creating Seq objects ###
 
+
+NoteL for now we are working in the interactive shell.
 
 You are first going to figure out everything we can do with a Seq object. To find all the methods for a specifyc type or class, do help(classname).
 
 ```python
 from Bio.Seq import Seq
-
 help(Seq)
-
 ```
 
-IGNORE all methods that begin with one or more underscores, those are "internal" to python. 
+Now scroll through them. Space gets you further down in the file, b gets you back up again. q will let you quit.IGNORE all methods that begin with one or more underscores, those are "internal" to python. 
+
+As you can see, there are lots of methods that are available. 
+
+** A note on self **
+
+When you see methods described here, you will always as a paremeter to the function see the word **self**. This just means that you specify that you are doing whatever you are doing on the object whose method you are using. This also means that you do not type in anything instead of self. I.e. if you see the method this_is_a_fake_method(self), you don't need to type in anything between the paranthesis. If you instead have this_is_a_fake_method(self, par1, par2), you will need to put in 2 parameters, corresponding to par1 and par2.
+
 
 First, we are going to create a Seq object. To create a Seq object, we need a string and an alphabet. Strings are built in, so we only need to import an alphabet before creating our object.
 
@@ -27,28 +34,38 @@ First, we are going to create a Seq object. To create a Seq object, we need a st
 from Bio.Alphabet import IUPAC
 my_seq = Seq("ATGGCC", IUPAC.unambiguous_dna)
 ```
-Now, use some of the methods above on this string. 
+Now, use the following methods on the my_seq seq: transcribe(), translate(), complement(), reverse_complement()
 
 Next, create an mRNA string instead. Make sure you use Us instead of Ts, and use the unambigous_rna alphabeth. Try out the various methods again. 
 
 Q: Can you find some methods that work with DNA, but not mRNA?
 
+### We can use normal string methods on Seq ###
+
+Figure out how to do the following:
+
+- how long my_seq is
+- what the first letter is
+- all of the sequence, except the first and last letter
+
+Notice the difference between the results from the last two.
+
+
 ### Creating SeqRecord objects ###
 
-SeqRecords hold not only the Seq, but also metadata. The only thing you need to create a Seq object however is a Seq, and a text string that will become the id.
+SeqRecords hold not only the Seq, but also metadata. 
 
 First, let's import them and see what help says about them:
 
 ```python
 from Bio.SeqRecord import SeqRecord
-
 help(SeqRecord)
 
 ```
 
-...something about the methods here....
+Many of these are simply the same methods as for Seq.
 
-Let's create a SeqRecord:
+Let's create a SeqRecord. The only thing you need to create a Seq object however is a Seq, and a text string that will become the id.
 
 ```python
 seq_record = SeqRecord(seq = my_seq, id = "MyID")
@@ -56,7 +73,19 @@ seq_record = SeqRecord(seq = my_seq, id = "MyID")
 
 Print seq_record, and see what you come up with.
 
-Now, let's read in SeqRecords from a genbank file and play with them:
+Let us create a slightly more complicated one:
+
+```python
+protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF", \
+                    IUPAC.protein), \
+                    id="YP_025292.1", name="HokC", \
+                    description="toxic membrane protein")
+
+```
+
+You will now try to access all of the attributes that this object has. Hint: to get to the id, you would type in `protein_record.id`.
+
+
 
 ### Using SeqIO ###
 
