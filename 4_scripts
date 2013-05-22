@@ -1,0 +1,121 @@
+```python
+def get_atcontent(dna_string):
+    A = dna_string.count("A")
+    T = dna_string.count("T")
+    AT = A + T
+    at_content = AT*100.1/len(dna_string)
+    return at_content
+
+def get_sequence(lines):
+    sequence = ""
+    for line in lines[1:]:
+        without_newline = line.replace("\n", "")
+        sequence += without_newline
+    return sequence
+
+def get_dinucleotide_freq(dinucleotide, dna_string):
+    count = dna_string.count(dinucleotide)
+    nuc_freq = count*100.1/(len(dna_string)-1)
+    return nuc_freq
+
+
+def transcribe(dna_string):
+    translated = dna_string.replace("T", "U")
+    return translated
+
+if __name__ == "__main__":
+
+    fh = open("hbb.fsa", "r")
+    readlines = fh.readlines()
+    fh.close()
+
+    sequence = get_sequence(readlines)
+    at_content = get_atcontent(sequence)
+    CG_freq = get_dinucleotide_freq("CG", sequence)
+    transcribed = transcribe(sequence)
+
+    print "The AT content is", at_content
+    print "The CG frequency is", CG_freq
+    print "The transcribed seq is", transcribed
+```
+
+
+```python
+import dna_functions
+
+fh = open("hbb.fsa", "r")
+lines = fh.readlines()
+fh.close()
+
+##Now, using the lines above as input, do the follwing:
+
+# 1. get the sequence as a string
+sequence = dna_functions.get_sequence(lines)
+print sequence
+# 2. calculate the AT content, and print it
+at_content = dna_functions.get_atcontent(sequence)
+print at_content
+# 3. calculate the "CG" dinucleotide frequency, and print it
+cg_freq = dna_functions.get_dinucleotide_freq("CG", sequence)
+print cg_freq
+# 4. transcribe it, and print the results
+transcribed = dna_functions.transcribe(sequence)
+print transcribed
+```
+    
+```python
+def read_fasta(lines):
+    sequence = ""
+    for line in lines[1:]:
+        without_newline = line.replace("\n", "")
+        sequence += without_newline
+    return sequence
+    
+def read_translationtable(lines):
+    codon_table = {}
+    for line in lines[:]:
+        without_newline = line.replace("\n", "")
+        fields = without_newline.split()
+        codon = fields[0]
+        aminoacid = fields[1]
+        codon_table[codon] = aminoacid
+    return codon_table
+    
+def translate(sequence, translationtable):
+    protein = ""
+    counter = 0
+    while counter < len(sequence) - 2:
+        codon = sequence[counter:counter + 3]
+        aminoacid = translationtable[codon]
+        protein = protein + aminoacid
+        counter += 3
+    return protein
+
+def create_fasta_string(header, sequence):
+    output = header
+    counter = 0
+    while counter < len(sequence):
+        output += sequence[counter:counter+60] + "\n"
+        counter += 60
+    return output
+
+fh = open("hbb.fsa", "r")
+fastalines = fh.readlines()
+fh.close()
+header = fastalines[0]
+sequence = read_fasta(fastalines)
+
+fh = open("translationtable.txt","r")
+tablelines = fh.readlines()
+fh.close()
+translationtable = read_translationtable(tablelines)
+
+protein = translate(sequence, translationtable)
+fastastring = create_fasta_string(header, protein)
+
+fo = open("hbb_proteins.fsa", "w")
+fo.write(fastastring)
+fo.close()
+```
+    
+    
