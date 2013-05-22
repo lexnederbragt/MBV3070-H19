@@ -1,0 +1,71 @@
+LOCUS       XM_001081975            1082 bp    DNA              PRI 01-JUN-2010
+DEFINITION  PREDICTED: Macaca mulatta myoglobin, transcript variant 1 (MB),
+            mRNA.
+ACCESSION   XM_001081975
+VERSION     XM_001081975.2  GI:297260941
+KEYWORDS    .
+SOURCE      Macaca mulatta (Rhesus monkey)
+  ORGANISM  Macaca mulatta
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Cercopithecidae; Cercopithecinae; Macaca.
+COMMENT     MODEL REFSEQ:  This record is predicted by automated computational
+            analysis. This record is derived from a genomic sequence
+            (NW_001095177) annotated using gene prediction method: GNOMON,
+            supported by EST evidence.
+            Also see:
+            Documentation of NCBI's Annotation Process
+            On Jun 1, 2010 this sequence version replaced gi:109094016.
+FEATURES             Location/Qualifiers
+     source          1..1082
+                     /mol_type="mRNA"
+                     /country="USA: Southwest National Primate Research Center
+                     at the Southwest Foundation for Biomedical Research, San
+                     Antonio, TX"
+                     /isolate="17573"
+                     /sex="female"
+                     /note="derived from Indian origin rhesus"
+                     /db_xref="taxon:9544"
+                     /organism="Macaca mulatta"
+                     /chromosome="10"
+     gene            1..1082
+                     /note="Derived by automated computational analysis using
+                     gene prediction method: GNOMON. Supporting evidence
+                     includes similarity to: 48 ESTs, 4 Proteins"
+                     /db_xref="GeneID:693269"
+                     /gene="MB"
+     CDS             82..546
+                     /product="myoglobin isoform 1"
+                     /codon_start="1"
+                     /db_xref="GI:297260942"
+                     /db_xref="GeneID:693269"
+                     /translation="MGLSDGEWQLVLNVWGKVEADIPSHGQEVLIRLFKGHPETLEKFD
+                     KFKHLKSEDEMKASEDLKKHGVTVLTALGGILKKKGHHEAEIKPLAQSHATKHKIPVKY
+                     LELISESIIQVLQSKHPGDFGADAQGAMNKALELFRNDMAAKYKELGFQG"
+                     /gene="MB"
+                     /protein_id="XP_001081975.2"
+     STS             182..378
+                     /db_xref="UniSTS:253987"
+                     /standard_name="MB"
+                     /gene="MB"
+ORIGIN
+        1 cctctcccca cccccagccc tggccgcttg gctggaagct ctgcgaggac agctggggag
+       61 aaggggagct gtgactgcgc catggggctc agcgacgggg aatggcagtt ggtgctgaac
+      121 gtctggggga aggtggaggc tgacatccca agccacgggc aggaagtcct catcaggctc
+      181 tttaagggtc accctgagac tctggagaag tttgacaagt tcaagcacct gaagtcagag
+      241 gacgagatga aggcgtctga ggacctaaag aagcatggcg tcaccgtgct cactgccttg
+      301 ggcggcatcc ttaagaagaa ggggcatcac gaggcggaga ttaagcccct ggcgcagtcg
+      361 catgccacca agcacaagat ccctgtgaag tacctggagt tgatctcgga atccatcatc
+      421 caagttctgc agagcaagca tcccggggac ttcggtgccg acgcccaggg ggccatgaac
+      481 aaggccctgg agctgttccg gaacgacatg gccgccaagt acaaagagct gggcttccag
+      541 ggttaggccc ctgctgcccc caccccaccc acctgggccc caggtccaag agagggcggg
+      601 gatctgatct cgtgtagccg tgtagagttt gcttctgagt gtctgctttg tttagtagag
+      661 gtgggcagga gcagctgagg ggctggggct ggggtgttga agttggcttc gcatgcccag
+      721 ccatgggcct ccctgtggag tgtcatcact gtgggaacca ggagtggccc ttggctcact
+      781 gtgttcttca tggtttgggt cggagttcat cgtcctttct tctaaatccc aacctaactt
+      841 cttccaacct ccaaactggc tgtaactacc ccaaatccaa gccattaagt acccctgaca
+      901 gtggcagttt tctgattcat cactggcccc ttgaagacag cagaatgtcc ctttgcaatg
+      961 aggaggagat ctgggctggg cggagcagct ggggaagcgt ttgagtatct ggaacatgtg
+     1021 tgtgccttct caggtatggc agtgactcac ctggttttaa taaaacaccc tgcaacatct
+     1081 ca
+//

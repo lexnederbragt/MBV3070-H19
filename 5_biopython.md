@@ -80,7 +80,6 @@ protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF", \
                     IUPAC.protein), \
                     id="YP_025292.1", name="HokC", \
                     description="toxic membrane protein")
-
 ```
 
 You will now try to access all of the attributes that this object has. Hint: to get to the id, you would type in `protein_record.id`.
@@ -91,43 +90,43 @@ You will now try to access all of the attributes that this object has. Hint: to 
 
 First, from now on we are working in a script file. So, the code below goes in a file that you save and then run.
 
-Second, download this genbank file and save it in the same place as you saved other files. Save it as hbb_one.gbk. This file contains only one genbank entry - we are going to have a look at it.
+Second, download this genbank file and save it in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
 
 ```python
-from Bio import SeqI0 # Have to import the module to have access to it.
+from Bio import SeqIO # Have to import the module to have access to it.
 
-fh = open("hbb_one.gbk", "r")
-one_gbk = SeqIO.parse(fh, "genbank").next()
+fh = open("macaca.gbk", "r")
+macaca = SeqIO.parse(fh, "genbank").next()
 fh.close()
 
-#below here you type in the methods you want to test. The object you
-#are testing them on are one_gbk
+# Below here you type in the things I specify 
+# you should look at later. The object you
+# are testing them on are macaca
 
 
 ```
 
-Remember the methods that you saw using help earlier? Try some of them out by writing them in after where you close the file.
+We are now going to try looking at the annotations in this object. In the script, write `print macaca.annotations` after the comment, save and run.
 
-Q: can you find out X
-Q: can you find out Y
+Q: Can you recognize what this is?
+Q: Can you from this figure out what you would have to do to get at the organism information.
 
 
-
-### name_with_taxonomy.py ###
+### name_with_organism.py ###
 
 We are now going to create a script that will let us print out fasta sequences with an ID which begins with the organism name.
 
 #### Reading in files ####
 
-We first need a genbank file to work with. Download this one and save it as hbb.gbk
+We first need a genbank file to work with. Download [mb.gbk](this one) and save it as mb.gbk
 
-Next, save the following in a script file named name_with_taxonomy.py
+Next, save the following in a script file named name_with_organism.py
 
 ```python
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 
-fh = open("hbb.gbk", "r")
+fh = open("mb.gbk", "r")
 
 for record in SeqIO.parse(fh, "genbank"):
     print record.id
@@ -135,19 +134,26 @@ for record in SeqIO.parse(fh, "genbank"):
 fh.close()
 ```
 
-Run it, and you will see the ids of the sequences in the hbb.gbk file printed on screen.
+Run it, and you will see the ids of the sequences in the mb.gbk file printed on screen.
 
 #### Creating a new id ####
 
-Now, can you remember how you could get at the taxonomy of a sequence? Add a print statement after `print record.id`, so that you will first get one line with the id of the sequence, and one with the taxonomy.
+Now, can you remember how you could get at the organism of a sequence? Add a print statement that will print this out
+ on the line after `print record.id`, so that you will first get one line with the id of the sequence, and one with the organism name.
 
-As you can see, these are now just strings. Strings can be added together. Try having both on one line, with a print in front.
+As you can see, these are now just strings. Strings can be added together. 
+
+In this case, we have two words in our string, the genus name and the species name. We will only use the species name.
+
+Q: In a string with two words, what do you use to get at only the last word?
 
 We are now going to create a new id for each entry. This can be done by doing this:
 
 ```python
    # Note: we are now inside the for loop
-   record.id = TAXONOMY + record.id
+   organism = record.annotations['organism']
+   species_name = organism.split()[1]
+   record.id = species_name + "_" + record.id
 ```
 
 Add a print statement inside the for loop after you have assigned a new value to record.id, so that you get to see what this is.
@@ -157,21 +163,19 @@ Add a print statement inside the for loop after you have assigned a new value to
 
 We are now going to write this out to file. We now need to also have an out file open. 
 
+Look at this example and figure out which portions of this you need in your own script:
 
 ```python
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 
-fh = open("hbb.gbk", "r")
-fo = open("hbb_taxonomy.fsa", "w")
+fh = open("fake_file_name.gkb", "r")
+fo = open("fake_file_name.fsa", "w")
 
 for record in SeqIO.parse(fh, "genbank"):
-    record.id = TAXONOMY + record.id
     SeqIO.write(fo, record, "fasta")
-
 fh.close()
-fo.close()
-```
 
+```
 
 Congratulations, you have now created your own custom conversion script!
