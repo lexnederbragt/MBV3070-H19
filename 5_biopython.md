@@ -10,23 +10,24 @@ http://biopython.org/DIST/docs/api/
 ### Creating Seq objects ###
 
 
-NoteL for now we are working in the interactive shell.
+Note: for now we are working in the interactive shell.
 
-You are first going to figure out everything we can do with a Seq object. To find all the methods for a specifyc type or class, do help(classname).
+You are first going to figure out what we can do with a Seq object. To find all the methods for a specifyc type or class, do help(classname).
 
 ```python
 from Bio.Seq import Seq
 help(Seq)
 ```
 
-Now scroll through them. Space gets you further down in the file, b gets you back up again. q will let you quit.IGNORE all methods that begin with one or more underscores, those are "internal" to python. 
+Now scroll through the help. Find the method that is named __init__ . This method is the one that is run every time you create an object of this class, and in this one you will find which attributes this class has. This means that every object of this class will have these attributes set, i.e. have something there. 
 
-As you can see, there are lots of methods that are available. 
+Q: how many attributes does Seq have?
+
+Everything you see in the help is a method in this class. As you can see, there are lots of methods that are available. 
 
 ** A note on self **
 
 When you see methods described here, you will always as a paremeter to the function see the word **self**. This just means that you specify that you are doing whatever you are doing on the object whose method you are using. This also means that you do not type in anything instead of self. I.e. if you see the method this_is_a_fake_method(self), you don't need to type in anything between the paranthesis. If you instead have this_is_a_fake_method(self, par1, par2), you will need to put in 2 parameters, corresponding to par1 and par2.
-
 
 First, we are going to create a Seq object. To create a Seq object, we need a string and an alphabet. Strings are built in, so we only need to import an alphabet before creating our object.
 
@@ -62,8 +63,9 @@ from Bio.SeqRecord import SeqRecord
 help(SeqRecord)
 
 ```
+Q: can you figure out how many attributes this class has?
 
-Many of these are simply the same methods as for Seq.
+As you can see, many of the methods are simply the same methods as for Seq.
 
 Let's create a SeqRecord. The only thing you need to create a Seq object however is a Seq, and a text string that will become the id.
 
@@ -83,7 +85,6 @@ protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF", \
 ```
 
 You will now try to access all of the attributes that this object has. Hint: to get to the id, you would type in `protein_record.id`.
-
 
 
 ### Using SeqIO ###
