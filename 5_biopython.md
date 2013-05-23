@@ -174,8 +174,9 @@ fh = open("fake_file_name.gkb", "r")
 fo = open("fake_file_name.fsa", "w")
 
 for record in SeqIO.parse(fh, "genbank"):
-    SeqIO.write(fo, record, "fasta")
+    SeqIO.write(record, fo, "fasta")
 fh.close()
+fo.close()
 
 ```
 
