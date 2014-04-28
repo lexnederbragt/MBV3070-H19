@@ -47,6 +47,7 @@ Let's say we have multiple values we want to add. These are kept in a separate l
 ```python
 add_items = [0.1, 0.2]
 at_content.append(add_items)
+print at_content
 ```
 
 Q: what happened here?
@@ -74,7 +75,7 @@ And to find the value of the third item
 at_content[2]
 ```
 
-Lists can be indexed from the back using a negative index. The last item of at_content is accessed like this:
+Lists can be indexed from the end using a negative index. The last item of at_content is accessed like this:
 
 ```python
 at_content[-1]
@@ -102,7 +103,12 @@ at_content[2:]
 
 and so on.
 
-Q: can you now figure out 
+Q: Let's say the content of at_content is like this:
+
+[0.5, 0.6, 0.8, 0.4, [0.1, 0.2]]
+
+How do you get the list that is inside the list?
+How do you get the last element of the list inside the list?
 
 
 ### The in operator
@@ -113,8 +119,8 @@ Let's make a string and figure out whether certain things are in the string:
 
 ```python
 teststring = "AUGUAGGGAUGG"
-"A" in teststring
-"AUG" in teststring
+print "A" in teststring
+print "AUG" in teststring
 ```
 Q: can you find out if there were any Ts in this string? If there are none, what does that tell you?
 
@@ -127,7 +133,7 @@ First with lists:
 ```python
 list1 = ["A", "B", "C", "D"]
 list2 = [1, 2, 3, 4]
-list1 + list2
+print list1 + list2
 ```
 
 and now for strings:
@@ -135,7 +141,7 @@ and now for strings:
 ```python
 text1 = "Watson"
 text2 = "Crick"
-text1 + text2
+print text1 + text2
 ```
 
 Q: what would you do to the strings above to introduce a space between Watson and Crick?
@@ -145,22 +151,22 @@ Q: what would you do to the strings above to introduce a space between Watson an
 Sometimes you want to know how many items are in a list. Use the len command.
 
 ```python
-len(at_content)
+print len(at_content)
 ```
 
 Next, we can find the minimum and the maximum of at_content.
 
 ```python
-min(at_content)
-max(at_content)
+print min(at_content)
+print max(at_content)
 ```
 
 NOTE: when using min and max on a string, the min and max are found by looking at each character in lexicographic order. Lets try:
 
 ```python
 text3 = "TtAaGgCc"
-min(text3)
-max(text3)
+print min(text3)
+print max(text3)
 ```
 
 ## Open reading frame GC dinucleotide frequency
@@ -194,10 +200,8 @@ Now we are going to create a dictionary from this, using the codons as keys and 
 ```python
 codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
                "AAC":"N", "CGA":"R", "CAG":"Q" }
-
 ```
 NOTE: you only need the \ if you want to write this one over two lines, in that case you write first \ and then press enter before entering the rest.
-
 
 Dictionaries are very good for storing data where the relationship between elements matter. In this case, the important thing is the relationship between the codon and the amino acid. The order of the codons do not matter.
 
@@ -208,15 +212,14 @@ So, let's manipulate this dictionary a bit.
 
 A dictionary is often used to look up the value of a certain key. In this case, let's find out which amino acid you would get from ATA:
 
-
 ```python
-codon_table["ATA"]
+print codon_table["ATA"]
 ```
 
 Let's try another one, CCG:
 
 ```python
-codon_table["CCG"]
+print codon_table["CCG"]
 ```
 Oups -  that did not work did it? Can you figure out what went wrong?
 
@@ -225,8 +228,8 @@ Oups -  that did not work did it? Can you figure out what went wrong?
 From the last example it seems it would be useful to be able to tell whether a key is part of a dictionary. We can do this using the in operator, just like we did for lists:
 
 ```python
-"AAC" in codon_table
-"CCG" in codon_table
+print "AAC" in codon_table
+print "CCG" in codon_table
 ```
 
 So, CCG is not in the table. Let's add it. CCG codes for P, proline. Adding a new key-value pair to a dictionary simply means defining it:
@@ -244,7 +247,7 @@ print codon_table
 As you can see the new codon is in there. Let's redo the test, just to make sure our eyes are not deceiving us:
 
 ```python
-"CCG" in codon_table
+print "CCG" in codon_table
 ```
 
 ###Keys and values
@@ -252,16 +255,9 @@ As you can see the new codon is in there. Let's redo the test, just to make sure
 We can access all the keys and the values of a dictionary using the keys() and the values() methods:
 
 ```python
-codon_table.keys()
-codon_table.values()
+print codon_table.keys()
+print codon_table.values()
 ```
-
-## Translate a DNA sequence
-
-Given the DNA string "ATGACAATACGACAGCCG", you will now figure out how to translate it to protein. Note: each triplet in the string is actually present in the dictionary. 
-
-Tip: try sorting out how you would do it on paper before trying it on the computer.
-
 ## Finding out more
 
 All python data types like lists, strings and dictionaries have help documentation available in the interpreter. Try typing in
