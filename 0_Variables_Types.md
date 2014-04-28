@@ -4,7 +4,7 @@
 
 There are many different kinds of programming languages. The language we are using today is python, which is an interpreted language. This means that we can write in code and it will be executed right away. 
 
-You can deal with python in two ways, either directly in an interpreter, or you can write bits of code in a file and have that run by the interpreter for you. 
+You can work with python in two ways, either directly in an interpreter, or you can write bits of code in a file and have that run by the interpreter for you. 
 
 NOTE: a line anywere in python that is preceeded with a # is a comment and is ignored by python!
 
@@ -38,7 +38,7 @@ Q: what happens if you don't include the space in Ada?
 ## Python as a calculator
 We are first going to use python as a simple calculator. Look at the operators that was shown for numbers at the lecture and test all of them.
 
-Q: What is the difference between 11/2 and 11.0/2.
+Q: What is the difference between 11/2 and 11.0/2?
 
 ## Creating your first script
 
@@ -47,7 +47,7 @@ In IDLE, go to "File" and click "New Window". You will get up a new window. Type
 NOTE: python scripts should be saved with the file ending .py. 
 
 Q: what happened after you clicked "Run Module"? Did you see anything in the other window?
-Q: try changing the file, save it and run again. What happened then?
+Q: try changing something in the file, save it and run again. What happened then?
 
 Note: for the rest of the exercise we will work in the interactive shell.
 
@@ -58,14 +58,13 @@ Strings can be created by putting single, double or triple quotation marks aroun
 We will first count the number of Cs, replace a T with a U, split the text on whitespace and then find the occurrence of the first C.
 
 ```python
-   "ATG GGC ATG GGC".count("C")
-   "ATG GGC ATG GGC".replace("T", "U")
-   "ATG GGC ATG GGC".split()
-   "ATG GGC ATG GGC".find("C")
+   print "ATG GGC ATG GGC".count("C")
+   print "ATG GGC ATG GGC".replace("T", "U")
+   print "ATG GGC ATG GGC".split()
+   print "ATG GGC ATG GGC".find("C")
 ```
 
 Q: Why the first C is in position 6?
-
 Q: How would you find the number of Ts?
 Q: How would you find the position of the first T?
 
@@ -84,7 +83,7 @@ When you give a variable a value, you are assigning that value to that variable.
    print a
 ```
 
-Variables in Python are not typed as you can see. They can be thought of as being just names. However, beware that Python does not assume default variables - you have to assign them before use:
+Variables can be thought of being labels on values - you can move the label onto a different value. However, beware that Python does not assume any default values for variables - you have to assign them before use:
 
 ```python
    print b
