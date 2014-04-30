@@ -93,11 +93,16 @@ lines = fh.readlines()
 fh.close()
 ```
 
-Then, have a look at your new list (use print, for instance). How many entries does it contain? Can you tell whether the table is tab separated, or if there are just spaces in between the entries?
+Then, have a look at your new list (use print, for instance). 
+
+Q: How many entries does it contain? (hint: how many lines do we get?)
+Q: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?
 
 Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value. Note: below the code is incomplete. Figure out what is lacking (replace underscores with something else), and run it. 
 
 ```python
+#Here, add the code needed to read in the file, then:
+
 codon_table = {}
 for line in _____:
 	without_newline = line._____("\n", "")
@@ -114,7 +119,6 @@ Q: How do you skip the first line when passing through the input file lines?
 
 Repeat the above code without the first line, and see what you get.
 
-Q: can you figure out how many entries there are in the list?
 Q: how would you iterate over the dictionary and show all codon-amino acid pairs? 
 
 ## Reading in a fasta file
@@ -166,11 +170,15 @@ string += " something else"
 
 This also goes for numbers, where **counter = counter + 1** can rather be written **as counter += 1**.
 
+Note: with strings, this becomes concatenation, and with numbers this is addition.
+
 #### Back to the mRNA sequence
 
-Below is the code necessary, with some text replaced wih underscores. Figure out how this should be, and run the code.
+Below is the code necessary to read in the fasta file, with some text replaced with underscores. Figure out how this should be, and run the code.
 
 ```python
+#Here, add the code needed to read in the file, then:
+
 mRNA = "" # create empty string to contain the mRNA
 for line __ lines[__]:
 	text = line.replace(____, __)
@@ -191,6 +199,9 @@ So, now we have the translation table, and the mRNA. Now we are going to transla
 Again, some text has been replaced by underscores. Figure out what goes in the underscores, and run the code. 
 
 ```python
+# remember, you need the mRNA string from above here, and also the 
+# codon_table
+
 protein = ""
 counter = 0
 while _______ < len(mRNA) - _:
@@ -203,9 +214,9 @@ print protein
 
 Q: what are we subtracting from the length of the mRNA? What is the consequence of this?
 
-Q: what is the name what happens in the first line of the while loop, where we get the codon?
+Q: what happens in the first line of the while loop, where we get the codon?
 
-Q: what is the effect of what happens in the line inside of the while loop where protein is reassigned a value?
+Q: what happens in the line inside of the while loop where protein is reassigned a value?
 
 Q: what do we add to the counter at the end, and why? What would happen if we did not increase the value of the counter? What amount should we increase it with?
 
