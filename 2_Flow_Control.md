@@ -126,13 +126,10 @@ Codons are triplets of nucleotides. Each of the three letters of the triplet can
 With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys in a dictionary work like a list. 
 
 ```python
-asp = ["GAU", "GAC"]
-glu = ["GAA", "GAG"]
-pro = ["CCU", "CCG", "CCA", "CCT"]
 codondict = {}
-codondict["asp"] = asp
-codondict["glu"] = glu
-codondict["pro"] = pro
+codondict["UUU"] = "F"
+codondict["ACA"] = "T"
+codondict["CGG"] = "R"
 for key in codondict:
     print key, codondict[key]
 ```
