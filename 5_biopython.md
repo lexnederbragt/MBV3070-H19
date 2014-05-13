@@ -12,7 +12,7 @@ http://biopython.org/DIST/docs/api/
 
 Note: for now we are working in the interactive shell.
 
-You are first going to figure out what we can do with a Seq object. To find all the methods for a specifyc type or class, do help(classname).
+You are first going to figure out what we can do with a Seq object. To find all the methods for a specify type or class, do help(classname).
 
 ```python
 from Bio.Seq import Seq
@@ -27,7 +27,7 @@ Everything you see in the help is a method in this class. As you can see, there 
 
 ** A note on self **
 
-When you see methods described here, you will always as a paremeter to the function see the word **self**. This just means that you specify that you are doing whatever you are doing on the object whose method you are using. This also means that you do not type in anything instead of self. I.e. if you see the method this_is_a_fake_method(self), you don't need to type in anything between the paranthesis. If you instead have this_is_a_fake_method(self, par1, par2), you will need to put in 2 parameters, corresponding to par1 and par2.
+When you see methods described here, you will always as a parameter to the function see the word **self**. This just means that you specify that you are doing whatever you are doing on the object whose method you are using. This also means that you do not type in anything instead of self. I.e. if you see the method this_is_a_fake_method(self), you don't need to type in anything between the paranthesis. If you instead have this_is_a_fake_method(self, par1, par2), you will need to put in 2 parameters, corresponding to par1 and par2.
 
 First, we are going to create a Seq object. To create a Seq object, we need a string and an alphabet. Strings are built in, so we only need to import an alphabet before creating our object.
 
@@ -43,13 +43,17 @@ Q: Can you find some methods that work with DNA, but not mRNA?
 
 ### We can use normal string methods on Seq ###
 
+Remember how you did the "normal" string operations? Look at the previous exercises if you are uncertain.
+
+Many of the normal string methods work on Seq objects.
+
 Figure out how to do the following:
 
 - how long my_seq is
 - what the first letter is
 - all of the sequence, except the first and last letter
 
-Notice the difference between the results from the last two.
+Notice the difference between the results from the first two and the last.
 
 
 ### Creating SeqRecord objects ###
