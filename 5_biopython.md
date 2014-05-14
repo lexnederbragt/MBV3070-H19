@@ -19,7 +19,9 @@ from Bio.Seq import Seq
 help(Seq)
 ```
 
-Now scroll through the help. Find the method that is named __init__ . This method is the one that is run every time you create an object of this class, and in this one you will find which attributes this class has. This means that every object of this class will have these attributes set, i.e. have something there. 
+Now scroll through the help. You go down by pressing the space bar, and up with the arrows. If you want to quit, press q. 
+
+Find the method that is named \_\_init\_\_ . This method is the one that is run every time you create an object of this class, and in this one you will find which attributes this class has. This means that every object of this class will have these attributes set, i.e. have something there. 
 
 Q: how many attributes does Seq have?
 
@@ -27,7 +29,7 @@ Everything you see in the help is a method in this class. As you can see, there 
 
 ** A note on self **
 
-When you see methods described here, you will always as a parameter to the function see the word **self**. This just means that you specify that you are doing whatever you are doing on the object whose method you are using. This also means that you do not type in anything instead of self. I.e. if you see the method this_is_a_fake_method(self), you don't need to type in anything between the paranthesis. If you instead have this_is_a_fake_method(self, par1, par2), you will need to put in 2 parameters, corresponding to par1 and par2.
+When you see methods described here, you will always as a parameter to the function see the word **self**. This just means that you specify that you are doing whatever you are doing on the object whose method you are using. This also means that you do not type in anything instead of self. I.e. if you see the method this_is_a_fake_method(self), you don't need to type in anything between the parenthesis. If you instead have this_is_a_fake_method(self, par1, par2), you will need to put in 2 parameters, corresponding to par1 and par2.
 
 First, we are going to create a Seq object. To create a Seq object, we need a string and an alphabet. Strings are built in, so we only need to import an alphabet before creating our object.
 
@@ -53,7 +55,7 @@ Figure out how to do the following:
 - what the first letter is
 - all of the sequence, except the first and last letter
 
-Notice the difference between the results from the first two and the last.
+Q: can you see a difference between the results from the first two and the last?
 
 
 ### Creating SeqRecord objects ###
@@ -95,7 +97,7 @@ You will now try to access all of the attributes that this object has. Hint: to 
 
 First, from now on we are working in a script file. So, the code below goes in a file that you save and then run.
 
-Second, download [this genbank file](macaca.gbk) and save it in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
+Second, go to this page [this genbank file](macaca.gbk), copy the contents and  and save it in a file in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
 
 ```python
 from Bio import SeqIO # Have to import the module to have access to it.
@@ -107,7 +109,6 @@ fh.close()
 # Below here you type in the things I specify 
 # you should look at later. The object you
 # are testing them on are macaca
-
 
 ```
 
@@ -123,7 +124,7 @@ We are now going to create a script that will let us print out fasta sequences w
 
 #### Reading in files ####
 
-We first need a genbank file to work with. Download [this one](mb.gbk) and save it as mb.gbk
+We first need a genbank file to work with. Save this file as before [this one](mb.gbk) as mb.gbk
 
 Next, save the following in a script file named name_with_organism.py
 
