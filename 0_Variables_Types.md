@@ -10,11 +10,14 @@ NOTE: a line anywere in python that is preceeded with a # is a comment and is ig
 
 ## The python interpreter
 
-Let's bring up the Python interpreter. You do this by starting IDLE on your windows machine. This is what you see when you open the program:
-```python
-   Python 2.7.3 (default, April 10 2012, 23:31:26) [MSC v.1500 32 bit (Intel)] on win32
-   Type "copyright", "credits" or "license" for more information.
-   >>>
+Let's bring up the Python interpreter. You do this by first starting a command window on your windows machine. You do this by pressing the start button, and typing in 'cmd' in the search box and pressing enter. The result is a black window where you can type in things after a arrow symbol. Type in the word 'python', and press enter. This is what you see when you open the program:
+``python
+Python 2.7.8 |Anaconda 2.1.0 (64-bit)| (default, Jul  2 2014, 15:12:11) [MS
+500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+Anaconda is brought to you by Continuum Analytics.
+Please check out: http://continuum.io/thanks and https://binstar.org
+>>>
 ```
 See the three >? You type in your commands after that.
 
@@ -33,21 +36,27 @@ We can also work with strings in python:
 ```
 Strings can actually be added together.
 
-Q: what happens if you don't include the space in Ada?
+Q: Remove the space in Ada. What happens?
 
 ## Python as a calculator
 We are first going to use python as a simple calculator. Look at the operators that was shown for numbers at the lecture and test all of them.
 
 Q: What is the difference between 11/2 and 11.0/2?
 
+Exit the interpreter by typing in Ctlr-D.
+
 ## Creating your first script
 
-In IDLE, go to "File" and click "New Window". You will get up a new window. Type in some of the commands that you typed in earlier when you used python as a calculator. Save the file as first.py. Then, go to the "Run" menu and click "Run Module".
+Open notepad. You will get up a new window. Type in some of the commands that you typed in earlier when you used python as a calculator. Notice which directory your command window is in (it says where you can type in the command). Save the file as first.py in the same directory. Then, go to the command window. Run the program by typing in
+
+```python
+  python first.py
+```
 
 NOTE: python scripts should be saved with the file ending .py. 
 
-Q: what happened after you clicked "Run Module"? Did you see anything in the other window?
-Q: try changing something in the file, save it and run again. What happened then?
+Q: What happened in the command window?
+Q: try changing something in the file, save it and run again. What happens?
 
 Note: for the rest of the exercise we will work in the interactive shell.
 
@@ -70,7 +79,7 @@ Q: How would you find the position of the first T?
 
 ## Using variables
 
-In a programming situation, we usually have data that we want to do something to. We want to be able to work on the data without having to specify it directly, like we did with the numbers and "Hello World" above. Instead of specifying the data directly, we can use variables. Variables contains data that we can do things to. Many languages require us to specify what kind the data a variable should contain should be, like strings or numbers. Python does not require this, we can use them directly. This is called dynamic typing.
+In a programming situation, we usually have data that we want to do something to. We want to be able to work on the data without having to specify it directly, like we did with the numbers and "Hello World" above. Instead of specifying the data directly, we can use variables. Variables contain data that we can do things to. Many languages require us to specify what kind the data a variable should contain should be, like strings or numbers. Python does not require this, we can use them directly. This is called dynamic typing.
 
 When you give a variable a value, you are assigning that value to that variable. 
 
