@@ -4,6 +4,11 @@
 
 **Written by Karin Lagesen**
 
+Note: we are using the interactive shell here. Start the shell by first starting a command window by typing in 'cmd' in the search field that appears when pressing the start button. Then, type in 'python'
+
+Note: if you want to repeat something that you have already typed in, try the arrow buttons on your keyboard.
+
+
 One of the useful features of Python are its compound data types. The main two are lists and dictionaries.
 
 ## Lists
@@ -41,6 +46,7 @@ We can add to the list by using append:
 
 ```python
 at_content.append(0.4)
+print at_content
 ```
 Let's say we have multiple values we want to add. These are kept in a separate list. There are two ways of adding to a list, append and extend. Let's try both:
 
@@ -50,12 +56,11 @@ at_content.append(add_items)
 print at_content
 ```
 
-Q: what happened here?
+Question: what happened here?
 
-Create a new list, at_content2, with the same numbers as before. Try doing the same as above with extend instead of append. What happens?
+Create a new list, at_content2, with the same numbers as in at_content. Try doing the same as above with extend instead of append. What happens?
 
-Q: would you use append or extend in this situation? Can you explain the difference between the two?
-
+Question: would you use append or extend in this situation? Can you explain the difference between the two?
 
 ## Sequence methods
 
@@ -63,22 +68,29 @@ Lists and strings are both what we call "sequence types". These are types where 
 
 ### Indices
 
+Let's first recreate the at_content list:
+
+```python
+at_content = [0.5, 0.4, 0.3, 0.8, 0.6]
+print at_content
+```
+
 We can access elements in lists and strings using indices. Python indices go from zero. Therefore, to find the value of the first item in at_content, we do this:
 
 ```python
-at_content[0]
+print at_content[0]
 ```
 
 And to find the value of the third item
 
 ```python
-at_content[2]
+print at_content[2]
 ```
 
 Lists can be indexed from the end using a negative index. The last item of at_content is accessed like this:
 
 ```python
-at_content[-1]
+print at_content[-1]
 ```
 
 and the next-to-last
@@ -103,13 +115,14 @@ at_content[2:]
 
 and so on.
 
-Q: Let's say the content of at_content is like this:
+### Task: Slicing 
+
+Create a list called newlist which contains the numbers below: 
 
 [0.5, 0.6, 0.8, 0.4, [0.1, 0.2]]
 
-How do you get the list that is inside the list?
-How do you get the last element of the list inside the list?
-
+1. Get python to print the list that is inside the list.
+2. Get python to print last element of the list inside the list.
 
 ### The in operator
 
@@ -122,7 +135,7 @@ teststring = "AUGUAGGGAUGG"
 print "A" in teststring
 print "AUG" in teststring
 ```
-Q: can you find out if there were any Ts in this string? If there are none, what does that tell you?
+Question: can you find out if there were any Ts in this string? If there are none, what does that tell you?
 
 ### Concatenation
 
@@ -144,7 +157,7 @@ text2 = "Crick"
 print text1 + text2
 ```
 
-Q: what would you do to the strings above to introduce a space between Watson and Crick?
+Question: what would you do to the strings above to introduce a space between Watson and Crick?
 
 ### Length, minimum and maximums
 
@@ -161,23 +174,22 @@ print min(at_content)
 print max(at_content)
 ```
 
-NOTE: when using min and max on a string, the min and max are found by looking at each character in lexicographic order. Lets try:
+NOTE: when using min and max on a string, the min and max are found by looking at each character in lexicographic order. Let's try:
 
 ```python
-text3 = "TtAaGgCc"
-print min(text3)
-print max(text3)
+mytext = "TtAaGgCc"
+print min(mytext)
+print max(mytext)
 ```
 
-## Open reading frame GC dinucleotide frequency
+### Task: Open reading frame G count
 
 Given the DNA string "CGAGATGGCAGCACGAGCACAGGA", do the following:
 
-1. Figure out how to find where the open reading frame starts (starts with ATG).
-2. Slice the string, so that only the open reading frame remains (no stop codons in the string, so just stop at the end).
-3. Count the number of GC dinucleotides in the open reading frame.
-4. Figure out the percentage of GC dinucleotides in the string, out of all the dinucleotides in it.
-
+1. Store the string as the variable dna.
+2. Figure out how to find where the open reading frame starts (starts with ATG). Save the value in the variable number.
+3. Slice the string, so that only the open reading frame remains (no stop codons in the string, so just stop at the end). Save this as the variable orf.
+4. Count and print the number of Gs in the open reading frame.
 
 ## Dictionaries
 
@@ -198,15 +210,11 @@ Now we are going to create a dictionary from this, using the codons as keys and 
 
 
 ```python
-codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
-               "AAC":"N", "CGA":"R", "CAG":"Q" }
+codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", "AAC":"N", "CGA":"R", "CAG":"Q" }
 ```
-NOTE: you only need the \ if you want to write this one over two lines, in that case you write first \ and then press enter before entering the rest.
-
 Dictionaries are very good for storing data where the relationship between elements matter. In this case, the important thing is the relationship between the codon and the amino acid. The order of the codons do not matter.
 
 So, let's manipulate this dictionary a bit. 
-
 
 ### Lookup
 
@@ -277,17 +285,18 @@ A lot of the material taught in this course draws heavily on this book:
 
 ## Homework
 
-There are two tasks that you will do. In both cases, you will create text document (word is fine here) containing the following:
+There are two tasks that you may do. In both cases, you will create text document (word is fine here) containing the following:
 
 1. The code itself
 2. A copy of what appears in the terminal when you run it.
 
+Send this to me.
 
 ### ORF finding
 
 Below is part of a python script that is meant to translate a DNA string into RNA, find the open reading frame in it (only look for the start codon AUG), find the stop codon (in this case UAA) and print the string from that position until the start of the stop codon.
 
-In the code there are words missing. Fill them in and run the script.
+In the code there are words missing. Fill them in.
 
 ```python
    	seq = "ATTATGAGATTACAGAGCTAAGAC"   
@@ -297,9 +306,11 @@ In the code there are words missing. Fill them in and run the script.
 	print mrna[_____:stop]
 ```
 
+Use notepad to create the completed script, and save it as orf.py. Run it on the command line like this: 'python orf.py'. 
+
 ### CG frequency
 
-CpG islands are regions of sequence that contain higher than expected number of CpG (CG) dinucleotides. CpG islands are found near or in 40% of all promoters in mammalian genomes. We will now create a script that will allow us to calculate the CG frequency in a given string.
+CpG islands are regions of sequence that contain higher than expected number of CpG (CG) dinucleotides (this is a C followed by a G, i.e. the substring CG). CpG islands are found near or in 40% of all promoters in mammalian genomes. We will now create a script that will allow us to calculate the CG frequency in a given string.
 
 Define the DNA string CGCTACGGACGTAGCCAGCGA.
 
