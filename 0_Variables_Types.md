@@ -38,12 +38,12 @@ We can also work with strings in python:
 ```
 Strings can actually be added together.
 
-Q: Remove the space in Ada. What happens?
+Question: Remove the space in Ada. What happens?
 
 ## Python as a calculator
 We are first going to use python as a simple calculator. Look at the operators that was shown for numbers at the lecture and test all of them.
 
-Q: What is the difference between 11/2 and 11.0/2?
+Question: What is the difference between 11/2 and 11.0/2?
 
 Exit the interpreter by typing in Ctlr-D.
 
@@ -57,8 +57,8 @@ Open notepad. You will get up a new window. Type in some of the commands that yo
 
 NOTE: python scripts should be saved with the file ending .py. 
 
-Q: What happened in the command window?
-Q: try changing something in the file, save it and run again. What happens?
+Question: What happened in the command window?
+Question: try changing something in the file, save it and run again. What happens?
 
 Note: for the rest of the exercise we will work in the interactive shell.
 
@@ -75,9 +75,9 @@ We will first count the number of Cs, replace a T with a U, split the text on wh
    print "ATG GGC ATG GGC".find("C")
 ```
 
-Q: Why the first C is in position 6?
-Q: How would you find the number of Ts?
-Q: How would you find the position of the first T?
+Question: Why the first C is in position 6?
+Question: How would you find the number of Ts?
+Question: How would you find the position of the first T?
 
 ## Using variables
 
@@ -99,7 +99,7 @@ Variables can be thought of being labels on values - you can move the label onto
 ```python
    print b
 ```
-Q: what happened when you typed in b, without assigning a value to b first?
+Question: what happened when you typed in b, without assigning a value to b first?
 
 ## Strings are immutable
 
