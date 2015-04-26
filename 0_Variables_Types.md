@@ -11,7 +11,8 @@ NOTE: a line anywere in python that is preceeded with a # is a comment and is ig
 ## The python interpreter
 
 Let's bring up the Python interpreter. You do this by first starting a command window on your windows machine. You do this by pressing the start button, and typing in 'cmd' in the search box and pressing enter. The result is a black window where you can type in things after a arrow symbol. Type in the word 'python', and press enter. This is what you see when you open the program:
-``python
+
+```python
 Python 2.7.8 |Anaconda 2.1.0 (64-bit)| (default, Jul  2 2014, 15:12:11) [MS
 500 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -19,6 +20,7 @@ Anaconda is brought to you by Continuum Analytics.
 Please check out: http://continuum.io/thanks and https://binstar.org
 >>>
 ```
+
 See the three >? You type in your commands after that.
 
 The interpreter can be used as a calculator:
