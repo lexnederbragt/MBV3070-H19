@@ -49,7 +49,6 @@ print beatle in beatles or len(beatles) > 4 # is "John" in beatles, or are are t
 print len(beatles) > 3
 print beatle in beatles or not len(beatles) >3
 ```
-Q: write the boolean values (true or false) for each of these out on paper, and see if you get the same results as the computer.
 
 ## If statements
 
@@ -66,6 +65,7 @@ elif i > 0:
 else:
     print "Sign must be zero"
     print "Have a nice day" # and ends here
+
 print sign
 ```
 
@@ -127,11 +127,6 @@ for num in numbers:
 		print num, word
 ```
 Explain to yourself what happens here. How are the elements from each of the two lists combined?
-
-## Creating codons
-
-Codons are triplets of nucleotides. Each of the three letters of the triplet can be one of four letters. In total, we have 64 codons, which equals 4*4*4. Can you think of how you can create a list of all codons using three nested for loops?
-
 
 ## For Loops with Dictionaries
 
