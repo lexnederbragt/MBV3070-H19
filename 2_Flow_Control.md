@@ -1,4 +1,7 @@
-# Python 2 : Control flow - Boolean expressions, if statements, for loops and while.
+# Python 2 : Control flow - Boolean expressions, if statements and for loops.
+## Howto
+
+Note: for this exercise, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python <yourchosenfilename>.py'.
 
 ## Boolean expressions
 
@@ -55,31 +58,42 @@ If statements are a way to select which parts of a piece of code that should be 
 ```python
 i = 4
 sign = "zero"
-if i < 0:
+
+if i < 0: #the if statement begins here
 	sign = "negative"
 elif i > 0:
     sign = "positive"
 else:
     print "Sign must be zero"
-    print "Have a nice day"
+    print "Have a nice day" # and ends here
 print sign
 ```
 
-Q: what is printed at the end when this piece of code is run?
+Question: what is printed at the end when this piece of code is run?
 
-Q: what would you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"?
+Question: what would you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"?
 
 Also note, Python uses ''indentation'' to delimit code blocks. The **indentation** above is NOT just to make things look pretty - it tells Python what the body of the if-statement is. This is true whenever we create any code blocks. 
 
 
-### GCdecider.py - Figuring out if a DNA string has more or less than 50 % GC content.
+### Task: GCdecider.py - Figuring out if a DNA string has more or less than 50 % GC content.
 
 Use the slides from last week, and look at the exercises from last week too. 
 
-Define the following DNA string "ATGGCATGGCATGGC" as the variable DNA. Figure out the GC content of the string. If the GC content is above or equal to 50%, print out the following "GC content is above or equal to 50%", otherwise print out "GC content is below 50%". 
+The goal for this task is to figure out if a piece of DNA contains more than 50% GCs or not. This basically means counting the number of Gs and Cs and figuring out if these together make up more than 50% of the number of nucleotides in the string.
 
-First, test this code out on the command line. Remember to indent! Press tab to indent and backspace to un-indent. Once you got it working there, save the code as a script (open New File to get a script shell, and remember to save the file as GCdecider.py) and run it using "Run Module". Also try to input another string and see what happens.
+Below is skeleton script that will do this. Save this in a file that you will name GCdecider.py. Figure out what each line of code should do, and fill in the missing text. Try to run it, does it work? 
 
+```python
+___ = "ATGGCATGGCATGGC"
+g = dna._____("G")
+c = ___.count(_)
+gc = (g + c)*100.0/___(____)
+if ______:
+    print "GC content is above or equal to 50%"
+else:
+    print "GC content is below 50%"
+```
 
 ## For Loops with lists
 
@@ -102,8 +116,6 @@ for word in words:
 ```
 
 Some things to note: each element will be used in the for loop in the order in which they appear in the list. Also, you absolutely need both the : and the tab, otherwise the for loop will not work. 
-
-Q: what happens when you use a for loop to iterate over a string?
 
 We can also create what is called nested for loops, this is when we have a loop within another one:
 
@@ -147,33 +159,37 @@ for word in words:
 		print word
 ```
 
-Some comments: we here use **not** in front of **in**. This means that we are looking for sentences _without_ the # character. If we were to do it the other way around, we would end up with this code:
 
-```python
-words = ["gre#en", "yellow",  "sun", "#blue",  "water"]
-for word in words:
-	if "#" in word:
-		pass
-	else:
-		print word
-```
-
-First of all, as you can see, this uses a lot more lines, and is inefficient due to this. Also, we are forced to use the instruction "pass" here - this instruction tells python to do nothing. If you need to use pass anywhere, your code should probably be changed.
-
-
-While Loops
+range() - create list of numbers
 ===========
 
-With while loops, we iterate over something until a boolean expression goes from being false to being true. The first thing we need to make sure of before we start is that we have something that is true that can become false. It is very common to se counters used with while loops, i.e. a variable that counts up (or down), which eventually causes the expression to become false, and the loop terminates. 
+With the range command, we can create a list of numbers that we can use in for loops:
 
 ```python
-count = 0
-while count < 9 :
-	print 'The count is:', count
-	count = count + 1
+numbers = range(10)
+print numbers
 ```
 
-Here, we start with defining count as having the value 0. In the while loop, we first check if count is less than 9. If it is, we print what the count is, and increase the value of the count. Note - if we don't increase the value of count, it will never be equal to 9, and the loop will continue forever.
+With this way of writing it, range will produce numbers from 0 to the number in the parenthesis. 
+
+We can also specify where it should start, and also the step size between the numbers:
+
+```python
+numbers = range(0, 12, 3)  # start, stop, step size
+print numbers
+```
+
+With this construct, we have a way of grabbing each codon in a piece of DNA:
+
+```python
+dna = "ATCATCATCATCATC"
+dnalen = len(dna)
+numbers = range(0, dnalen, 3)  # start, stop, step size
+print numbers
+for index in numbers:
+    print dna[index:index+3]
+```
+We can now use this to translate a protein.
 
 ## Translate proteins
 
@@ -185,20 +201,19 @@ codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
 dna = "ATGCAGAACATA"
 ```
 
-First, define a new variable that will contain the protein string, and a counter with a value of 0. Next, use a while loop to iterate over triplets of the string. Use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string. 
+First, define a new variable that will contain the protein string. Then we need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. WE use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string. 
 
 ```python
 protein = ""
-counter = 0
-while counter < len(dna) - 2:
-	codon = dna[counter:counter + 3]
-	protein = protein + codon_table[codon]
-	counter = counter + 3
+dnalen = len(dna)
+numbers = range(0, dnalen, 3)  # start, stop, step size
+for index in numbers:
+    codon = dna[index:index+3]
+    protein = protein + codon_table[codon]
 print protein
 ```
 
-Q: it is often common to test things several times, especially when working in the interactive shell. What mistake regarding the counter can you imagine happening if you test several times?
- 
+Question: what happens if the DNA string does not have 
 
 
 ## Homework: Testing if a list of DNA strings contains something else than DNA characters.
