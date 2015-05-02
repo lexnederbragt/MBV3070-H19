@@ -1,7 +1,7 @@
 # Python 2 : Control flow - Boolean expressions, if statements and for loops.
 ## Howto
 
-Note: for this exercise, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python <yourchosenfilename>.py'.
+Note: for this exercise, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'.
 
 ## Boolean expressions
 
