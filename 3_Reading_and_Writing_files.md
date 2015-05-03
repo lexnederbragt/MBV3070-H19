@@ -103,10 +103,9 @@ We are now going to read in the "translationtable.txt" file, and create a dictio
 ```python
 fh = open("translationtable.txt", "r")
 lines = fh.readlines()
+print lines.
 fh.close()
 ```
-
-Then, have a look at your new list (use print, for instance). 
 
 Question: How many entries does it contain? (hint: how many lines do we get?)  
 Question: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
