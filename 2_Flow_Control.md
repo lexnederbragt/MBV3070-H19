@@ -109,16 +109,6 @@ for elem in forlist:
 	print elem
 ```
 
-Let's try this with a list of words instead:
-
-```python
-words = ["green plants", "yellow sun", "blue water"]
-for word in words:
-	print word
-```
-
-Some things to note: each element will be used in the for loop in the order in which they appear in the list. Also, you absolutely need both the : and the tab, otherwise the for loop will not work. 
-
 We can also create what is called nested for loops, this is when we have a loop within another one:
 
 ```python
@@ -143,19 +133,6 @@ for key in codondict:
     print key, codondict[key]
 ```
 This way we see both the keys and their values.
-
-
-## Combining for loops and if statements
-
-A lot of the power in a programming language becomes apparent when we combine elements of the language. One very common thing to do is to use an if statement to decide what to do with something in a for loop. In this case, we will skip all words in a list that contains the character #. This is often used when we want to skip certain lines in files.
-
-```python
-words = ["gre#en", "yellow",  "sun", "#blue",  "water"]
-for word in words:
-	if "#" not in word:
-		print word
-```
-
 
 range() - create list of numbers
 ===========
@@ -213,15 +190,7 @@ print protein
 Question: what happens if the DNA string does not have 
 
 
-## Homework: Testing if a list of DNA strings contains something else than DNA characters.
+## Homework: Filtering out codons with non-IUPAC letters
 
-Sometimes you will see that a DNA string contains non-ATGC letters, these are most often IUPAC letters. In a situation where you want to translate DNA, these would have to be deconvoluted first. In this case we are just going to skip the strings that contain something else than DNA.
-
-The list in this case is defined below:
-
-```python
-dnalist = ["ATTGAGGACCAG", "AGGNAAGGAT", "CGGATTTAGG", "PGATTAGGA"]
-```
-Figure out how you would iterate over this list, and skip any lines with non-ATGC characters.
-
+In the exercise above, can you figure out what you would need to do to skip codons that had non-IUPAC letters in them (that is, not ATCG in them?
 
