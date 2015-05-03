@@ -110,18 +110,16 @@ fh.close()
 Question: How many entries does it contain? (hint: how many lines do we get?)  
 Question: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
 
-Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value. Note: below the code is incomplete. Figure out what is lacking (replace underscores with something else), and run it. 
+Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value. Note: below the code is incomplete. Figure out what is lacking (replace underscores with something else), and add it below the code you already have. 
 
 ```python
-#Here, add the code needed to read in the file, then:
-
 codon_table = {}
-for line in _____:
-	without_newline = line._____("\n", "")
-	fields = without_newline.____()
-	codon = fields[_]
-	aminoacid = fields[_]
-	codon_table[_____] = aminoacid
+for line in lines:
+    without_newline = line.replace("\n", "")
+    fields = without_newline.split()
+    codon = fields[0]
+    aminoacid = fields[1]
+    codon_table[codon] = aminoacid
 print codon_table
 ```
 
@@ -167,38 +165,30 @@ Question: after we have translated the DNA string, we will want to print it out 
 
 So, now we have the translation table, and the mRNA. Now we are going to translate it to protein. What we do here is to slice the mRNA into codons and use them to look up the amino acid in the codon table. Then, we stick that onto the string that contains the protein. 
 
-Again, some text has been replaced by underscores. Figure out what goes in the underscores, and run the code. 
+Insert this code below the rest of what you already have. 
 
 ```python
 protein = ""
-dnalen = len(mRNA)
+dnalen = len(mRNA)-2
 numbers = range(0, dnalen, 3)  # start, stop, step size
 for index in numbers:
     codon = mRNA[index:index+3]
     protein = protein + codon_table[codon]
 print protein
 ```
-
 Question: what are we subtracting from the length of the mRNA? What is the consequence of this?
-
-Question: what happens in the first line of the while loop, where we get the codon?
-
-Question: what happens in the line inside of the while loop where protein is reassigned a value?
-
-Question: what do we add to the counter at the end, and why? What would happen if we did not increase the value of the counter? What amount should we increase it with?
+Question: what happens in the two lines inside the for loop?
 
 ## Printing the results to file. 
 
 Last, but not least, let's get this output to file. Let's first figure out how to get it nicely formatted. In this case, in our file we should have a header line followed by the amino acids, 60 per line. 
 
-
 ```python
-output = lines[0] + "\n" # we first add the header from the mRNA file
-output = ""
+output = lines[0] # we first add the header from the mRNA file
 proteinlen = len(protein)
-numbers = range(0, protein, 3)  # start, stop, step size
+numbers = range(0, proteinlen, 60)  # start, stop, step size
 for index in numbers:
-    output = output + protein[index:index+16]
+    output = output + protein[index:index+60] + "\n"
 print protein
 ```
 
