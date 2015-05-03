@@ -171,12 +171,11 @@ Again, some text has been replaced by underscores. Figure out what goes in the u
 
 ```python
 protein = ""
-counter = 0
-while _______ < len(mRNA) - _:
-	codon = ____[counter:counter + 3]
-	aminoacid = codon_table[_____]
-	protein = ______ + aminoacid
-	counter += __
+dnalen = len(dna)
+numbers = range(0, dnalen, 3)  # start, stop, step size
+for index in numbers:
+    codon = dna[index:index+3]
+    protein = protein + codon_table[codon]
 print protein
 ```
 
@@ -195,11 +194,12 @@ Last, but not least, let's get this output to file. Let's first figure out how t
 
 ```python
 output = lines[0] + "\n" # we first add the header from the mRNA file
-counter = 0
-while counter < len(protein):
-	output += protein[counter:counter+60] + "\n"
-	counter += 60
-print output
+output = ""
+proteinlen = len(protein)
+numbers = range(0, protein, 3)  # start, stop, step size
+for index in numbers:
+    output = output + protein[index:index+16]
+print protein
 ```
 
 So, now we have the output we want, and we can print it to a file. We first open it, then write to it, and then close it again.
