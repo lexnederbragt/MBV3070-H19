@@ -108,8 +108,8 @@ fh.close()
 
 Then, have a look at your new list (use print, for instance). 
 
-Question: How many entries does it contain? (hint: how many lines do we get?)
-Qquestion: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?
+Question: How many entries does it contain? (hint: how many lines do we get?)  
+Qquestion: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
 
 Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value. Note: below the code is incomplete. Figure out what is lacking (replace underscores with something else), and run it. 
 
@@ -128,12 +128,12 @@ print codon_table
 
 But note: you will see that you actually also get the first line of the file in here - this is no codon-amino acid pair. 
 
-Question: How do you skip the first line when passing through the input file lines? 
+Question: How do you skip the first line when passing through the input file lines?   
 
 Repeat the above code without the first line, and see what you get.
 
-Question: how would you iterate over the dictionary and show all codon-amino acid pairs? 
-
+Question: how would you iterate over the dictionary and show all codon-amino acid pairs?   
+ 
 ## Reading in a fasta file
 
 We now have a codon to amino acid mapping dictionary. The file "hbb.fsa" that you saved above is the mRNA sequence for hemoglobin subunit B. Let's try to translate that into protein.
