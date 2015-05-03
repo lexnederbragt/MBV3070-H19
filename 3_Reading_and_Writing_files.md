@@ -171,10 +171,10 @@ Again, some text has been replaced by underscores. Figure out what goes in the u
 
 ```python
 protein = ""
-dnalen = len(dna)
+dnalen = len(mRNA)
 numbers = range(0, dnalen, 3)  # start, stop, step size
 for index in numbers:
-    codon = dna[index:index+3]
+    codon = mRNA[index:index+3]
     protein = protein + codon_table[codon]
 print protein
 ```
