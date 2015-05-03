@@ -137,7 +137,7 @@ Question: how would you iterate over the dictionary and show all codon-amino aci
 
 We now have a codon to amino acid mapping dictionary. The file "hbb.fsa" that you saved above is the mRNA sequence for hemoglobin subunit B. Let's try to translate that into protein.
 
-First, we need to read in the file:
+First, we need to read in the file (add this to your existing script file):
 
 ```python
 fh = open("hbb.fsa", "r")
@@ -147,28 +147,7 @@ fh.close()
 
 So, now we have a list containing all of the lines in this file. Now we need to get this into one string containing the mRNA. This string will be contained in the variable mRNA. 
 
-#### The += syntax. 
-
-We are introducing a small piece of new syntax here, when we want to add something to a variable that is already defined, we can use += to do it. This means that
-
-```python
-string = "something"
-string = string + " something else"
-```
-can be written as 
-
-```python
-string = "something"
-string += " something else"
-```
-
-This also goes for numbers, where **counter = counter + 1** can rather be written **as counter += 1**.
-
-Note: with strings, this becomes concatenation, and with numbers this is addition.
-
-#### Back to the mRNA sequence
-
-Below is the code necessary to read in the fasta file, with some text replaced with underscores. Figure out how this should be, and run the code.
+Below is the code necessary to read in the fasta file, with some text replaced with underscores. Figure out how this should be, and add it to your existing script.
 
 ```python
 mRNA = "" # create empty string to contain the mRNA
