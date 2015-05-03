@@ -201,6 +201,10 @@ fo.write(output)
 fo.close()
 ```
 
+You can use the more command to look at the results.
+
+Congratulations, you have now translated your very first protein!
+
 
 
 
