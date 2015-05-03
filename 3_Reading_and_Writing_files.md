@@ -109,7 +109,7 @@ fh.close()
 Then, have a look at your new list (use print, for instance). 
 
 Question: How many entries does it contain? (hint: how many lines do we get?)  
-Qquestion: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
+Question: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
 
 Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value. Note: below the code is incomplete. Figure out what is lacking (replace underscores with something else), and run it. 
 
