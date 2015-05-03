@@ -1,10 +1,9 @@
 # Reading and Writing files
 
-We are now going to see how we can read and write to files. Note: use notepad to write the scripts, save it under a filename that you choose and run it with python.
+## Files we need
 
 Note: you have to save the file in the same directory that your cmd line window is in.
 
-## Files we need
 
 ### Fasta file
 
@@ -95,6 +94,8 @@ TAC     Y
 TAT     Y
 ```
 
+
+We are now going to see how we can read and write to files. Note: use notepad to write the script, save it as translate.py and run it with python.
 
 ## Creating a codon table
 
