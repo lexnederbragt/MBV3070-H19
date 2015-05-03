@@ -10,12 +10,12 @@ A basic element of programming is to be able to compare things, to see if they a
 ```python
 a = 1
 b = 2
-a == b # are the two the same?
-a < b  # is a less than b?
-a <= b # is a less than or equal to b?
-a > b # is a larger than b?
-a >= b # is a larger or greater than b?
-a != b # 
+print a == b # are the two the same?
+print a < b  # is a less than b?
+print a <= b # is a less than or equal to b?
+print a > b # is a larger than b?
+print a >= b # is a larger or greater than b?
+print a != b # 
 ```
 
 Note, we can also test the results of doing something, like this:
