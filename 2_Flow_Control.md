@@ -40,6 +40,8 @@ print "Tom" in beatles # is there somebody in the list beatles called Tom?
 We can also combine these with and, or and not. Let's see how this works:
 
 ```python
+beatle="John"		
+beatles=["George", "Ringo","John", "Paul"]
 print beatle
 print beatle in beatles
 print len(beatles) == 4
