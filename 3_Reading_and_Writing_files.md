@@ -1,12 +1,31 @@
 # Reading and Writing files
 
-We are now going to see how we can read and write to files. Note: use notepad to save the scripts in, save it under a filename that you choose and run it with python.
+We are now going to see how we can read and write to files. Note: use notepad to write the scripts, save it under a filename that you choose and run it with python.
 
 Note: you have to save the file in the same directory that your cmd line window is in.
 
-### Creating a coding table from a file
+## Files we need
 
-Take the text below and save it in a textfile, using Notepad or something similar. Save it in the same location as you got above, with the name "translationtable.txt".
+### Fasta file
+
+Save the following in a file called "hbb.fsa".
+
+```
+>gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA
+ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGA
+GGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGC
+AGGCTGCTGGTGGTCTACCCTTGGACCCAGAGGTTCTTTGAGTCCTTTGGGGATCTGTCCACTCCTGATG
+CTGTTATGGGCAACCCTAAGGTGAAGGCTCATGGCAAGAAAGTGCTCGGTGCCTTTAGTGATGGCCTGGC
+TCACCTGGACAACCTCAAGGGCACCTTTGCCACACTGAGTGAGCTGCACTGTGACAAGCTGCACGTGGAT
+CCTGAGAACTTCAGGCTCCTGGGCAACGTGCTGGTCTGTGTGCTGGCCCATCACTTTGGCAAAGAATTCA
+CCCCACCAGTGCAGGCTGCCTATCAGAAAGTGGTGGCTGGTGTGGCTAATGCCCTGGCCCACAAGTATCA
+CTAAGCTCGCTTTCTTGCTGTCCAATTTCTATTAAAGGTTCCTTTGTTCCCTAAGTCCAACTACTAAACT
+GGGGGATATTATGAAGGGCCTTGAGCATCTGGATTCTGCCTAATAAAAAACATTTATTTTCATTGC
+```
+
+### Codon translation file.
+
+Save this file as "translationtable.txt".
 
 ```
 codon	amino_acid
@@ -76,7 +95,10 @@ TAC     Y
 TAT     Y
 ```
 
-We are now going to read in this file, and create a dictionary from it.
+
+## Creating a codon table
+
+We are now going to read in the "translationtable.txt" file, and create a dictionary from it.
 
 ```python
 fh = open("translationtable.txt", "r")
@@ -114,24 +136,7 @@ Question: how would you iterate over the dictionary and show all codon-amino aci
 
 ## Reading in a fasta file
 
-We now have a codon to amino acid mapping dictionary. Now we need some DNA to translate.
-
-Save the following in a file called "hbb.fsa".
-
-```
->gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA
-ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGA
-GGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGC
-AGGCTGCTGGTGGTCTACCCTTGGACCCAGAGGTTCTTTGAGTCCTTTGGGGATCTGTCCACTCCTGATG
-CTGTTATGGGCAACCCTAAGGTGAAGGCTCATGGCAAGAAAGTGCTCGGTGCCTTTAGTGATGGCCTGGC
-TCACCTGGACAACCTCAAGGGCACCTTTGCCACACTGAGTGAGCTGCACTGTGACAAGCTGCACGTGGAT
-CCTGAGAACTTCAGGCTCCTGGGCAACGTGCTGGTCTGTGTGCTGGCCCATCACTTTGGCAAAGAATTCA
-CCCCACCAGTGCAGGCTGCCTATCAGAAAGTGGTGGCTGGTGTGGCTAATGCCCTGGCCCACAAGTATCA
-CTAAGCTCGCTTTCTTGCTGTCCAATTTCTATTAAAGGTTCCTTTGTTCCCTAAGTCCAACTACTAAACT
-GGGGGATATTATGAAGGGCCTTGAGCATCTGGATTCTGCCTAATAAAAAACATTTATTTTCATTGC
-```
-
-This is the mRNA sequence for hemoglobin subunit B. Let's try to translate that into protein.
+We now have a codon to amino acid mapping dictionary. The file "hbb.fsa" that you saved above is the mRNA sequence for hemoglobin subunit B. Let's try to translate that into protein.
 
 First, we need to read in the file:
 
@@ -142,7 +147,6 @@ fh.close()
 ```
 
 So, now we have a list containing all of the lines in this file. Now we need to get this into one string containing the mRNA. This string will be contained in the variable mRNA. 
-
 
 #### The += syntax. 
 
@@ -168,8 +172,6 @@ Note: with strings, this becomes concatenation, and with numbers this is additio
 Below is the code necessary to read in the fasta file, with some text replaced with underscores. Figure out how this should be, and run the code.
 
 ```python
-#Here, add the code needed to read in the file, then:
-
 mRNA = "" # create empty string to contain the mRNA
 for line __ lines[__]:
 	text = line.replace(____, __)
@@ -190,9 +192,6 @@ So, now we have the translation table, and the mRNA. Now we are going to transla
 Again, some text has been replaced by underscores. Figure out what goes in the underscores, and run the code. 
 
 ```python
-# remember, you need the mRNA string from above here, and also the 
-# codon_table
-
 protein = ""
 counter = 0
 while _______ < len(mRNA) - _:
