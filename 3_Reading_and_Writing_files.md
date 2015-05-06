@@ -111,7 +111,7 @@ fh.close()
 Question: How many entries does it contain? (hint: how many lines do we get?)  
 Question: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
 
-Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value. Note: below the code is incomplete. Figure out what is lacking (replace underscores with something else), and add it below the code you already have. 
+Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value. 
 
 ```python
 codon_table = {}
