@@ -190,7 +190,7 @@ proteinlen = len(protein)
 numbers = range(0, proteinlen, 60)  # start, stop, step size
 for index in numbers:
     output = output + protein[index:index+60] + "\n"
-print protein
+print output
 ```
 
 So, now we have the output we want, and we can print it to a file. We first open it, then write to it, and then close it again.
