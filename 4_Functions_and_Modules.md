@@ -2,7 +2,7 @@
 -----------------------
 
 A function is a block of code that performs a specific task. In this section we
-will learn how to write our own functions and modules, and import them. The example used in this section is a simple one. But the main purpose of this part of the tutorial is not only to show you how to write our own functions and modules but also why do it. The goal is to show you how and why modularisation of the source code is a good programming practice.
+will learn how to write our own functions and modules, and import them. The main purpose of this part of the tutorial is to show you how to write our own functions and modules and hopefullyy also why do it. The goal is to show you how and why modularisation of the source code is a good programming practice.
 
 ##Writing our own functions
 
@@ -68,26 +68,25 @@ Run the script. What is the protein that the file codes for?
 NOTE: the file hbb.fsa has to be in the same directory as the script.
 
 
-##Using it as a modules
+## Using it as a modules
 
-Towards the end of the file, we have the following line: "if __name__ == "__main__":". This if statement is only true if you are running this script. If you use code from this script elsewhere, it is not true. What happens is that when you run a script directly from the command line, a variable that is called "\_\_name\_\_" is set to have the value "\_\_main\_\_" then ask python
-to test on this variable with an if statement, and if it is true, whatever is inside of it is run. This variable will not be set to "\_\_name\_\_" if we use this script inside of another script using an import statement.
+Towards the end of the file, we have the following line: "if __name__ == "__main__":". This if statement is only true if you are running this script. If you use code from this script elsewhere, it is not true. What happens is that when you run a script directly from the command line, a variable that is called \_\_name\_\_ is set to have the text string "\_\_main\_\_" as value.  We then ask python to test on this variable with an if statement. If the value of the variable \_\_name\_\_ is "\_\_main\_\_", then the if statement is true and whatever is inside of it is run. This variable will not be set to "\_\_name\_\_" if we use this script inside of another script using an import statement.
 
-We are now going to import these functions into a different script. Note, when we do `import modulename`, we have to prepend the function with the module name, like this: modulename.functionname.
+We are now going to import these functions into a different script - call this translate_usemodule.py. Note, when we do `import modulename`, we have to prepend the function with the module name, like this: modulename.functionname.
 
 
 ```python
 import translate_module
-
 fh = open("hbb.fsa", "r")
 fastalines = fh.readlines()
 fh.close()
 
 ##Now, using the lines above as input, do the following:
 
-header = fastalines[:1]
+header = fastalines[0]
 sequence = translate_module.read_fasta(fastalines)
-fastastring = create_fasta_string(header, sequence)
+fastastring = translate_module.create_fasta_string(header, sequence)
+print fastastring
 
 fo = open("hbb_proteins.fsa", "w") 
 fo.write(fastastring)
@@ -97,3 +96,24 @@ fo.close()
 This script basically takes a fasta file, and does formatting on it. Not incredibly useful, but it does show that you can use code that is not in the script you wrote, but in another file, which then is a python module.
 
 What happens here is that Python goes into the translate_module file and gets the functions that we specified, and uses that inside of this script. We get at the function by using the import statement. 
+
+
+## Using the sys module.
+
+So far, you have hardcoded the file name into each script file. Wouldn't it be nice to be able to just add the filename on the command line, so that you don't have to change the script every time you want to run it? And, wouldn't it be nice if you could specify the output file name also?
+
+In the translate_usemodule.py script do the following:
+
+1. include the line 'import sys' on top of the file (leave the ' out).
+2. replace "hbb.fsa" with 'sys.argv[1]' (leave the ' out).
+3. replace "hbb_proteins.fsa" with 'sys.argv[2]' (leave the ' out).
+
+Now, try running this on the command line:
+
+```
+python translate_usemodule.py hbb.fsa hbb_out.fsa
+```
+
+As you see, you have now specified the input and the output file on the command line - you can now use a different input file, and also save the results under a different output file name.
+
+Try running it again, but now use your own personal name instead of hbb_out. Have a look at the file. Does it look the same?
