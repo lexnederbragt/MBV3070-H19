@@ -19,13 +19,13 @@ from Bio.Seq import Seq
 help(Seq)
 ```
 
-Now scroll through the help. You go down by pressing the space bar, and up with the arrows. If you want to quit, press q. 
+Now scroll through the help. You go down by pressing the space bar, and up by scrolling. If you want to quit, press q. 
 
 Find the method that is named \_\_init\_\_ . This method is the one that is run every time you create an object of this class, and in this one you will find which attributes this class has. This means that every object of this class will have these attributes set, i.e. have something there. 
 
-Q: how many attributes does Seq have?
+Question: how many attributes does Seq have?
 
-Everything you see in the help is a method in this class. As you can see, there are lots of methods that are available. 
+Everything you see in the help is a method in this class. As you can see, there are lots of methods that are available. However, you should only use the ones without one or two underscores in the beginning.  
 
 ** A note on self **
 
@@ -41,7 +41,7 @@ Now, use the following methods on the my_seq seq: transcribe(), translate(), com
 
 Next, create an mRNA string instead. Make sure you use Us instead of Ts, and use the unambigous_rna alphabeth. Try out the various methods again. 
 
-Q: Can you find some methods that work with DNA, but not mRNA?
+Question: Can you find some methods that work with DNA, but not mRNA?
 
 ### We can use normal string methods on Seq ###
 
@@ -55,7 +55,7 @@ Figure out how to do the following:
 - what the first letter is
 - all of the sequence, except the first and last letter
 
-Q: can you see a difference between the results from the first two and the last?
+Question: can you see a difference in the results between the results from the first two and the last?
 
 
 ### Creating SeqRecord objects ###
@@ -69,7 +69,7 @@ from Bio.SeqRecord import SeqRecord
 help(SeqRecord)
 
 ```
-Q: can you figure out how many attributes this class has?
+Question: can you figure out how many attributes this class has?
 
 As you can see, many of the methods are simply the same methods as for Seq.
 
@@ -84,9 +84,9 @@ Print seq_record, and see what you come up with.
 Let us create a slightly more complicated one:
 
 ```python
-protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF", \
-                    IUPAC.protein), \
-                    id="YP_025292.1", name="HokC", \
+protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF",
+                    IUPAC.protein),
+                    id="YP_025292.1", name="HokC",
                     description="toxic membrane protein")
 ```
 
@@ -100,10 +100,11 @@ First, from now on we are working in a script file. So, the code below goes in a
 Second, go to this page [this genbank file](macaca.gbk), copy the contents and  and save it in a file in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
 
 ```python
+import sys
 from Bio import SeqIO # Have to import the module to have access to it.
 
-fh = open("macaca.gbk", "r")
-macaca = SeqIO.parse(fh, "genbank").next()
+fh = open(sys.argv[1], "r")
+gbk = SeqIO.parse(fh, "genbank").next()
 fh.close()
 
 # Below here you type in the things I specify 
@@ -112,13 +113,15 @@ fh.close()
 
 ```
 
-We are now going to try looking at the annotations in this object. In the script, write `print macaca.annotations` after the comment, save and run.
+We are now going to try looking at the annotations in this object. In the script, write `print gbk.annotations` after the comment, save and run.
 
-Q: Can you recognize what this is?
-Q: Can you from this figure out what you would have to do to get at the organism information.
+Question: Can you recognize what this is?
+Question: Can you from this figure out what you would have to do to get at the organism information.
+
+Remove the print you added above, and add the following: 'print gbk.annotations["organism"]'.
 
 
-### name_with_organism.py ###
+### name_with_organism.py ### !!!!!DONE until here.
 
 We are now going to create a script that will let us print out fasta sequences with an ID which begins with the organism name.
 
@@ -129,10 +132,11 @@ We first need a genbank file to work with. Save this file as before [this one](m
 Next, save the following in a script file named name_with_organism.py
 
 ```python
+import sys
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 
-fh = open("mb.gbk", "r")
+fh = open(sys.argv[1], "r")
 
 for record in SeqIO.parse(fh, "genbank"):
     print record.id
