@@ -37,8 +37,8 @@ def create_fasta_string(header, sequence):
     # header is a fasta header with a >
     # sequence is a string that we want
     # to print, 60 characters to a line
-    # Create a fasta outut formatted string
-    # return string
+    # Create a fasta output formatted string
+    # using a for loop, and return the results.
     
 if __name__ == "__main__":
    fh = open("hbb.fsa", "r")
