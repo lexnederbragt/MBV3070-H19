@@ -121,7 +121,7 @@ Question: Can you from this figure out what you would have to do to get at the o
 Remove the print you added above, and add the following: 'print gbk.annotations["organism"]'.
 
 
-### name_with_organism.py ### !!!!!DONE until here.
+### name_with_organism.py 
 
 We are now going to create a script that will let us print out fasta sequences with an ID which begins with the organism name.
 
@@ -144,7 +144,9 @@ for record in SeqIO.parse(fh, "genbank"):
 fh.close()
 ```
 
-Run it, and you will see the ids of the sequences in the mb.gbk file printed on screen.
+Run it, (python name_with_organism.py mb.gbk) and you will see the ids of the sequences in the mb.gbk file printed on screen. Question: how many sequences are there in that gbk file?
+
+Try running it with the macaca file too.
 
 #### Creating a new id ####
 
@@ -155,7 +157,7 @@ As you can see, these are now just strings. Strings can be added together.
 
 In this case, we have two words in our string, the genus name and the species name. We will only use the species name.
 
-Q: In a string with two words, what do you use to get at only the last word?
+Question: In a string with two words, what do you use to get at only the last word?
 
 We are now going to create a new id for each entry. This can be done by doing this:
 
@@ -179,8 +181,8 @@ Look at this example and figure out which portions of this you need in your own 
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 
-fh = open("fake_file_name.gkb", "r")
-fo = open("fake_file_name.fsa", "w")
+fh = open(sys.argv[1], "r")
+fo = open(sys.argv[2], "w")
 
 for record in SeqIO.parse(fh, "genbank"):
     SeqIO.write(record, fo, "fasta")
