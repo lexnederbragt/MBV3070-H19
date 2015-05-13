@@ -104,7 +104,7 @@ We are now going to read in the "translationtable.txt" file, and create a dictio
 ```python
 fh = open("translationtable.txt", "r")
 lines = fh.readlines()
-print lines.
+print lines
 fh.close()
 ```
 
