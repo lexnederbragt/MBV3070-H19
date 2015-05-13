@@ -44,7 +44,7 @@ if __name__ == "__main__":
    fh = open("hbb.fsa", "r")
    fastalines = fh.readlines()
    fh.close()
-   header = fastalines[:1]
+   header = fastalines[0]
    sequence = read_fasta(fastalines)
 
    fh = open("translationtable.txt","r")
