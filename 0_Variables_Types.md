@@ -56,7 +56,7 @@ Exit the interpreter by typing in Ctlr-D.
 
 ## Creating your first script
 
-Open notepad. You will get up a new window. Type in some of the commands that you typed in earlier when you used python as a calculator. Notice which directory your command window is in (it says where you can type in the command). Save the file as first.py in the same directory. Then, go to the command window. Run the program by typing in
+Open notepad. You will get up a new window. Type in some of the commands that you typed in earlier when you used python as a calculator. Notice which directory your command window is in (it says where you can type in the command). Save the file as first.py in the same directory. Note: windows might try to add the .txt extension to it. In that case, use the explorer to rename it so that it is only called first.py. Then, go to the command window. Run the program by typing in
 
 ```python
   python first.py
