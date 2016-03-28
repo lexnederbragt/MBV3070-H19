@@ -8,6 +8,11 @@ You can work with python in two ways, either directly in an interpreter, or you 
 
 NOTE: a line anywere in python that is preceeded with a # is a comment and is ignored by python!
 
+## How to do these exercises
+
+In this exercise you will see pyton code in gray boxes. Try typing it in, and see what happens. You will also see some questions being asked through the exercise, try to answer those while you are working through them. These questions will either be gone through during the exercise, or at the beginning of the next exercise.
+
+
 ## The python interpreter
 
 Let's bring up the Python interpreter. You do this by first starting a command window on your windows machine. You do this by pressing the start button, and typing in 'cmd' in the search box and pressing enter. The result is a black window where you can type in things after a arrow symbol. Type in the word 'python', and press enter. This is what you see when you open the program:
@@ -21,7 +26,7 @@ Please check out: http://continuum.io/thanks and https://binstar.org
 >>>
 ```
 
-See the three >? You type in your commands after that. In this exercise, you should type in everything in the gray boxes and see what happens.
+See the three >? You type in your commands after that. 
 
 
 
