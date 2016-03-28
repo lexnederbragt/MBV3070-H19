@@ -67,7 +67,7 @@ NOTE: python scripts should be saved with the file ending .py.
 Question: What happened in the command window?
 Question: try changing something in the file, save it and run again. What happens?
 
-Note: for the rest of the exercise we will work in the interactive shell.
+Note: for the rest of the exercise we will work in the interactive shell. To get back to that one again, type in python on the command line and press enter.
 
 # String methods
 
