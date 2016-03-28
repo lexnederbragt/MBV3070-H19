@@ -33,15 +33,15 @@ See the three >? You type in your commands after that.
 The interpreter can be used as a calculator:
 
 ```python
-   print 2 + 2
-   print 2*8
+print 2 + 2
+print 2*8
 ```
 
 We can also work with strings in python:
 
 ```python
-   print "Hello world!"
-   print 'Ada ' + 'Lovelace'
+print "Hello world!"
+print 'Ada ' + 'Lovelace'
 ```
 Strings can actually be added together.
 
@@ -59,7 +59,7 @@ Exit the interpreter by typing in Ctlr-D.
 Open notepad. You will get up a new window. Type in some of the commands that you typed in earlier when you used python as a calculator. Notice which directory your command window is in (it says where you can type in the command). Save the file as first.py in the same directory. Note: windows might try to add the .txt extension to it. In that case, use the explorer to rename it so that it is only called first.py. Then, go to the command window. Run the program by typing in
 
 ```python
-  python first.py
+python first.py
 ```
 
 NOTE: python scripts should be saved with the file ending .py. 
@@ -76,10 +76,10 @@ Strings can be created by putting single, double or triple quotation marks aroun
 We will first count the number of Cs, replace a T with a U, split the text on whitespace and then find the occurrence of the first C.
 
 ```python
-   print "ATG GGC ATG GGC".count("C")
-   print "ATG GGC ATG GGC".replace("T", "U")
-   print "ATG GGC ATG GGC".split()
-   print "ATG GGC ATG GGC".find("C")
+print "ATG GGC ATG GGC".count("C")
+print "ATG GGC ATG GGC".replace("T", "U")
+print "ATG GGC ATG GGC".split()
+print "ATG GGC ATG GGC".find("C")
 ```
 
 Question: Why the first C is in position 6?  
@@ -93,18 +93,18 @@ In a programming situation, we usually have data that we want to do something to
 When you give a variable a value, you are assigning that value to that variable. 
 
 ```python
-   a = 1
-   print a
-   a = 'pigeon'
-   print a
-   a = 2 + 7 
-   print a
+a = 1
+print a
+a = 'pigeon'
+print a
+a = 2 + 7 
+print a
 ```
 
 Variables can be thought of being labels on values - you can move the label onto a different value. However, beware that Python does not assume any default values for variables - you have to assign them before use:
 
 ```python
-   print b
+print b
 ```
 Question: what happened when you typed in b, without assigning a value to b first?
 
@@ -113,17 +113,17 @@ Question: what happened when you typed in b, without assigning a value to b firs
 When working with strings, it is important to note that a string is immutable, it cannot be changed. Let's see what consequences this has:
 
 ```python
-   first_string = "ATCATCATC"
-   first_string.replace("T", "U")
-   print first_string
+first_string = "ATCATCATC"
+first_string.replace("T", "U")
+print first_string
 ```
 
 As you can see, the string itself has not changed! If you want to modify a string, you need to assign the modified string to a new variable.
 
 ```python
-   second_string = first_string.replace("T", "U")
-   print second_string
-   print first_string
+second_string = first_string.replace("T", "U")
+print second_string
+print first_string
 ```
 
 As you can see, second_string now contains the modified string, while first_string remains the same.
@@ -134,9 +134,9 @@ As you can see, second_string now contains the modified string, while first_stri
 Python also has what is called strong typing, this means that python will protest if you do something that the datatype does not allow for. As an example, what happens when we try to concatenate, i.e. combine two Python variables, string and integer:
 
 ```python
-   string = "green"
-   number = 4
-   print string + number 
+string = "green"
+number = 4
+print string + number 
 ```
 
 ## Type conversion
@@ -144,9 +144,9 @@ Python also has what is called strong typing, this means that python will protes
 Sometimes a number can be interpreted as a text string when you need it to work as a number. This can be fixed by converting it to an integer (a whole number). We can also convert to decimal numbers - floats. These have a decimal point in them.
 
 ```python
-   print int('2') + 3
-   print '2' + str('3')
-   print string + str(number)
+print int('2') + 3
+print '2' + str('3')
+print string + str(number)
 ```
 
 Next: [Data Types](1_Data_Types.md)
