@@ -96,7 +96,7 @@ print at_content[-1]
 and the next-to-last
 
 ```python
-at_content[-2]
+print at_content[-2]
 ```
 
 ### Slicing
@@ -104,13 +104,13 @@ at_content[-2]
 You can "slice" items from within a list. Lets say we wanted the second through fourth items from at_content
 
 ```python
-at_content[1:4]
+print at_content[1:4]
 ```
 
 Or from the third item to the end
 
 ```python
-at_content[2:]
+print at_content[2:]
 ```
 
 and so on.
