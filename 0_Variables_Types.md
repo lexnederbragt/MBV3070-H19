@@ -21,7 +21,9 @@ Please check out: http://continuum.io/thanks and https://binstar.org
 >>>
 ```
 
-See the three >? You type in your commands after that.
+See the three >? You type in your commands after that. In this exercise, you should type in everything in the gray boxes and see what happens.
+
+
 
 The interpreter can be used as a calculator:
 
