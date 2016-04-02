@@ -101,6 +101,32 @@ else:
     print "GC content is below 50%"
 ```
 
+## Getting input from the command line
+
+Above, the text string you calculated the GC content on was writtien into the script, this is often called "hard coding" something into it. Let's say you want to try to calculate the GC content of another string. You could then change the script, but it would be a lot easier if you could do that without changing the script. You cand do that by using a special list that is called "sys.argv"
+
+Create a script that is called "sys-test.py". Put the following content into it:
+
+```python
+import sys
+print sys.argv
+for element in sys.argv:
+    print element
+print sys.argv[1]
+```
+Run the commands shown below on the command line:
+
+  * python sys-test.py
+  * python sys-test.py 1 
+  * python sys-test first second
+  * python sys-test.py 1 2 3 4
+
+Can you now try to figure out how to change your GCdecider script so that you can do the following:
+
+  * python GCdecider.py ATGGCCGGAGGGAGCCGGA
+
+Hint: you need to include the first and the last line of the sys-test script.
+
 ## For Loops with lists
 
 **for** loops in python are used to iterate over sequences of things (they can be used for much more, but for now this definition will do). 
@@ -160,14 +186,15 @@ print numbers
 With this construct, we have a way of grabbing each codon in a piece of DNA:
 
 ```python
-dna = "ATCTGACAGCTA"
+import sys
+dna = sys.argv[1]
 dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size
 print numbers
 for index in numbers:
     print dna[index:index+3]
 ```
-We can now use this to translate a protein.
+We can now use this to translate a protein. Try with this string: ATGGCATGGCATGGC
 
 ## Translate proteins
 
@@ -176,9 +203,10 @@ For this part, use Notepad and run your script on the command line.
 Last week we translated proteins manually. Now, we can do it a bit more efficiently. First, let's define a dictionary which can translate between them, and a DNA string to translate:
 
 ```python
+import sys
 codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
                "AAC":"N", "CGA":"R", "CAG":"Q", "TGA": "*"}
-dna = "ATGCAGAACATA"
+dna = 
 ```
 
 First, define a new variable that will contain the protein string. Then we need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. We use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string. 
@@ -193,9 +221,12 @@ for index in numbers:
 print protein
 ```
 
+Try running this script with this string: ATGCAGAACATA
+
+
 ## Homework: Stop at stop codon.
 
-Let's say you have a different DNA string, "ACACAGCGAAACTGAACAATG". 
+Let's say you have a different DNA string, ACACAGCGAAACTGAACAATG. 
 
 First, try running the script above with this string instead of the other one. 
 
