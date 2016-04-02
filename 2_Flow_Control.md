@@ -1,9 +1,7 @@
 # Python 2 : Control flow - Boolean expressions, if statements and for loops.
 ## Howto
 
-Note: for this exercise, you can either use the interactive shell directly, and type in commands there. You can also create batch files and run those. To do that, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'.
-
-You can either choose to have everything in one file, or in separate files. To run only one section of a program (parts of the code in a file), comment away what you don't want to run. Do that by putting a # in front of any lines that should not be run.
+Note: for the first part of this exercise, use the interactive shell directly, and type in commands there. You can also use copy-paste if you want. 
 
 ## Boolean expressions
 
@@ -56,7 +54,11 @@ print beatle in beatles or not len(beatles) >3
 
 ## If statements
 
+
 If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run, and what would be printed in the end.
+
+To do the following part, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment away what you don't want to run. Do that by putting a # in front of any lines that should not be run.
+
 
 ```python
 i = 4
