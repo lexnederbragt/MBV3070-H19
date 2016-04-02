@@ -218,7 +218,8 @@ dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size
 for index in numbers:
     codon = dna[index:index+3]
-    protein = protein + codon_table[codon]
+    aa = codon_table[codon]
+    protein = protein + aa
 print protein
 ```
 
