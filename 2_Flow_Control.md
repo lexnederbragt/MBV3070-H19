@@ -188,15 +188,14 @@ print numbers
 With this construct, we have a way of grabbing each codon in a piece of DNA:
 
 ```python
-import sys
-dna = sys.argv[1]
+dna = "ATGGCATGGCATGGC"
 dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size
 print numbers
 for index in numbers:
     print dna[index:index+3]
 ```
-We can now use this to translate a protein. Try with this string: ATGGCATGGCATGGC
+We can now use this to translate a protein. 
 
 ## Translate proteins
 
