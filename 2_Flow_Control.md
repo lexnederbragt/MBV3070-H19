@@ -17,7 +17,7 @@ print a < b  # is a less than b?
 print a <= b # is a less than or equal to b?
 print a > b # is a larger than b?
 print a >= b # is a larger or greater than b?
-print a != b # 
+print a != b # is a not equal to b?
 ```
 
 Note, we can also test the results of doing something, like this:
