@@ -57,7 +57,7 @@ print beatle in beatles or not len(beatles) >3
 
 If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run, and what would be printed in the end.
 
-To do the following part, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment away what you don't want to run. Do that by putting a # in front of any lines that should not be run.
+To do the following part, exit the interactive shell by using Ctrl-d. Use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment away what you don't want to run. Do that by putting a # in front of any lines that should not be run.
 
 
 ```python
@@ -127,6 +127,8 @@ Explain to yourself what happens here. How are the elements from each of the two
 ## For Loops with Dictionaries
 
 With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys in a dictionary work like a list. 
+
+For this part, go back to the interactive shell.
 
 ```python
 codondict = {}
