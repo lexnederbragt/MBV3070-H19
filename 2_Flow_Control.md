@@ -201,6 +201,6 @@ First, try running the script above with this string instead of the other one.
 
 As you might see, you now get a stop codon in the code.
 
-Figure out how you can use an if statement inside of the loop to stop before the stop codon.
+Figure out how you can use an if statement inside of the loop to skip over the stop codon.
 
 
