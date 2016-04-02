@@ -198,6 +198,7 @@ for index in numbers:
     output = output + protein[index:index+60] + "\n"
 print output
 ```
+Question: can you identify where in the code the fasta description line comes from?
 
 So, now we have the output we want, and we can print it to a file. We first open it, then write to it, and then close it again.
 
