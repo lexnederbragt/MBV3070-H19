@@ -171,6 +171,8 @@ We can now use this to translate a protein.
 
 ## Translate proteins
 
+For this part, use Notepad and run your script on the command line.
+
 Last week we translated proteins manually. Now, we can do it a bit more efficiently. First, let's define a dictionary which can translate between them, and a DNA string to translate:
 
 ```python
