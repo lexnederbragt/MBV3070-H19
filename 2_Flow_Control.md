@@ -128,8 +128,6 @@ Explain to yourself what happens here. How are the elements from each of the two
 
 With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys in a dictionary work like a list. 
 
-For this part, go back to the interactive shell.
-
 ```python
 codondict = {}
 codondict["UUU"] = "F"
