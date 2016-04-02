@@ -207,7 +207,7 @@ Last week we translated proteins manually. Now, we can do it a bit more efficien
 import sys
 codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
                "AAC":"N", "CGA":"R", "CAG":"Q", "TGA": "*"}
-dna = 
+dna = sys.argv[1]
 ```
 
 First, define a new variable that will contain the protein string. Then we need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. We use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string. 
