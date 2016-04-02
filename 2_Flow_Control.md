@@ -1,7 +1,7 @@
 # Python 2 : Control flow - Boolean expressions, if statements and for loops.
 ## Howto
 
-Note: for this exercise, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'.
+Note: for this exercise, you can either use the interactive shell directly, and type in commands there. You can also create batch files and run those. To do that, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'.
 
 You can either choose to have everything in one file, or in separate files. To run only one section of a program (parts of the code in a file), comment away what you don't want to run. Do that by putting a # in front of any lines that should not be run.
 
