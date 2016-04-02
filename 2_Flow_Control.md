@@ -3,6 +3,8 @@
 
 Note: for this exercise, use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'.
 
+You can either choose to have everything in one file, or in separate files. To run only one section of a program (parts of the code in a file), comment away what you don't want to run. Do that by putting a # in front of any lines that should not be run.
+
 ## Boolean expressions
 
 A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of these are similar to those found in other languages. 
