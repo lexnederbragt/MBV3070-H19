@@ -160,7 +160,7 @@ print numbers
 With this construct, we have a way of grabbing each codon in a piece of DNA:
 
 ```python
-dna = "ATCATCATCATCATC"
+dna = "ATCTGACAGCTA"
 dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size
 print numbers
