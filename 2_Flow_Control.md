@@ -105,7 +105,7 @@ else:
 
 **for** loops in python are used to iterate over sequences of things (they can be used for much more, but for now this definition will do). 
 
-Let's start with a very simple list, and see how **for** behaves. 
+Let's start with a very simple list, and see how **for** behaves. To do this part, go back to the interactive shell.
 
 ```python
 forlist = [1, 2 ,3,"a", 5, 9, "c"]
