@@ -177,7 +177,7 @@ Last week we translated proteins manually. Now, we can do it a bit more efficien
 
 ```python
 codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
-               "AAC":"N", "CGA":"R", "CAG":"Q" }
+               "AAC":"N", "CGA":"R", "CAG":"Q", "TGA": "*"}
 dna = "ATGCAGAACATA"
 ```
 
@@ -193,10 +193,14 @@ for index in numbers:
 print protein
 ```
 
-Question: what happens if the DNA string does not have 
+## Homework: Stop at stop codon.
 
+Let's say you have a different DNA string, "ACACAGCGAAACTGAACAATG". 
 
-## Homework: Filtering out codons with non-IUPAC letters
+First, try running the script above with this string instead of the other one. 
 
-In the exercise above, can you figure out what you would need to do to skip codons that had non-IUPAC letters in them (that is, not ATCG in them?
+As you might see, you now get a stop codon in the code.
+
+Figure out how you can use an if statement inside of the loop to stop before the stop codon.
+
 
