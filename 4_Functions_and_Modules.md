@@ -18,19 +18,20 @@ import sys
 def read_fasta(lines):
     # Input: a list containing the lines found
     # in the file, i.e. the results from
-    # fh.readlines()
+    # fh.readlines() in Part 1
     # Return a string containing the fasta
     # sequence found in the file
     
 def read_translationtable(lines):
-    # Input: the result from filehandle readlines().
+    # Input: the result from fh.readlines()
+    # from Part 2
     # This file contains codon-amino acid pairs
     # Create a dictionary where the codon is
     # the key, and the amino acid is the value
     # Return the dictionary
     
-def translate(sequence, translationtable):
-    # sequence is a dna string, translationtable
+def translate(sequence, codon_table):
+    # sequence is a dna string, codon_table
     # is a dictionary where codons are the key
     # and the amino acids are the values.
     # Do a for loop over the sequence, get codons,
@@ -43,6 +44,11 @@ def create_fasta_string(header, sequence):
     # to print, 60 characters to a line
     # Create a fasta output formatted string
     # using a for loop, and return the results.
+    # Remember, you also need the header line,
+    # so first assign the text in the header variable
+    # to the variable that will contain the output, 
+    # and keep adding the rest of the string to it,
+    # 60 characters at a time.
     
 if __name__ == "__main__":
     # Part 1: here we open the first file given
@@ -74,13 +80,13 @@ if __name__ == "__main__":
     # And use the function read_translationtable to
     # process the file contents to get a dictionary
     # of codons and amino acids back.
-    translationtable = read_translationtable(tablelines)
+    codon_table = read_translationtable(tablelines)
     
     # Part 3. Here, we use the dna sequence we got 
     # from the dna file, and the translation table
     # in the function translate to translate the
     # dna into protein
-    protein = translate(sequence, translationtable)
+    protein = translate(sequence, codon_table)
     # Here, we use the header we saved above, with the
     # protein string in the method create_fasta_string
     # to create nice output which we can save to a file.
