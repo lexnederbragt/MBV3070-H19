@@ -118,6 +118,7 @@ We are now going to import these functions into a different script - call this t
 
 
 ```python
+import sys
 import translate_module
 fh = open(sys.argv[1], "r")
 fastalines = fh.readlines()
