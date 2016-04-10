@@ -1,124 +1,109 @@
-## Solutions to exercise 4 ##
+import sys
 
-
-```python
-def get_atcontent(dna_string):
-    A = dna_string.count("A")
-    T = dna_string.count("T")
-    AT = A + T
-    at_content = AT*100.1/len(dna_string)
-    return at_content
-
-def get_sequence(lines):
-    sequence = ""
-    for line in lines[1:]:
-        without_newline = line.replace("\n", "")
-        sequence += without_newline
-    return sequence
-
-def get_dinucleotide_freq(dinucleotide, dna_string):
-    count = dna_string.count(dinucleotide)
-    nuc_freq = count*100.1/(len(dna_string)-1)
-    return nuc_freq
-
-
-def transcribe(dna_string):
-    translated = dna_string.replace("T", "U")
-    return translated
-
-if __name__ == "__main__":
-
-    fh = open("hbb.fsa", "r")
-    readlines = fh.readlines()
-    fh.close()
-
-    sequence = get_sequence(readlines)
-    at_content = get_atcontent(sequence)
-    CG_freq = get_dinucleotide_freq("CG", sequence)
-    transcribed = transcribe(sequence)
-
-    print "The AT content is", at_content
-    print "The CG frequency is", CG_freq
-    print "The transcribed seq is", transcribed
-```
-
-
-```python
-import dna_functions
-
-fh = open("hbb.fsa", "r")
-lines = fh.readlines()
-fh.close()
-
-##Now, using the lines above as input, do the follwing:
-
-# 1. get the sequence as a string
-sequence = dna_functions.get_sequence(lines)
-print sequence
-# 2. calculate the AT content, and print it
-at_content = dna_functions.get_atcontent(sequence)
-print at_content
-# 3. calculate the "CG" dinucleotide frequency, and print it
-cg_freq = dna_functions.get_dinucleotide_freq("CG", sequence)
-print cg_freq
-# 4. transcribe it, and print the results
-transcribed = dna_functions.transcribe(sequence)
-print transcribed
-```
-    
-```python
 def read_fasta(lines):
-    sequence = ""
-    for line in lines[1:]:
-        without_newline = line.replace("\n", "")
-        sequence += without_newline
-    return sequence
-    
+    # Input: a list containing the lines found
+    # in the file, i.e. the results from
+    # fh.readlines()
+    # Return a string containing the fasta
+    # sequence found in the file
+	dna = "" # create empty string to contain the mRNA
+	for line in lines[1:]:
+		text = line.replace("\n", "")
+		dna = dna + text
+	return dna
+
 def read_translationtable(lines):
-    codon_table = {}
-    for line in lines[:]:
-        without_newline = line.replace("\n", "")
-        fields = without_newline.split()
-        codon = fields[0]
-        aminoacid = fields[1]
-        codon_table[codon] = aminoacid
-    return codon_table
-    
-def translate(sequence, translationtable):
-    protein = ""
-    counter = 0
-    while counter < len(sequence) - 2:
-        codon = sequence[counter:counter + 3]
-        aminoacid = translationtable[codon]
-        protein = protein + aminoacid
-        counter += 3
-    return protein
+    # Input: the result from filehandle readlines().
+    # This file contains codon-amino acid pairs
+    # Create a dictionary where the codon is
+    # the key, and the amino acid is the value
+    # Return the dictionary
+	codon_table = {}
+	for line in lines:
+		without_newline = line.replace("\n", "")
+		fields = without_newline.split()
+		codon = fields[0]
+		aminoacid = fields[1]
+		codon_table[codon] = aminoacid
+	return codon_table
+
+def translate(sequence, codon_table): #####
+    # sequence is a dna string, translationtable
+    # is a dictionary where codons are the key
+    # and the amino acids are the values.
+    # Do a for loop over the sequence, get codons,
+    # and translate to protein using the dictionary.
+    # Return the protein string.
+	protein = ""
+	dnalen = len(sequence)-2
+	numbers = range(0, dnalen, 3)  # start, stop, step size
+	for index in numbers:
+		codon = sequence[index:index+3]
+		aa = codon_table[codon]
+		protein = protein + aa
+	return protein
 
 def create_fasta_string(header, sequence):
-    output = header
-    counter = 0
-    while counter < len(sequence):
-        output += sequence[counter:counter+60] + "\n"
-        counter += 60
-    return output
+    # header is a fasta header with a >
+    # sequence is a string that we want
+    # to print, 60 characters to a line
+    # Create a fasta output formatted string ### put output to be header first.
+    # using a for loop, and return the results.
+	output = header# we first add the header from the mRNA file
+	sequencelen = len(sequence)
+	numbers = range(0, sequencelen, 60) # start, stop, step size
+	for index in numbers:
+		output = output + sequence[index:index+60] + "\n"
+	return output
 
-fh = open("hbb.fsa", "r")
-fastalines = fh.readlines()
-fh.close()
-header = fastalines[0]
-sequence = read_fasta(fastalines)
+if __name__ == "__main__":
+    # Part 1: here we open the first file given
+    # on the command line. This file contains our
+    # fasta sequence to be translated. 
+    # First we open the file,
+    fh = open(sys.argv[1], "r")
+    # We read the contents into a list
+    fastalines = fh.readlines()
+    # We close the file
+    fh.close()
+    # We store the first line, to have the
+    # fasta header stored
+    header = fastalines[0]
+    # And we use the read_fasta function to
+    # convert the contents of the file into
+    # one long string
+    sequence = read_fasta(fastalines)
 
-fh = open("translationtable.txt","r")
-tablelines = fh.readlines()
-fh.close()
-translationtable = read_translationtable(tablelines)
+    # Part 2: Here we read in a translation table,
+    # and make a dictionary out of it.
+    # First we open the second file given on the
+    # command line
+    fh = open(sys.argv[2],"r")
+    # We read the contents into a list
+    tablelines = fh.readlines()
+    # We close the file
+    fh.close()
+    # And use the function read_translationtable to
+    # process the file contents to get a dictionary
+    # of codons and amino acids back.
+    translationtable = read_translationtable(tablelines)
 
-protein = translate(sequence, translationtable)
-fastastring = create_fasta_string(header, protein)
+    # Part 3. Here, we use the dna sequence we got 
+    # from the dna file, and the translation table
+    # in the function translate to translate the
+    # dna into protein
+    protein = translate(sequence, translationtable)
+    # Here, we use the header we saved above, with the
+    # protein string in the method create_fasta_string
+    # to create nice output which we can save to a file.
+    fastastring = create_fasta_string(header, protein)
 
-fo = open("hbb_proteins.fsa", "w")
-fo.write(fastastring)
-fo.close()
-```
-    
-    
+    # Part 4: here, we get a file name from the 
+    # command line, open it, and save our string
+    # to it
+    # Here, we open the file.
+    fo = open(sys.argv[3], "w")
+    # Here, we write the string to the file
+    fo.write(fastastring)
+    # Then we close the file
+    fo.close()
