@@ -23,7 +23,7 @@ Now scroll through the help. You go down by pressing the space bar, and up by sc
 
 Find the method that is named \_\_init\_\_ . This method is the one that is run every time you create an object of this class, and in this one you will find which attributes this class has. This means that every object of this class will have these attributes set, i.e. have something there. 
 
-Question: how many attributes does Seq have?
+Question: how many attributes does Seq have?  
 
 Everything you see in the help is a method in this class. As you can see, there are lots of methods that are available. However, you should only use the ones without one or two underscores in the beginning.  
 
@@ -55,7 +55,7 @@ Figure out how to do the following:
 - what the first letter is
 - all of the sequence, except the first and last letter
 
-Question: can you see a difference in the results between the results from the first two and the last?
+Question: can you see a difference in the results between the results from the first two and the last?  
 
 
 ### Creating SeqRecord objects ###
@@ -69,7 +69,7 @@ from Bio.SeqRecord import SeqRecord
 help(SeqRecord)
 
 ```
-Question: can you figure out how many attributes this class has?
+Question: can you figure out how many mandatory attributes this class has?  
 
 As you can see, many of the methods are simply the same methods as for Seq.
 
@@ -99,6 +99,9 @@ First, from now on we are working in a script file. So, the code below goes in a
 
 Second, go to this page [this genbank file](macaca.gbk), copy the contents and  and save it in a file in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
 
+Take the code shown below, and save it in a file. We are going to explore the genbank file by gradually expanding on this script. 
+
+
 ```python
 import sys
 from Bio import SeqIO # Have to import the module to have access to it.
@@ -113,17 +116,23 @@ fh.close()
 
 ```
 
-We are now going to try looking at the annotations in this object. In the script, write `print gbk.annotations` after the comment, save and run.
+We are now going to explore this genbank file.
 
-Question: Can you recognize what this is?
-Question: Can you from this figure out what you would have to do to get at the organism information.
+First, add `print gbk`, save and run.
 
-Remove the print you added above, and add the following: 'print gbk.annotations["organism"]'.
+Question: can you figure out what the id of this sequence is?
+Question: can you figure out which species this sequence is from?
 
+Second, remove the line specified above, add `print gbk.id`, save and run.  
+Third, remove the line specified above, add `print gbk.annotations`, save and run.  
 
-### name_with_organism.py 
+Question: can you figure out what kind of thing you printed out? You should see something with curly brackets, with elements inside with colons inbetween. Hint: you used them quite extensively when working with translation tables.
 
-We are now going to create a script that will let us print out fasta sequences with an ID which begins with the organism name.
+Fourth, remove the line specified above, add `print gbk.annotations["organism"]`, save and run.  
+
+### Add organism name to fasta description line
+
+Our goal now is to create script so that it will take a genbank file in, access the organism name and add it to the fasta description name, and then print this out in fasta format.  As you saw with the script above, you can do that by accessing the annotations of the 
 
 #### Reading in files ####
 
@@ -144,20 +153,21 @@ for record in SeqIO.parse(fh, "genbank"):
 fh.close()
 ```
 
-Run it, (python name_with_organism.py mb.gbk) and you will see the ids of the sequences in the mb.gbk file printed on screen. Question: how many sequences are there in that gbk file?
+Run it, (python name_with_organism.py mb.gbk) and you will see the ids of the sequences in the mb.gbk file printed on screen. 
+
+Question: how many sequences are there in that gbk file?  
 
 Try running it with the macaca file too.
 
 #### Creating a new id ####
 
-Now, can you remember how you could get at the organism of a sequence? Add a print statement that will print this out
- on the line after `print record.id`, so that you will first get one line with the id of the sequence, and one with the organism name.
+Now, can you remember how you could get at the organism of a sequence? Add a print statement that will print this out on the line after `print record.id`, so that you will first get one line with the id of the sequence, and one with the organism name.
 
 As you can see, these are now just strings. Strings can be added together. 
 
 In this case, we have two words in our string, the genus name and the species name. We will only use the species name.
 
-Question: In a string with two words, what do you use to get at only the last word?
+Question: In a string with two words, what do you use to get at only the last word?  
 
 We are now going to create a new id for each entry. This can be done by doing this:
 
