@@ -13,8 +13,12 @@ NOTE: you are supposed to fill in some code in each function. Hint: you should h
 Put the following code in a script file named translate_module.py
 
 ```python
+import sys
+
 def read_fasta(lines):
-    # Input: 
+    # Input: a list containing the lines found
+    # in the file, i.e. the results from
+    # fh.readlines()
     # Return a string containing the fasta
     # sequence found in the file
     
@@ -41,34 +45,66 @@ def create_fasta_string(header, sequence):
     # using a for loop, and return the results.
     
 if __name__ == "__main__":
-   fh = open("hbb.fsa", "r")
-   fastalines = fh.readlines()
-   fh.close()
-   header = fastalines[0]
-   sequence = read_fasta(fastalines)
-
-   fh = open("translationtable.txt","r")
-   tablelines = fh.readlines()
-   fh.close()
-   translationtable = read_translationtable(tablelines)
-
-   protein = translate(sequence, translationtable)
-   fastastring = create_fasta_string(header, protein)
-
-   fo = open("hbb_proteins.fsa", "w")
-   fo.write(fastastring)
-   fo.close()
+    # Part 1: here we open the first file given
+    # on the command line. This file contains our
+    # fasta sequence to be translated. 
+    # First we open the file,
+    fh = open(sys.argv[1], "r")
+    # We read the contents into a list
+    fastalines = fh.readlines()
+    # We close the file
+    fh.close()
+    # We store the first line, to have the
+    # fasta header stored
+    header = fastalines[0]
+    # And we use the read_fasta function to
+    # convert the contents of the file into
+    # one long string
+    sequence = read_fasta(fastalines)
+    
+    # Part 2: Here we read in a translation table,
+    # and make a dictionary out of it.
+    # First we open the second file given on the
+    # command line
+    fh = open(sys.argv[2],"r")
+    # We read the contents into a list
+    tablelines = fh.readlines()
+    # We close the file
+    fh.close()
+    # And use the function read_translationtable to
+    # process the file contents to get a dictionary
+    # of codons and amino acids back.
+    translationtable = read_translationtable(tablelines)
+    
+    # Part 3. Here, we use the dna sequence we got 
+    # from the dna file, and the translation table
+    # in the function translate to translate the
+    # dna into protein
+    protein = translate(sequence, translationtable)
+    # Here, we use the header we saved above, with the
+    # protein string in the method create_fasta_string
+    # to create nice output which we can save to a file.
+    fastastring = create_fasta_string(header, protein)
+    
+    # Part 4: here, we get a file name from the 
+    # command line, open it, and save our string
+    # to it
+    # Here, we open the file.
+    fo = open(sys.argv[3], "w")
+    # Here, we write the string to the file
+    fo.write(fastastring)
+    # Then we close the file
+    fo.close()
 
 ```
 The keyword for defining a function is *def*. After that we have the function name followed by any arguments in parenthesis. After that comes the code that the function performs. Input to the function is available in the arguments passed to it.
 
 NOTE: any variables defined in the function is not available outside of it. Any results that is created in it must be returned to the outside using the return statement.
 
-Run the script. What is the protein that the file codes for?
-NOTE: the file hbb.fsa has to be in the same directory as the script.
+Run the script, using hbb.fsa as the fasta dna input file, translationtable.txt as the translation table input file, and then name the output what you feel like. The output file should not already exist in the directory that you are in, but the input file should. 
 
 
-## Using it as a modules
+## Using it as a module
 
 Towards the end of the file, we have the following line: "if __name__ == "__main__":". This if statement is only true if you are running this script. If you use code from this script elsewhere, it is not true. What happens is that when you run a script directly from the command line, a variable that is called \_\_name\_\_ is set to have the text string "\_\_main\_\_" as value.  We then ask python to test on this variable with an if statement. If the value of the variable \_\_name\_\_ is "\_\_main\_\_", then the if statement is true and whatever is inside of it is run. This variable will not be set to "\_\_name\_\_" if we use this script inside of another script using an import statement.
 
@@ -77,7 +113,7 @@ We are now going to import these functions into a different script - call this t
 
 ```python
 import translate_module
-fh = open("hbb.fsa", "r")
+fh = open(sys.argv[1], "r")
 fastalines = fh.readlines()
 fh.close()
 
@@ -88,32 +124,15 @@ sequence = translate_module.read_fasta(fastalines)
 fastastring = translate_module.create_fasta_string(header, sequence)
 print fastastring
 
-fo = open("hbb_proteins.fsa", "w") 
+fo = open(sys.argv[2], "w") 
 fo.write(fastastring)
 fo.close()
 
 ```
-This script basically takes a fasta file, and does formatting on it. Not incredibly useful, but it does show that you can use code that is not in the script you wrote, but in another file, which then is a python module.
+This script takes a fasta file, and does formatting on it. Not incredibly useful, but it does show that you can use code that is not in the script you wrote, but in another file, which then is a python module.
 
 What happens here is that Python goes into the translate_module file and gets the functions that we specified, and uses that inside of this script. We get at the function by using the import statement. 
 
+Try running it, using the hbb.fsa file as input.
 
-## Using the sys module.
 
-So far, you have hardcoded the file name into each script file. Wouldn't it be nice to be able to just add the filename on the command line, so that you don't have to change the script every time you want to run it? And, wouldn't it be nice if you could specify the output file name also?
-
-In the translate_usemodule.py script do the following:
-
-1. include the line 'import sys' on top of the file (leave the ' out).
-2. replace "hbb.fsa" with 'sys.argv[1]' (leave the ' out).
-3. replace "hbb_proteins.fsa" with 'sys.argv[2]' (leave the ' out).
-
-Now, try running this on the command line:
-
-```
-python translate_usemodule.py hbb.fsa hbb_out.fsa
-```
-
-As you see, you have now specified the input and the output file on the command line - you can now use a different input file, and also save the results under a different output file name.
-
-Try running it again, but now use your own personal name instead of hbb_out. Have a look at the file. Does it look the same?
