@@ -10,12 +10,12 @@ NOTE: a line anywere in python that is preceeded with a # is a comment and is ig
 
 ## How to do these exercises
 
-In this exercise you will see pyton code in gray boxes. Try typing it in, and see what happens. You will also see some questions being asked through the exercise, try to answer those while you are working through them. These questions will either be gone through during the exercise, or at the beginning of the next exercise.
+In this exercise you will see python code in gray boxes. Try typing it in, and see what happens. You will also see some questions being asked through the exercise, try to answer those while you are working through them. These questions will either be gone through during the exercise, or at the beginning of the next exercise.
 
 
 ## The python interpreter
 
-Let's bring up the Python interpreter. You do this by first starting a command window on your windows machine. You do this by pressing the start button, and typing in 'cmd' in the search box and pressing enter. The result is a black window where you can type in things after a arrow symbol. Type in the word 'python', and press enter. This is what you see when you open the program:
+Let's bring up the Python interpreter. You do this by pressing the start button, and typing in 'python' in the search box. You will get several versions, you need to make sure that you open then one that gives you a python version 2.7 interpreter (the teacher will show you how) and pressing enter. The result is a  window where you can type in things after a arrow symbol. You will see something that resembles what you see below when you open the program. Please note: it should say Python 2.7, and not Python 3.something at the top:
 
 ```python
 Python 2.7.8 |Anaconda 2.1.0 (64-bit)| (default, Jul  2 2014, 15:12:11) [MS
@@ -27,8 +27,6 @@ Please check out: http://continuum.io/thanks and https://binstar.org
 ```
 
 See the three >? You type in your commands after that. 
-
-
 
 The interpreter can be used as a calculator:
 
@@ -53,21 +51,6 @@ We are first going to use python as a simple calculator. Look at the operators t
 Question: What is the difference between 11/2 and 11.0/2?
 
 Exit the interpreter by typing in Ctlr-D.
-
-## Creating your first script
-
-Open notepad. You will get up a new window. Type in some of the commands that you typed in earlier when you used python as a calculator. Notice which directory your command window is in (it says where you can type in the command). Save the file as first.py in the same directory. Note: windows might try to add the .txt extension to it. In that case, use the explorer to rename it so that it is only called first.py. Then, go to the command window. Run the program by typing in
-
-```python
-python first.py
-```
-
-NOTE: python scripts should be saved with the file ending .py. 
-
-Question: What happened in the command window?
-Question: try changing something in the file, save it and run again. What happens?
-
-Note: for the rest of the exercise we will work in the interactive shell. To get back to that one again, type in python on the command line and press enter.
 
 # String methods
 
