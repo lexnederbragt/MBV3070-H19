@@ -35,8 +35,8 @@ at_content = [0.5, 0.4, 0.3, 0.8, 0.6]
 A list can be sorted in place, like this:
 
 ```python
-   at_content.sort()
-   print at_content
+at_content.sort()
+print at_content
 ```
 
 
