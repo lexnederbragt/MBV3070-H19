@@ -283,32 +283,23 @@ A lot of the material taught in this course draws heavily on this book:
 [Python for Bioinformatics by Sebastian Bassi](http://www.amazon.com/Bioinformatics-Chapman-Mathematical-Computational-Biology/dp/1584889292)
 
 
-## Homework
-
-There are two tasks that you may do. In both cases, you will create text document (word is fine here) containing the following:
-
-1. The code itself
-2. A copy of what appears in the terminal when you run it.
-
-Send this to me.
-
-### ORF finding
+## Task: ORF finding
 
 Below is part of a python script that is meant to translate a DNA string into RNA, find the open reading frame in it (only look for the start codon AUG), find the stop codon (in this case UAA) and print the string from that position until the start of the stop codon.
 
 In the code there are words missing. Fill them in.
 
 ```python
-   	seq = "ATTATGAGATTACAGAGCTAAGAC"   
-	mrna = seq._______("T", "U")
-	start = mrna.find("___")
-	stop = mrna.____("UAA")
-	print mrna[_____:stop]
+seq = "ATTATGAGATTACAGAGCTAAGAC"   
+mrna = seq._______("T", "U")
+start = mrna.find("___")
+stop = mrna.____("UAA")
+print mrna[_____:stop]
 ```
 
 Use notepad to create the completed script, and save it as orf.py. Run it on the command line like this: 'python orf.py'. 
 
-### CG frequency
+### Task: CG frequency
 
 CpG islands are regions of sequence that contain higher than expected number of CpG (CG) dinucleotides (this is a C followed by a G, i.e. the substring CG). CpG islands are found near or in 40% of all promoters in mammalian genomes. We will now create a script that will allow us to calculate the CG frequency in a given string.
 
@@ -316,7 +307,7 @@ Define the DNA string CGCTACGGACGTAGCCAGCGA.
 
 Create a script that will calculate the percent of CG dinucleotides in the string. Note, a string that contains N nucleotides, contains N-1 dinucleotides.
 
-Hint: look at how we calculated AT content in the lecture.
+Hint: look at how we calculated AT content in the lecture, and the exercise in the previous section.
 
 
 Previous: [Variable types](0_Variables_Types.md)
