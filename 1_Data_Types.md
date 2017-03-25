@@ -4,7 +4,7 @@
 
 **Written by Karin Lagesen**
 
-Note: we are using the interactive shell here. Start the shell by first starting a command window by typing in 'cmd' in the search field that appears when pressing the start button. Then, type in 'python'
+Note: we are using the interactive shell here, as in the previous exercise. 
 
 Note: if you want to repeat something that you have already typed in, try the arrow buttons on your keyboard.
 
