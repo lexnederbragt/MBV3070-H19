@@ -50,8 +50,6 @@ We are first going to use python as a simple calculator. Look at the operators t
 
 Question: What is the difference between 11/2 and 11.0/2?
 
-Exit the interpreter by typing in Ctlr-D.
-
 # String methods
 
 Strings can be created by putting single, double or triple quotation marks around a piece of text. In this case we will be using the example string "ATG GGC ATG GGC" to demonstrate some string methods.
@@ -68,6 +66,8 @@ print "ATG GGC ATG GGC".find("C")
 Question: Why the first C is in position 6?  
 Question: How would you find the number of Ts?  
 Question: How would you find the position of the first T?  
+
+
 
 ## Using variables
 
@@ -131,5 +131,23 @@ print int('2') + 3
 print '2' + str('3')
 print string + str(number)
 ```
+
+### Task: Finding the GC content of a string
+
+Let's say you have the string "AGACTGAGGT". We would like to know how much GC there is in this string.
+
+Below there is some partially complete code that will calculate this value. Copy the code into notepad, fill in the underscores, and copy-paste it into the python interpreter window.
+
+```python
+DNA = ___
+g = ___.count(___)
+c = DNA.___(___)
+gc_count = _ + _
+
+print "GC count: ", ____
+```
+
+Qestion: How many percent GC did the sequence have?
+
 
 Next: [Data Types](1_Data_Types.md)
