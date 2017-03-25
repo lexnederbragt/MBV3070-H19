@@ -147,7 +147,7 @@ gc_count = _ + _
 print "GC count: ", ____
 ```
 
-Qestion: How many percent GC did the sequence have?
+Qestion: How much GC did the sequence have?
 
 
 Next: [Data Types](1_Data_Types.md)
