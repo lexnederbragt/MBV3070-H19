@@ -15,7 +15,7 @@ In this exercise you will see python code in gray boxes. Try typing it in, and s
 
 ## The python interpreter
 
-Let's bring up the Python interpreter. You do this by pressing the start button, and typing in 'python' in the search box. You will get several versions, you need to make sure that you open then one that gives you a python version 2.7 interpreter (the teacher will show you how) and pressing enter. The result is a  window where you can type in things after a arrow symbol. You will see something that resembles what you see below when you open the program. Please note: it should say Python 2.7, and not Python 3.something at the top:
+Let's bring up the Python interpreter. You do this by pressing the start button, and typing in 'python' in the search box. You will get several choices, the ones you are looking for are Python (command line). Try one of them. You are looking for one that gives you a python version 2.7 interpreter (the teacher will show you how). The result is a window where you can type in things after a arrow symbol. You will see something that resembles what you see below when you open the program. Please note: it should say Python 2.7, and not Python 3.something at the top:
 
 ```python
 Python 2.7.8 |Anaconda 2.1.0 (64-bit)| (default, Jul  2 2014, 15:12:11) [MS
