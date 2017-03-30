@@ -297,7 +297,7 @@ stop = mrna.____("UAA")
 print mrna[_____:stop]
 ```
 
-Use notepad to create the completed script, and save it as orf.py. Run it on the command line like this: 'python orf.py'. 
+Use notepad to create the completed script. Copy-paste one line at the time into the interpreter to run it. 
 
 ### Task: CG frequency
 
