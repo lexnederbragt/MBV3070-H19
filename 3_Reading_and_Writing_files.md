@@ -140,7 +140,7 @@ Question: how would you iterate over the dictionary and show all codon-amino aci
 
 We now have a codon to amino acid mapping dictionary. The file "hbb.fsa" that you saved above is the mRNA sequence for hemoglobin subunit B. Let's try to translate that into protein.
 
-First, we need to read in the file. Remove the print statement from the code above, and and this to your script file:
+First, we need to read in the file. Remove the print statement from the code above, and add this to your script file:
 
 ```python
 fh = open(sys.argv[2], "r") # now need to add the hbb.fsa file to the command line.
