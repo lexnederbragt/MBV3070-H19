@@ -95,7 +95,7 @@ TAT     Y
 ```
 
 
-We are now going to see how we can read and write to files. Note: use notepad to write the script, save it as translate.py and run it with python27.
+We are now going to see how we can read and write to files. Note: use Notepad++ to write the script, save it as translate.py and run it with python27.
 
 ## Creating a codon table
 
