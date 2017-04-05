@@ -1,11 +1,19 @@
 # Python 2 : Control flow - Boolean expressions, if statements and for loops.
 ## Howto
 
-Note: for the first part of this exercise, use the interactive shell directly, and type in commands there. You can also use copy-paste if you want. 
+Note: for the first part of this exercise, use the interactive shell directly, and type in commands there. You can start the interpreter like this:
+
+  * click the start button
+  * type in cmd in the small window at the bottom
+  * press enter
+
+You will now have a black window on your screen. You can type things in here, after the arrow symbol. To run a python script, or to run the python interactive shell, type in **python27**.
+
+For some exercises, the code is commented. Comments begin with a # sign, and anything after that is ignored. You do not need to type in the # and anything after.
 
 ## Boolean expressions
 
-A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of these are similar to those found in other languages. 
+A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of the ways of comparing things are similar to those found in other languages. 
 
 ```python
 a = 1
@@ -28,7 +36,7 @@ print len(beatles) == 4 # are there four members in beatles?
 ```
 
 However, python has other equivalence test statements that are fairly
-unique to python. To check whether an object is contained in a list :
+unique to python. To check whether an object is contained in a list:
 
 ```python
 beatle="John"
@@ -46,10 +54,10 @@ print beatle
 print beatle in beatles
 print len(beatles) == 4
 print beatle in beatles and len(beatles) == 4 # is "John" in beatles, and are there four entries (members) in the beatles list?
-print len(beatles) > 4
+print len(beatles) > 4 # are there more than four members in the beatles list?
 print beatle in beatles or len(beatles) > 4 # is "John" in beatles, or are are there more than 4 members in the list?
-print len(beatles) > 3
-print beatle in beatles or not len(beatles) >3
+print len(beatles) > 3 # are there more than three members in the beatles list?
+print beatle in beatles or not len(beatles) >3  # is "John" in beatles, or not more than 3 memebers in beathes
 ```
 
 ## If statements
@@ -57,7 +65,7 @@ print beatle in beatles or not len(beatles) >3
 
 If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run, and what would be printed in the end.
 
-To do the following part, exit the interactive shell by using Ctrl-d. Use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment away what you don't want to run. Do that by putting a # in front of any lines that should not be run.
+To do the following part, exit the interactive shell by using Ctrl-z, and then pressing enter. Use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python27 yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment out what you don't want to run. Do that by putting a # in front of any lines that should not be run.
 
 
 ```python
@@ -65,7 +73,7 @@ i = 4
 sign = "zero"
 
 if i < 0: #the if statement begins here
-	sign = "negative"
+    sign = "negative"
 elif i > 0:
     sign = "positive"
 else:
@@ -131,14 +139,14 @@ Hint: you need to include the first and the last line of the sys-test script.
 
 ## For Loops with lists
 
-**for** loops in python are used to iterate over sequences of things (they can be used for much more, but for now this definition will do). 
+**for** loops in python are used to iterate over collections of things (they can be used for much more, but for now this definition will do). 
 
 Let's start with a very simple list, and see how **for** behaves. To do this part, go back to the interactive shell.
 
 ```python
 forlist = [1, 2 ,3,"a", 5, 9, "c"]
 for elem in forlist:
-	print elem
+    print elem
 ```
 
 We can also create what is called nested for loops, this is when we have a loop within another one:
@@ -147,8 +155,8 @@ We can also create what is called nested for loops, this is when we have a loop 
 numbers = [1, 2, 3, 4, 5]
 words = ["green plants", "yellow sun", "blue water"]
 for num in numbers:
-	for word in words:
-		print num, word
+    for word in words:
+        print num, word
 ```
 Explain to yourself what happens here. How are the elements from each of the two lists combined?
 
@@ -226,7 +234,7 @@ print protein
 Try running this script with this string: ATGCAGAACATA
 
 
-## Homework: Stop at stop codon.
+## Task: Stop at stop codon.
 
 Let's say you have a different DNA string, ACACAGCGAAACTGAACAATG. 
 
