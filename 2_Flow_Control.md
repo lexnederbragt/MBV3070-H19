@@ -124,16 +124,16 @@ print sys.argv[1]
 ```
 Run the commands shown below on the command line:
 
-  * python sys-test.py 1 
-  * python sys-test first second
-  * python sys-test.py 1 2 3 4
-  * python sys-test.py
+  * python27 sys-test.py 1 
+  * python27 sys-test first second
+  * python27 sys-test.py 1 2 3 4
+  * python27 sys-test.py
 
 Question: can you figure out why the last one fails?
 
 Can you now try to figure out how to change your GCdecider script so that you can do the following:
 
-  * python GCdecider.py ATGGCCGGAGGGAGCCGGA
+  * python27 GCdecider.py ATGGCCGGAGGGAGCCGGA
 
 Hint: you need to include the first and the last line of the sys-test script.
 
