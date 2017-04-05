@@ -65,7 +65,7 @@ print beatle in beatles or not len(beatles) >3  # is "John" in beatles, or not m
 
 If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run, and what would be printed in the end.
 
-To do the following part, exit the interactive shell by using Ctrl-z, and then pressing enter. Use Notepad to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python27 yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment out what you don't want to run. Do that by putting a # in front of any lines that should not be run.
+To do the following part, exit the interactive shell by using Ctrl-z, and then pressing enter. Use Notepad++ to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python27 yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment out what you don't want to run. Do that by putting a # in front of any lines that should not be run.
 
 
 ```python
@@ -207,7 +207,7 @@ We can now use this to translate a protein.
 
 ## Translate proteins
 
-For this part, use Notepad and run your script on the command line.
+For this part, use Notepad++ and run your script on the command line.
 
 Last week we translated proteins manually. Now, we can do it a bit more efficiently. First, let's define a dictionary which can translate between them, and a DNA string to translate:
 
