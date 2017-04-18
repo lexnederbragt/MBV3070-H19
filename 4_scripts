@@ -49,7 +49,7 @@ def create_fasta_string(header, sequence):
     # to print, 60 characters to a line
     # Create a fasta output formatted string ### put output to be header first.
     # using a for loop, and return the results.
-    output = header# we first add the header from the mRNA file
+    output = header # we first add the header from the mRNA file
     sequencelen = len(sequence)
     numbers = range(0, sequencelen, 60) # start, stop, step size
     for index in numbers:
