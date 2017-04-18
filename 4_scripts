@@ -6,11 +6,11 @@ def read_fasta(lines):
     # fh.readlines()
     # Return a string containing the fasta
     # sequence found in the file
-	dna = "" # create empty string to contain the mRNA
-	for line in lines[1:]:
-		text = line.replace("\n", "")
-		dna = dna + text
-	return dna
+    dna = "" # create empty string to contain the mRNA
+    for line in lines[1:]:
+        text = line.replace("\n", "")
+	dna = dna + text
+    return dna
 
 def read_translationtable(lines):
     # Input: the result from filehandle readlines().
@@ -18,14 +18,14 @@ def read_translationtable(lines):
     # Create a dictionary where the codon is
     # the key, and the amino acid is the value
     # Return the dictionary
-	codon_table = {}
-	for line in lines:
-		without_newline = line.replace("\n", "")
-		fields = without_newline.split()
-		codon = fields[0]
-		aminoacid = fields[1]
-		codon_table[codon] = aminoacid
-	return codon_table
+    codon_table = {}
+    for line in lines:
+        without_newline = line.replace("\n", "")
+	fields = without_newline.split()
+	codon = fields[0]
+	aminoacid = fields[1]
+	codon_table[codon] = aminoacid
+    return codon_table
 
 def translate(sequence, codon_table): #####
     # sequence is a dna string, translationtable
@@ -34,14 +34,14 @@ def translate(sequence, codon_table): #####
     # Do a for loop over the sequence, get codons,
     # and translate to protein using the dictionary.
     # Return the protein string.
-	protein = ""
-	dnalen = len(sequence)-2
-	numbers = range(0, dnalen, 3)  # start, stop, step size
-	for index in numbers:
-		codon = sequence[index:index+3]
-		aa = codon_table[codon]
-		protein = protein + aa
-	return protein
+    protein = ""
+    dnalen = len(sequence)-2
+    numbers = range(0, dnalen, 3)  # start, stop, step size
+    for index in numbers:
+        codon = sequence[index:index+3]
+	aa = codon_table[codon]
+	protein = protein + aa
+    return protein
 
 def create_fasta_string(header, sequence):
     # header is a fasta header with a >
@@ -49,12 +49,12 @@ def create_fasta_string(header, sequence):
     # to print, 60 characters to a line
     # Create a fasta output formatted string ### put output to be header first.
     # using a for loop, and return the results.
-	output = header# we first add the header from the mRNA file
-	sequencelen = len(sequence)
-	numbers = range(0, sequencelen, 60) # start, stop, step size
-	for index in numbers:
-		output = output + sequence[index:index+60] + "\n"
-	return output
+    output = header# we first add the header from the mRNA file
+    sequencelen = len(sequence)
+    numbers = range(0, sequencelen, 60) # start, stop, step size
+    for index in numbers:
+        output = output + sequence[index:index+60] + "\n"
+    return output
 
 if __name__ == "__main__":
     # Part 1: here we open the first file given
