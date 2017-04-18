@@ -1,14 +1,14 @@
-Functions and Modules
+# Functions and Modules
 -----------------------
 
 A function is a block of code that performs a specific task. In this section we
-will learn how to write our own functions and modules, and import them. The main purpose of this part of the tutorial is to show you how to write our own functions and modules and hopefullyy also why do it. The goal is to show you how and why modularisation of the source code is a good programming practice.
+will learn how to write our own functions and modules, and import them. The main purpose of this part of the tutorial is to show you how to write our own functions and modules and hopefully also why do it. The goal is to show you how and why modularisation of the source code is a good programming practice.
 
-##Writing our own functions
+## Writing our own functions
 
-So far we have used the python interactive Python shell and also written Python scripts (typing up the source code in a file and then running it with python). We will now show how to "package" this source code into functions. This will allow us to reuse the same code easily multiple times (without having to run it each time manually). First, you will create the module. You will then use this script in itself. Second, you will create a new script, where you import and use the script you just created.
+So far we have used the python interactive Python shell and also written Python scripts (typing up the source code in a file and then running it with python). We will now show how to "package" this source code into functions. This will allow us to reuse the same code easily multiple times (without having to type it in each time). First, you will create the module. You will then use this script as such. Second, you will create a new script, where you import and use the script you just created.
 
-NOTE: you are supposed to fill in some code in each function. Hint: you should have most of this code from exercises done previously.
+NOTE: you are supposed to fill in some code for each function. Hint: you should have most of this code from exercises done previously, or available via the slides.
 
 Put the following code in a script file named translate_module.py
 
@@ -39,7 +39,7 @@ def translate(sequence, codon_table):
     # Return the protein string.
     
 def create_fasta_string(header, sequence):
-    # header is a fasta header with a >
+    # header is a fasta header with a >,
     # sequence is a string that we want
     # to print, 60 characters to a line
     # Create a fasta output formatted string
