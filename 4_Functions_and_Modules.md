@@ -1,4 +1,4 @@
-#Functions and Modules
+Functions and Modules
 -----------------------
 
 A function is a block of code that performs a specific task. In this section we
