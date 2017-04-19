@@ -7,12 +7,12 @@ You can find a full listing of everything here:
 http://biopython.org/DIST/docs/api/
 
 
-### Creating Seq objects ###
+### Working with Seqs ###
 
 
 Note: for now we are working in the interactive shell.
 
-You are first going to figure out what we can do with a Seq object. To find all the methods for a specify type or class, do help(classname).
+You are first going to figure out what we can do with a string stored as a Seq. To find all the methods for a specify type, do help(type_name).
 
 ```python
 from Bio.Seq import Seq
@@ -21,23 +21,23 @@ help(Seq)
 
 Now scroll through the help. You go down by pressing the space bar, and up by scrolling. If you want to quit, press q. 
 
-Find the method that is named \_\_init\_\_ . This method is the one that is run every time you create an object of this class, and in this one you will find which attributes this class has. This means that every object of this class will have these attributes set, i.e. have something there. 
+Find the method that is named \_\_init\_\_ . This method is the one that is run every time you create a Seq, and in this one you will find which kinds of data that you need to have to create one. This means that every Seq will have these set, i.e. have something there. 
 
-Question: how many attributes does Seq have?  
+Question: what kinds of data do you have to have to create a Seq?  
 
-Everything you see in the help is a method in this class. As you can see, there are lots of methods that are available. However, you should only use the ones without one or two underscores in the beginning.  
+Everything you see in the help is a method . As you can see, there are lots of methods that are available. However, you should only use the ones without one or two underscores in the beginning.  
 
-** A note on self **
+#### A note on self ####
 
 When you see methods described here, you will always as a parameter to the function see the word **self**. This just means that you specify that you are doing whatever you are doing on the object whose method you are using. This also means that you do not type in anything instead of self. I.e. if you see the method this_is_a_fake_method(self), you don't need to type in anything between the parenthesis. If you instead have this_is_a_fake_method(self, par1, par2), you will need to put in 2 parameters, corresponding to par1 and par2.
 
-First, we are going to create a Seq object. To create a Seq object, we need a string and an alphabet. Strings are built in, so we only need to import an alphabet before creating our object.
+First, we are going to create a new Seq. To do that, we need a string and an alphabet. Strings are built in, so we only need to import an alphabet before creating our object.
 
 ```python
 from Bio.Alphabet import IUPAC
 my_seq = Seq("ATGGCC", IUPAC.unambiguous_dna)
 ```
-Now, use the following methods on the my_seq seq: transcribe(), translate(), complement(), reverse_complement()
+Now, use the following methods on the my_seq seq: my_seq.transcribe(), my_seq.translate(), my_seq.complement(), my_seq.reverse_complement().
 
 Next, create an mRNA string instead. Make sure you use Us instead of Ts, and use the unambigous_rna alphabeth. Try out the various methods again. 
 
@@ -69,11 +69,11 @@ from Bio.SeqRecord import SeqRecord
 help(SeqRecord)
 
 ```
-Question: can you figure out how many mandatory attributes this class has?  
+Question: can you figure out what kind of data you need to have to create a SeqRecord? 
 
 As you can see, many of the methods are simply the same methods as for Seq.
 
-Let's create a SeqRecord. The only thing you need to create a Seq object however is a Seq, and a text string that will become the id.
+Let's create a SeqRecord. The only thing you need to create a SeqRecord is a Seq, and a text string that will become the id.
 
 ```python
 seq_record = SeqRecord(seq = my_seq, id = "MyID")
@@ -90,12 +90,12 @@ protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF",
                     description="toxic membrane protein")
 ```
 
-You will now try to access all of the attributes that this object has. Hint: to get to the id, you would type in `protein_record.id`.
+You will now try to access all of the data that is stored in this SeqRecord. Hint: to get to the id, you would type in `protein_record.id`.
 
 
 ### Using SeqIO ###
 
-First, from now on we are working in a script file. So, the code below goes in a file that you save and then run.
+First, from now on we are working in a script file. So, the code below goes in a file that you save and then run with python27 if you are on the windows machines at the university.
 
 Second, go to this page [this genbank file](macaca.gbk), copy the contents and  and save it in a file in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
 
@@ -118,7 +118,7 @@ fh.close()
 
 We are now going to explore this genbank file.
 
-First, add `print gbk`, save and run.
+First, add `print gbk` at the bottom of the file, then save and run.
 
 Question: can you figure out what the id of this sequence is?
 Question: can you figure out which species this sequence is from?
@@ -132,7 +132,7 @@ Fourth, remove the line specified above, add `print gbk.annotations["organism"]`
 
 ### Add organism name to fasta description line
 
-Our goal now is to create script so that it will take a genbank file in, access the organism name and add it to the fasta description name, and then print this out in fasta format.  As you saw with the script above, you can do that by accessing the annotations of the 
+Our goal now is to create a script so that it can read a genbankk file, access the organism name and add it to the fasta description name, and then print this out in fasta format.  As you saw with the script above, you can do that by accessing the annotations of the genbank record.
 
 #### Reading in files ####
 
