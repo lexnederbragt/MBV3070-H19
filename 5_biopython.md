@@ -97,7 +97,7 @@ You will now try to access all of the data that is stored in this SeqRecord. Hin
 
 First, from now on we are working in a script file. So, the code below goes in a file that you save and then run with python27 if you are on the windows machines at the university.
 
-Second, go to this page [this genbank file](macaca.gbk), copy the contents and  and save it in a file in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
+Second, go to this page [this genbank file](macaca.gbk). Click on "Raw", you should now get it up in a separate window. Copy the contents and  and save it in a file in the same place as you saved other files. Save it as macaca.gbk. This file contains only one genbank entry - we are going to have a look at it.
 
 Take the code shown below, and save it in a file. We are going to explore the genbank file by gradually expanding on this script. 
 
