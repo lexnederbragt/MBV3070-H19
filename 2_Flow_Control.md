@@ -174,8 +174,8 @@ for key in codondict:
 ```
 This way we see both the keys and their values.
 
-range() - create list of numbers
-===========
+# range() - create list of numbers
+
 
 With the range command, we can create a list of numbers that we can use in for loops:
 
