@@ -14,7 +14,7 @@ Note: for now we are working in the interactive shell.
 
 You are first going to figure out what we can do with a string stored as a Seq. To find all the methods for a specify type, do help(type_name).
 
-```python
+```Python
 from Bio.Seq import Seq
 help(Seq)
 ```
@@ -33,7 +33,7 @@ When you see methods described here, you will always as a parameter to the funct
 
 First, we are going to create a new Seq. To do that, we need a string and an alphabet. Strings are built in, so we only need to import an alphabet before creating our object.
 
-```python
+```Python
 from Bio.Alphabet import IUPAC
 my_seq = Seq("ATGGCC", IUPAC.unambiguous_dna)
 ```
@@ -64,7 +64,7 @@ SeqRecords hold not only the Seq, but also metadata.
 
 First, let's import them and see what help says about them:
 
-```python
+```Python
 from Bio.SeqRecord import SeqRecord
 help(SeqRecord)
 
@@ -75,7 +75,7 @@ As you can see, many of the methods are simply the same methods as for Seq.
 
 Let's create a SeqRecord. The only thing you need to create a SeqRecord is a Seq, and a text string that will become the id.
 
-```python
+```Python
 seq_record = SeqRecord(seq = my_seq, id = "MyID")
 ```
 
@@ -83,7 +83,7 @@ Print seq_record, and see what you come up with.
 
 Let us create a slightly more complicated one:
 
-```python
+```Python
 protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF",
                     IUPAC.protein),
                     id="YP_025292.1", name="HokC",
@@ -102,7 +102,7 @@ Second, go to this page [this genbank file](macaca.gbk). Click on "Raw", you sho
 Take the code shown below, and save it in a file. We are going to explore the genbank file by gradually expanding on this script. 
 
 
-```python
+```Python
 import sys
 from Bio import SeqIO # Have to import the module to have access to it.
 
@@ -140,7 +140,7 @@ We first need a genbank file to work with. Save this file as before [this one](m
 
 Next, save the following in a script file named name_with_organism.py
 
-```python
+```Python
 import sys
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
@@ -171,7 +171,7 @@ Question: In a string with two words, what do you use to get at only the last wo
 
 We are now going to create a new id for each entry. This can be done by doing this:
 
-```python
+```Python
    # Note: we are now inside the for loop
    organism = record.annotations['organism']
    species_name = organism.split()[1]
@@ -187,7 +187,7 @@ We are now going to write this out to file. We now need to also have an out file
 
 Look at this example and figure out which portions of this you need in your own script:
 
-```python
+```Python
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 

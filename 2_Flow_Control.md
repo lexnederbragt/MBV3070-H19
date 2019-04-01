@@ -15,7 +15,7 @@ For some exercises, the code is commented. Comments begin with a # sign, and any
 
 A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of the ways of comparing things are similar to those found in other languages.
 
-```python
+```Python
 a = 1
 b = 2
 print(a == b) # are the two the same?
@@ -28,7 +28,7 @@ print(a != b) # is a not equal to b?
 
 Note, we can also test the results of doing something, like this:
 
-```python
+```Python
 word = "Hello"
 print(len(word) < 10) # is the length of this word shorter than 10?
 beatles=["George", "Ringo","John", "Paul"]
@@ -38,7 +38,7 @@ print(len(beatles) == 4) # are there four members in beatles?
 However, python has other equivalence test statements that are fairly
 unique to python. To check whether an object is contained in a list:
 
-```python
+```Python
 beatle="John"
 beatles=["George", "Ringo","John", "Paul"]
 print(beatle in beatles) # is John in the list beatles?
@@ -47,7 +47,7 @@ print("Tom" in beatles) # is there somebody in the list beatles called Tom?
 
 We can also combine these with and, or and not. Let's see how this works:
 
-```python
+```Python
 beatle="John"		
 beatles=["George", "Ringo","John", "Paul"]
 print(beatle)
@@ -68,7 +68,7 @@ If statements are a way to select which parts of a piece of code that should be 
 To do the following part, exit the interactive shell by using Ctrl-z, and then pressing enter. Use Notepad++ to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python27 yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment out what you don't want to run. Do that by putting a # in front of any lines that should not be run.
 
 
-```python
+```Python
 i = 4
 sign = "zero"
 
@@ -98,7 +98,7 @@ The goal for this task is to figure out if a piece of DNA contains more than 50%
 
 Below is skeleton script that will do this. Save this in a file that you will name GCdecider.py. Figure out what each line of code should do, and fill in the missing text. Try to run it, does it work?
 
-```python
+```Python
 ___ = "ATGGCATGGCATGGC"
 g = dna._____("G")
 c = ___.count(_)
@@ -115,7 +115,7 @@ Above, the text string you calculated the GC content on was writtien into the sc
 
 Create a script that is called "sys-test.py". Put the following content into it:
 
-```python
+```Python
 import sys
 print(sys.argv)
 for element in sys.argv:
@@ -143,7 +143,7 @@ Hint: you need to include the first and the last line of the sys-test script.
 
 Let's start with a very simple list, and see how **for** behaves. To do this part, go back to the interactive shell.
 
-```python
+```Python
 forlist = [1, 2 ,3,"a", 5, 9, "c"]
 for elem in forlist:
     print(elem)
@@ -151,7 +151,7 @@ for elem in forlist:
 
 We can also create what is called nested for loops, this is when we have a loop within another one:
 
-```python
+```Python
 numbers = [1, 2, 3, 4, 5]
 words = ["green plants", "yellow sun", "blue water"]
 for num in numbers:
@@ -164,7 +164,7 @@ Explain to yourself what happens here. How are the elements from each of the two
 
 With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys in a dictionary work like a list.
 
-```python
+```Python
 codondict = {}
 codondict["UUU"] = "F"
 codondict["ACA"] = "T"
@@ -179,7 +179,7 @@ range() - create list of numbers
 
 With the range command, we can create a list of numbers that we can use in for loops:
 
-```python
+```Python
 numbers = range(10)
 print(numbers)
 ```
@@ -188,14 +188,14 @@ With this way of writing it, range will produce numbers from 0 to the number in 
 
 We can also specify where it should start, and also the step size between the numbers:
 
-```python
+```Python
 numbers = range(0, 12, 3)  # start, stop, step size
 print(numbers)
 ```
 
 With this construct, we have a way of grabbing each codon in a piece of DNA:
 
-```python
+```Python
 dna = "ATGGCATGGCATGGC"
 dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size
@@ -211,7 +211,7 @@ For this part, use Notepad++ and run your script on the command line.
 
 Last week we translated proteins manually. Now, we can do it a bit more efficiently. First, let's define a dictionary which can translate between them, and a DNA string to translate:
 
-```python
+```Python
 import sys
 codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
                "AAC":"N", "CGA":"R", "CAG":"Q", "TGA": "*"}
@@ -220,7 +220,7 @@ dna = sys.argv[1]
 
 First, define a new variable that will contain the protein string. Then we need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. We use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string.
 
-```python
+```Python
 protein = ""
 dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size

@@ -101,7 +101,7 @@ We are now going to see how we can read and write to files. Note: use Notepad++ 
 
 We are now going to read in the "translationtable.txt" file, and create a dictionary from it.
 
-```python
+```Python
 import sys
 fh = open(sys.argv[1], "r") # the translation table file
 lines = fh.readlines()
@@ -117,7 +117,7 @@ Next, we are going to use a for loop to read in all the entries into a dictionar
 
 Remove the print lines in the code above, and add the following code below:
 
-```python
+```Python
 codon_table = {}
 for line in lines:
     without_newline = line.replace("\n", "")
@@ -142,7 +142,7 @@ We now have a codon to amino acid mapping dictionary. The file "hbb.fsa" that yo
 
 First, we need to read in the file. Remove the print statement from the code above, and add this to your script file:
 
-```python
+```Python
 fh = open(sys.argv[2], "r") # now need to add the hbb.fsa file to the command line.
 lines = fh.readlines()
 print(lines)
@@ -153,7 +153,7 @@ So, now we have a list containing all of the lines in this file. Now we need to 
 
 Below is the code necessary to read in the fasta file, with some text replaced with underscores. Figure out how this should be and add the following to your existing script. Remember, remove any print statements from the code above first.
 
-```python
+```Python
 mRNA = "" # create empty string to contain the mRNA
 for line __ lines[__]:
 	text = line.replace(____, __)
@@ -173,7 +173,7 @@ So, now we have the translation table, and the mRNA. Now we are going to transla
 
 Again the code below has some underscores in it that has to be replaced. A lot of this are things you saw in the previous exercise. Figure out what goes instead of the underscore and place this code below the rest of what you already have. Also, remove any print statements above this code.
 
-```python
+```Python
 protein = ""
 dnalen = len(____)-2
 numbers = range(0, ____, 3)  # start, stop, step size
@@ -190,7 +190,7 @@ Question: what happens in the three lines inside the for loop?
 
 Last, but not least, let's get this output to file. Let's first figure out how to get it nicely formatted. In this case, in our file we should have a header line followed by the amino acids, 60 per line. 
 
-```python
+```Python
 output = lines[0] # we first add the header from the mRNA file
 proteinlen = len(protein)
 numbers = range(0, proteinlen, 60)  # start, stop, step size
@@ -202,7 +202,7 @@ Question: can you identify where in the code the fasta description line comes fr
 
 So, now we have the output we want, and we can print it to a file. We first open it, then write to it, and then close it again. Again, remove any print statements.
 
-```python
+```Python
 fo = open(sys.argv[3], "w") # output file name.
 fo.write(output)
 fo.close()

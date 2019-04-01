@@ -12,7 +12,7 @@ NOTE: you are supposed to fill in some code for each function. Hint: you should 
 
 Put the following code in a script file named translate_module.py
 
-```python
+```Python
 import sys
 
 def read_fasta(lines):
@@ -117,7 +117,7 @@ Towards the end of the file, we have the following line: "if __name__ == "__main
 We are now going to import these functions into a different script - call this translate_usemodule.py. Note, when we do `import modulename`, we have to prepend the function with the module name, like this: modulename.functionname.
 
 
-```python
+```Python
 import sys
 import translate_module
 fh = open(sys.argv[1], "r")
