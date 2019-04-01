@@ -1,0 +1,10 @@
+.ipynb_*/
+*.dlog
+*.dlog
+*.exerinfo
+ipynb-*-src.tar.gz
+.*_html_file_collection
+.DS_Store
+tmp_preprocess__*
+.ipynb_checkpoints/
+__pycache__/
