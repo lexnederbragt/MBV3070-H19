@@ -1,14 +1,6 @@
 # Python 2 : Control flow - Boolean expressions, if statements and for loops.
 ## Howto
 
-Note: for the first part of this exercise, use the interactive shell directly, and type in commands there. You can start the interpreter like this:
-
-  * click the start button
-  * type in cmd in the small window at the bottom
-  * press enter
-
-You will now have a black window on your screen. You can type things in here, after the arrow symbol. To run a python script, or to run the python interactive shell, type in **python27**.
-
 For some exercises, the code is commented. Comments begin with a # sign, and anything after that is ignored. You do not need to type in the # and anything after.
 
 ## Boolean expressions

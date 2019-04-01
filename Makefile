@@ -6,5 +6,5 @@ all: ${TARGETS}
 test:
 	@echo ${TARGETS}
 
-%.ipynb: %.do.txt
+%.ipynb: %.do.txt %.md
 	doconce format ipynb $< --markdown
