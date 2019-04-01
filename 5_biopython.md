@@ -148,7 +148,7 @@ from Bio.SeqRecord import SeqRecord
 fh = open(sys.argv[1], "r")
 
 for record in SeqIO.parse(fh, "genbank"):
-    print record.id
+    print(record.id)
 
 fh.close()
 ```

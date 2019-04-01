@@ -13,26 +13,26 @@ For some exercises, the code is commented. Comments begin with a # sign, and any
 
 ## Boolean expressions
 
-A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of the ways of comparing things are similar to those found in other languages. 
+A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of the ways of comparing things are similar to those found in other languages.
 
 ```python
 a = 1
 b = 2
-print a == b # are the two the same?
-print a < b  # is a less than b?
-print a <= b # is a less than or equal to b?
-print a > b # is a larger than b?
-print a >= b # is a larger or greater than b?
-print a != b # is a not equal to b?
+print(a == b) # are the two the same?
+print(a < b) # is a less than b?
+print(a <= b) # is a less than or equal to b?
+print(a > b) # is a larger than b?
+print(a >= b) # is a larger or greater than b?
+print(a != b) # is a not equal to b?
 ```
 
 Note, we can also test the results of doing something, like this:
 
 ```python
 word = "Hello"
-print len(word) < 10 # is the length of this word shorter than 10?
+print(len(word) < 10) # is the length of this word shorter than 10?
 beatles=["George", "Ringo","John", "Paul"]
-print len(beatles) == 4 # are there four members in beatles?
+print(len(beatles) == 4) # are there four members in beatles?
 ```
 
 However, python has other equivalence test statements that are fairly
@@ -41,8 +41,8 @@ unique to python. To check whether an object is contained in a list:
 ```python
 beatle="John"
 beatles=["George", "Ringo","John", "Paul"]
-print beatle in beatles # is John in the list beatles? 
-print "Tom" in beatles # is there somebody in the list beatles called Tom?
+print(beatle in beatles) # is John in the list beatles?
+print("Tom" in beatles) # is there somebody in the list beatles called Tom?
 ```
 
 We can also combine these with and, or and not. Let's see how this works:
@@ -50,14 +50,14 @@ We can also combine these with and, or and not. Let's see how this works:
 ```python
 beatle="John"		
 beatles=["George", "Ringo","John", "Paul"]
-print beatle
-print beatle in beatles
-print len(beatles) == 4
-print beatle in beatles and len(beatles) == 4 # is "John" in beatles, and are there four entries (members) in the beatles list?
-print len(beatles) > 4 # are there more than four members in the beatles list?
-print beatle in beatles or len(beatles) > 4 # is "John" in beatles, or are are there more than 4 members in the list?
-print len(beatles) > 3 # are there more than three members in the beatles list?
-print beatle in beatles or not len(beatles) >3  # is "John" in beatles, or not more than 3 memebers in beathes
+print(beatle)
+print(beatle in beatles)
+print(len(beatles) == 4)
+print(beatle in beatles and len(beatles) == 4) # is "John" in beatles, and are there four entries (members) in the beatles list?
+print(len(beatles) > 4) # are there more than four members in the beatles list?
+print(beatle in beatles or len(beatles) > 4) # is "John" in beatles, or are are there more than 4 members in the list?
+print(len(beatles) > 3) # are there more than three members in the beatles list?
+print(beatle in beatles or not len(beatles) >3)  # is "John" in beatles, or not more than 3 members in beathes
 ```
 
 ## If statements
@@ -77,26 +77,26 @@ if i < 0: #the if statement begins here
 elif i > 0:
     sign = "positive"
 else:
-    print "Sign must be zero"
-    print "Have a nice day" # and ends here
+    print("Sign must be zero")
+    print("Have a nice day") # and ends here
 
-print sign
+print(sign)
 ```
 
 Question: what is printed at the end when this piece of code is run?
 
 Question: figure out what you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"?
 
-Note, Python uses **indentation** to delimit code blocks. The indentation above is NOT just to make things look pretty - it tells Python what the body of the if-statement is. This is true whenever we create any code blocks. 
+Note, Python uses **indentation** to delimit code blocks. The indentation above is NOT just to make things look pretty - it tells Python what the body of the if-statement is. This is true whenever we create any code blocks.
 
 
 ### Task: GCdecider.py - Figuring out if a DNA string has more or less than 50 % GC content.
 
-Use the slides from last week, and look at the exercises from last week too. 
+Use the slides from last week, and look at the exercises from last week too.
 
 The goal for this task is to figure out if a piece of DNA contains more than 50% GCs or not. This basically means counting the number of Gs and Cs and figuring out if these together make up more than 50% of the number of nucleotides in the string.
 
-Below is skeleton script that will do this. Save this in a file that you will name GCdecider.py. Figure out what each line of code should do, and fill in the missing text. Try to run it, does it work? 
+Below is skeleton script that will do this. Save this in a file that you will name GCdecider.py. Figure out what each line of code should do, and fill in the missing text. Try to run it, does it work?
 
 ```python
 ___ = "ATGGCATGGCATGGC"
@@ -104,9 +104,9 @@ g = dna._____("G")
 c = ___.count(_)
 gc = (g + c)*100.0/___(____)
 if ______:
-    print "GC content is above or equal to 50%"
+    print("GC content is above or equal to 50%")
 else:
-    print "GC content is below 50%"
+    print("GC content is below 50%")
 ```
 
 ## Getting input from the command line
@@ -117,14 +117,14 @@ Create a script that is called "sys-test.py". Put the following content into it:
 
 ```python
 import sys
-print sys.argv
+print(sys.argv)
 for element in sys.argv:
-    print element
-print sys.argv[1]
+    print(element)
+print(sys.argv[1])
 ```
 Run the commands shown below on the command line:
 
-  * python27 sys-test.py 1 
+  * python27 sys-test.py 1
   * python27 sys-test first second
   * python27 sys-test.py 1 2 3 4
   * python27 sys-test.py
@@ -139,14 +139,14 @@ Hint: you need to include the first and the last line of the sys-test script.
 
 ## For Loops with lists
 
-**for** loops in python are used to iterate over collections of things (they can be used for much more, but for now this definition will do). 
+**for** loops in python are used to iterate over collections of things (they can be used for much more, but for now this definition will do).
 
 Let's start with a very simple list, and see how **for** behaves. To do this part, go back to the interactive shell.
 
 ```python
 forlist = [1, 2 ,3,"a", 5, 9, "c"]
 for elem in forlist:
-    print elem
+    print(elem)
 ```
 
 We can also create what is called nested for loops, this is when we have a loop within another one:
@@ -156,13 +156,13 @@ numbers = [1, 2, 3, 4, 5]
 words = ["green plants", "yellow sun", "blue water"]
 for num in numbers:
     for word in words:
-        print num, word
+        print(num, word)
 ```
 Explain to yourself what happens here. How are the elements from each of the two lists combined?
 
 ## For Loops with Dictionaries
 
-With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys in a dictionary work like a list. 
+With a list, then, it's clear that we can use the **in** keyword to indicate a list of things, and that we can create nested loops. How do we use use for loops with dicionaries? The clue here is to remember that the keys in a dictionary work like a list.
 
 ```python
 codondict = {}
@@ -170,7 +170,7 @@ codondict["UUU"] = "F"
 codondict["ACA"] = "T"
 codondict["CGG"] = "R"
 for key in codondict:
-    print key, codondict[key]
+    print(key, codondict[key])
 ```
 This way we see both the keys and their values.
 
@@ -181,16 +181,16 @@ With the range command, we can create a list of numbers that we can use in for l
 
 ```python
 numbers = range(10)
-print numbers
+print(numbers)
 ```
 
-With this way of writing it, range will produce numbers from 0 to the number in the parenthesis. 
+With this way of writing it, range will produce numbers from 0 to the number in the parenthesis.
 
 We can also specify where it should start, and also the step size between the numbers:
 
 ```python
 numbers = range(0, 12, 3)  # start, stop, step size
-print numbers
+print(numbers)
 ```
 
 With this construct, we have a way of grabbing each codon in a piece of DNA:
@@ -199,11 +199,11 @@ With this construct, we have a way of grabbing each codon in a piece of DNA:
 dna = "ATGGCATGGCATGGC"
 dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size
-print numbers
+print(numbers)
 for index in numbers:
-    print dna[index:index+3]
+    print(dna[index:index+3])
 ```
-We can now use this to translate a protein. 
+We can now use this to translate a protein.
 
 ## Translate proteins
 
@@ -218,7 +218,7 @@ codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
 dna = sys.argv[1]
 ```
 
-First, define a new variable that will contain the protein string. Then we need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. We use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string. 
+First, define a new variable that will contain the protein string. Then we need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. We use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string.
 
 ```python
 protein = ""
@@ -228,7 +228,7 @@ for index in numbers:
     codon = dna[index:index+3]
     aa = codon_table[codon]
     protein = protein + aa
-print protein
+print(protein)
 ```
 
 Try running this script with this string: ATGCAGAACATA
@@ -236,12 +236,10 @@ Try running this script with this string: ATGCAGAACATA
 
 ## Task: Stop at stop codon.
 
-Let's say you have a different DNA string, ACACAGCGAAACTGAACAATG. 
+Let's say you have a different DNA string, ACACAGCGAAACTGAACAATG.
 
-First, try running the script above with this string instead of the other one. 
+First, try running the script above with this string instead of the other one.
 
 As you might see, you now get a stop codon in the code.
 
 Figure out how you can use an if statement inside of the loop to skip over the stop codon. Hint: instead of focusing on what you do if you see that stop codon, focus on what you do if a codon is not a stop codon.
-
-

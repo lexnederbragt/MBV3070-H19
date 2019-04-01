@@ -31,15 +31,15 @@ See the three >? You type in your commands after that.
 The interpreter can be used as a calculator:
 
 ```python
-print 2 + 2
-print 2*8
+print(2 + 2)
+print(2*8)
 ```
 
 We can also work with strings in python:
 
 ```python
-print "Hello world!"
-print 'Ada ' + 'Lovelace'
+print("Hello world!")
+print('Ada ' + 'Lovelace')
 ```
 Strings can actually be added together.
 
@@ -57,10 +57,10 @@ Strings can be created by putting single, double or triple quotation marks aroun
 We will first count the number of Cs, replace a T with a U, split the text on whitespace and then find the occurrence of the first C.
 
 ```python
-print "ATG GGC ATG GGC".count("C")
-print "ATG GGC ATG GGC".replace("T", "U")
-print "ATG GGC ATG GGC".split()
-print "ATG GGC ATG GGC".find("C")
+print("ATG GGC ATG GGC".count("C"))
+print("ATG GGC ATG GGC".replace("T", "U"))
+print("ATG GGC ATG GGC".split())
+print("ATG GGC ATG GGC".find("C"))
 ```
 
 Question: Why the first C is in position 6?  
@@ -77,17 +77,17 @@ When you give a variable a value, you are assigning that value to that variable.
 
 ```python
 a = 1
-print a
+print(a)
 a = 'pigeon'
-print a
+print(a)
 a = 2 + 7 
-print a
+print(a)
 ```
 
 Variables can be thought of being labels on values - you can move the label onto a different value. However, beware that Python does not assume any default values for variables - you have to assign them before use:
 
 ```python
-print b
+print(b)
 ```
 Question: what happened when you typed in b, without assigning a value to b first?
 
@@ -98,15 +98,15 @@ When working with strings, it is important to note that a string is immutable, i
 ```python
 first_string = "ATCATCATC"
 first_string.replace("T", "U")
-print first_string
+print(first_string)
 ```
 
 As you can see, the string itself has not changed! If you want to modify a string, you need to assign the modified string to a new variable.
 
 ```python
 second_string = first_string.replace("T", "U")
-print second_string
-print first_string
+print(second_string)
+print(first_string)
 ```
 
 As you can see, second_string now contains the modified string, while first_string remains the same.
@@ -119,7 +119,7 @@ Python also has what is called strong typing, this means that python will protes
 ```python
 string = "green"
 number = 4
-print string + number 
+print(string + number )
 ```
 
 ## Type conversion
@@ -127,9 +127,9 @@ print string + number
 Sometimes a number can be interpreted as a text string when you need it to work as a number. This can be fixed by converting it to an integer (a whole number). We can also convert to decimal numbers - floats. These have a decimal point in them.
 
 ```python
-print int('2') + 3
-print '2' + str('3')
-print string + str(number)
+print(int('2') + 3)
+print('2' + str('3'))
+print(string + str(number))
 ```
 
 ### Task: Finding the GC content of a string
@@ -144,7 +144,7 @@ g = ___.count(___)
 c = DNA.___(___)
 gc_count = _ + _
 
-print "GC count: ", ____
+print("GC count: ", ____)
 ```
 
 Qestion: How much GC did the sequence have?

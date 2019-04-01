@@ -36,7 +36,7 @@ A list can be sorted in place, like this:
 
 ```python
 at_content.sort()
-print at_content
+print(at_content)
 ```
 
 
@@ -46,14 +46,14 @@ We can add to the list by using append:
 
 ```python
 at_content.append(0.4)
-print at_content
+print(at_content)
 ```
 Let's say we have multiple values we want to add. These are kept in a separate list. There are two ways of adding to a list, append and extend. Let's try both:
 
 ```python
 add_items = [0.1, 0.2]
 at_content.append(add_items)
-print at_content
+print(at_content)
 ```
 
 Question: what happened here?
@@ -72,31 +72,31 @@ Let's first recreate the at_content list:
 
 ```python
 at_content = [0.5, 0.4, 0.3, 0.8, 0.6]
-print at_content
+print(at_content)
 ```
 
 We can access elements in lists and strings using indices. Python indices go from zero. Therefore, to find the value of the first item in at_content, we do this:
 
 ```python
-print at_content[0]
+print(at_content[0])
 ```
 
 And to find the value of the third item
 
 ```python
-print at_content[2]
+print(at_content[2])
 ```
 
 Lists can be indexed from the end using a negative index. The last item of at_content is accessed like this:
 
 ```python
-print at_content[-1]
+print(at_content[-1])
 ```
 
 and the next-to-last
 
 ```python
-print at_content[-2]
+print(at_content[-2])
 ```
 
 ### Slicing
@@ -104,13 +104,13 @@ print at_content[-2]
 You can "slice" items from within a list. Lets say we wanted the second through fourth items from at_content
 
 ```python
-print at_content[1:4]
+print(at_content[1:4])
 ```
 
 Or from the third item to the end
 
 ```python
-print at_content[2:]
+print(at_content[2:])
 ```
 
 and so on.
@@ -132,8 +132,8 @@ Let's make a string and figure out whether certain things are in the string:
 
 ```python
 teststring = "AUGUAGGGAUGG"
-print "A" in teststring
-print "AUG" in teststring
+print("A" in teststring)
+print("AUG" in teststring)
 ```
 Question: can you find out if there were any Ts in this string? If there are none, what does that tell you?
 
@@ -146,7 +146,7 @@ First with lists:
 ```python
 list1 = ["A", "B", "C", "D"]
 list2 = [1, 2, 3, 4]
-print list1 + list2
+print(list1 + list2)
 ```
 
 and now for strings:
@@ -154,7 +154,7 @@ and now for strings:
 ```python
 text1 = "Watson"
 text2 = "Crick"
-print text1 + text2
+print(text1 + text2)
 ```
 
 Question: what would you do to the strings above to introduce a space between Watson and Crick?
@@ -164,22 +164,22 @@ Question: what would you do to the strings above to introduce a space between Wa
 Sometimes you want to know how many items are in a list. Use the len command.
 
 ```python
-print len(at_content)
+print(len(at_content))
 ```
 
 Next, we can find the minimum and the maximum of at_content.
 
 ```python
-print min(at_content)
-print max(at_content)
+print(min(at_content))
+print(max(at_content))
 ```
 
 NOTE: when using min and max on a string, the min and max are found by looking at each character in lexicographic order. Let's try:
 
 ```python
 mytext = "TtAaGgCc"
-print min(mytext)
-print max(mytext)
+print(min(mytext))
+print(max(mytext))
 ```
 
 ### Task: Open reading frame G count
@@ -221,13 +221,13 @@ So, let's manipulate this dictionary a bit.
 A dictionary is often used to look up the value of a certain key. In this case, let's find out which amino acid you would get from ATA:
 
 ```python
-print codon_table["ATA"]
+print(codon_table["ATA"])
 ```
 
 Let's try another one, CCG:
 
 ```python
-print codon_table["CCG"]
+print(codon_table["CCG"])
 ```
 Oups -  that did not work did it? Can you figure out what went wrong?
 
@@ -236,8 +236,8 @@ Oups -  that did not work did it? Can you figure out what went wrong?
 From the last example it seems it would be useful to be able to tell whether a key is part of a dictionary. We can do this using the in operator, just like we did for lists:
 
 ```python
-print "AAC" in codon_table
-print "CCG" in codon_table
+print("AAC" in codon_table)
+print("CCG" in codon_table)
 ```
 
 So, CCG is not in the table. Let's add it. CCG codes for P, proline. Adding a new key-value pair to a dictionary simply means defining it:
@@ -249,13 +249,13 @@ codon_table["CCG"] = "P"
 Let's now look at what we have in the dictionary:
 
 ```python
-print codon_table
+print(codon_table)
 ```
 
 As you can see the new codon is in there. Let's redo the test, just to make sure our eyes are not deceiving us:
 
 ```python
-print "CCG" in codon_table
+print("CCG" in codon_table)
 ```
 
 ###Keys and values
@@ -263,8 +263,8 @@ print "CCG" in codon_table
 We can access all the keys and the values of a dictionary using the keys() and the values() methods:
 
 ```python
-print codon_table.keys()
-print codon_table.values()
+print(codon_table.keys())
+print(codon_table.values())
 ```
 ## Finding out more
 
@@ -294,7 +294,7 @@ seq = "ATTATGAGATTACAGAGCTAAGAC"
 mrna = seq._______("T", "U")
 start = mrna.find("___")
 stop = mrna.____("UAA")
-print mrna[_____:stop]
+print(mrna[_____:stop])
 ```
 
 Use notepad to create the completed script. Copy-paste one line at the time into the interpreter to run it. 

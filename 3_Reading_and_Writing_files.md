@@ -105,8 +105,8 @@ We are now going to read in the "translationtable.txt" file, and create a dictio
 import sys
 fh = open(sys.argv[1], "r") # the translation table file
 lines = fh.readlines()
-print lines
-print len(lines)
+print(lines)
+print(len(lines))
 fh.close()
 ```
 
@@ -125,7 +125,7 @@ for line in lines:
     codon = fields[0]
     aminoacid = fields[1]
     codon_table[codon] = aminoacid
-print codon_table
+print(codon_table)
 ```
 
 But note: you will see that you actually also get the first line of the file in here - this is no codon-amino acid pair. 
@@ -145,7 +145,7 @@ First, we need to read in the file. Remove the print statement from the code abo
 ```python
 fh = open(sys.argv[2], "r") # now need to add the hbb.fsa file to the command line.
 lines = fh.readlines()
-print lines
+print(lines)
 fh.close()
 ```
 
@@ -158,7 +158,7 @@ mRNA = "" # create empty string to contain the mRNA
 for line __ lines[__]:
 	text = line.replace(____, __)
 	mRNA = mRNA + ____
-print mRNA
+print(mRNA)
 ```
 
 Question: what are we removing from the variable line, and why?
@@ -181,7 +181,7 @@ for index in _______:
     codon = mRNA[_____:index+3]
     aa = codon_table[_____]
     protein = _______ + aa
-print protein
+print(protein)
 ```
 Question: what are we subtracting from the length of the mRNA? What is the consequence of this?
 Question: what happens in the three lines inside the for loop?
@@ -196,7 +196,7 @@ proteinlen = len(protein)
 numbers = range(0, proteinlen, 60)  # start, stop, step size
 for index in numbers:
     output = output + protein[index:index+60] + "\n"
-print output
+print(output)
 ```
 Question: can you identify where in the code the fasta description line comes from?
 

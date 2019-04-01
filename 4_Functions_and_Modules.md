@@ -129,7 +129,7 @@ fh.close()
 header = fastalines[0]
 sequence = translate_module.read_fasta(fastalines)
 fastastring = translate_module.create_fasta_string(header, sequence)
-print fastastring
+print(fastastring)
 
 fo = open(sys.argv[2], "w") 
 fo.write(fastastring)
