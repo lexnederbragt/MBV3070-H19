@@ -1,0 +1,17 @@
+======= Week 1 =======
+
+!split
+# #include "EXDIR/01_scientific_calculator/typeconversion01.do.txt"
+
+!split
+# #include "EXDIR/01_scientific_calculator/Variables08.do.txt"
+
+!split
+# #include "EXDIR/01_scientific_calculator/order_operations2.do.txt"
+
+!split
+# #include "EXDIR/01_scientific_calculator/Variables11.do.txt"
+
+
+!split
+# #include "EXDIR/02_bacterial_growth_analysis/liste_blank.do.txt"

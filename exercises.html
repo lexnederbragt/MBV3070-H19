@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+
+<title></title>
+
+
+
+
+
+
+
+
+
+<!-- deck.js: https://github.com/imakewebthings/deck.js -->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=1024, user-scalable=no">
+
+<!-- Required stylesheet -->
+<link rel="stylesheet" href="deck.js/core/deck.core.css">
+
+<!-- Extension CSS files go here. Remove or add as needed.
+deck.goto: Adds a shortcut key to jump to any slide number.
+Hit g, type in the slide number, and hit enter.
+
+deck.hash: Enables internal linking within slides, deep
+linking to individual slides, and updates the address bar and
+a permalink anchor with each slide change.
+
+deck.menu: Adds a menu view, letting you see all slides in a grid.
+Hit m to toggle to menu view, continue navigating your deck,
+and hit m to return to normal view. Touch devices can double-tap
+the deck to switch between views.
+
+deck.navigation: Adds clickable left and right buttons for the
+less keyboard inclined.
+
+deck.status: Adds a page number indicator. (current/total).
+
+deck.scale: Scales each slide to fit within the deck container
+using CSS Transforms for those browsers that support them.
+
+deck.pointer: Turn mouse into laser pointer (toggle with p).
+(Requires https://github.com/mikeharris100/deck.pointer.js)
+-->
+
+<link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+<link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+<link rel="stylesheet" href="deck.js/extensions/scale/deck.scale.css">
+<link rel="stylesheet" href="deck.js/extensions/pointer/deck.pointer.css">
+<link rel="stylesheet" href="deck.js/extensions/notes/deck.notes.css">
+<!--
+<link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+<link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+<link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+-->
+
+<!-- Style theme. More available in themes/style/ or create your own. -->
+<link rel="stylesheet" href="deck.js/themes/style/swiss.css">
+
+<!--
+<link rel="stylesheet" href="deck.js/themes/style/neon.css">
+<link rel="stylesheet" href="deck.js/themes/style/swiss.css">
+<link rel="stylesheet" href="deck.js/themes/style/web-2.0.css">
+
+git clone git://github.com/duijf/mnml.git
+<link rel="stylesheet" href="deck.js/themes/style/mnml.css">
+
+git://github.com/groovecoder/deckjs-theme-mozilla.git
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.aurora.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.dark.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.default.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.firefox.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.light.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.mdn.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.nightly.css">
+<link rel="stylesheet" href="deck.js/themes/style/sandstone.cbc.css">
+
+git://github.com/barraq/deck.ext.js.git
+<link rel="stylesheet" href="deck.js/themes/style/beamer.css">
+-->
+
+<!--
+Transition theme. More available in /themes/transition/ or create your own. -->
+<!--
+<link rel="stylesheet" href="deck.js/themes/transition/horizontal-slide.css">
+<link rel="stylesheet" href="deck.js/themes/transition/fade.css">
+<link rel="stylesheet" href="deck.js/themes/transition/vertical-slide.css">
+<link rel="stylesheet" href="deck.js/themes/transition/horizontal-slide.css">
+-->
+
+<!-- Required Modernizr file -->
+<script src="deck.js/modernizr.custom.js"></script>
+
+<style type="text/css">
+/* Override h1, h2, ... styles */
+h1 { font-size: 2.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h1, h2, h3, h4 { font-weight: bold; line-height: 1.2; }
+body { overflow: auto; } /* vertical scrolling */
+
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.slide .alert-text-small   { font-size: 80%;  }
+.slide .alert-text-large   { font-size: 130%; }
+.slide .alert-text-normal  { font-size: 90%;  }
+.slide .alert {
+     padding:8px 35px 8px 14px; margin-bottom:18px;
+     text-shadow:0 1px 0 rgba(255,255,255,0.5);
+     border:5px solid #bababa;
+       -webkit-border-radius:14px; -moz-border-radius:14px;
+     border-radius:14px
+     background-position: 10px 10px;
+     background-repeat: no-repeat;
+     background-size: 38px;
+     padding-left: 30px; /* 55px; if icon */
+ }
+ .slide .alert-block {padding-top:14px; padding-bottom:14px}
+ .slide .alert-block > p, .alert-block > ul {margin-bottom:0}
+ /*.slide .alert li {margin-top: 1em}*/
+ .deck .alert-block p+p {margin-top:5px}
+ /*.slide .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images//small_gray_notice.png); }
+ .slide .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images//small_gray_summary.png); }
+ .slide .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images//small_gray_warning.png); }
+ .slide .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body class="deck-container">
+
+<header>
+<!-- Here goes a potential header -->
+</header>
+
+<!-- do not use the article tag - it gives strange sizings -->
+
+
+
+    
+
+
+
+<section class="slide">
+<!-- ------------------- main content ---------------------- -->
+
+<h1 id="___sec0">Week 1 </h1>
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- after <a href="https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec1">Exercise 1: Arithmetic with Different Types </h2>
+
+<p>
+Which of the following will print <code>2.0</code>?
+Note: there may be more than one right answer.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>first = <span style="color: #009999">1.0</span>
+second = <span style="color: #aa5500">&quot;1&quot;</span>
+third = <span style="color: #aa5500">&quot;1.1&quot;</span>
+</pre></div>
+<ul>
+<p><li> <code>first + float(second)</code></li>
+<p><li> <code>float(second) + float(third)</code></li>
+<p><li> <code>first + int(third)</code></li>
+<p><li> <code>first + int(float(third))</code></li>
+<p><li> <code>int(first) + int(float(third))</code></li>
+<p><li> <code>2.0 * second</code></li>
+</ul>
+<p>
+
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- after <a href="https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec2">Exercise 2: variables and types </h2>
+
+<p>
+What type of value (integer, floating point number, or character string) would
+you use to represent each of the following?
+
+<ol>
+<p><li> Number of days since the start of the year.</li>
+<p><li> A lab specimen's name.</li>
+<p><li> A lab specimen's age.</li>
+<p><li> Current population of a city.</li>
+<p><li> Average population density of a country.</li>
+</ol>
+<p>
+
+<!-- removed !bans ... !eans environment (because of the command-line option --without_answers)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- after <a href="https://swcarpentry.github.io/python-novice-gapminder/04-built-in" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/04-built-in</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec3">Exercise 3: What Happens When </h2>
+
+<ul>
+<p><li> Explain in simple terms the order of operations in the following program:</li>
+
+<ul>
+
+<p><li> when does the addition happen</li>
+
+<p><li> when does the subtraction happen</li>
+
+<p><li> when is each function called, etc.</li>
+</ul>
+<p><li> What is the final value of <code>radiance</code>?</li>
+</ul>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>radiance = <span style="color: #009999">1.0</span>
+radiance = <span style="color: #00aaaa">max</span>(<span style="color: #009999">2.1</span>, <span style="color: #009999">2.0</span> + <span style="color: #00aaaa">min</span>(radiance, <span style="color: #009999">1.1</span> * radiance - <span style="color: #009999">0.5</span>))
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec4">Exercise 4: Use of functions </h2>
+
+<p>
+Write Python statements to print out the answers to the following.
+
+<ol>
+<p><li> 3.8 rounded to the nearest integer.</li>
+<p><li> 4.483847 rounded to one decimal place.</li>
+<p><li> Convert 3.8 to an integer format using <code>int()</code>, assign the value to a variable, and print out it&#8217;s value.</li>
+<p><li> Convert the answer to the previous question to a string and assign it to a new variable, print out the value.</li>
+<p><li> Convert the answer to the previous question to a float and assign it to a new variable, print out the value.</li>
+<p><li> Do you notice anything about the answer to the last question?</li>
+<p><li> Take the square of the answer to the previous question, assign it to a new variable, print out the value.</li>
+</ol>
+<p>
+
+<!-- removed !bans ... !eans environment (because of the command-line option --without_answers)
+ -->
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- <a href="http://swcarpentry.github.io/python-novice-gapminder/11-lists/" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/11-lists/</tt></a> -->
+<!-- used as exam exercise in 2017 -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec5">Exercise 5: Gj&#248;r ferdig koden: lister </h2>
+
+<p>
+Bytt ut <code>____</code> med riktig python kode slik at det forventet resultat oppn&#229;s. Alle linjer med python kode fra oppgaven skal v&#230;re en del av svaret ditt. Du skal ikke legge til noen flere linjer eller bytte p&#229; rekkef&#248;lge av linjene.
+
+<p>
+<b style="font-weight: bold">The code below can be loaded into a codecell with</b> <code>%load code/list_blank.py</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>verdier = ____
+verdier.____(<span style="color: #009999">1</span>)
+verdier.____(<span style="color: #009999">3</span>)
+verdier.____(<span style="color: #009999">5</span>)
+<span style="color: #0000aa">print</span>(<span style="color: #aa5500">&#39;Først:&#39;</span>, verdier)
+verdier = verdier[____]
+<span style="color: #0000aa">print</span>(<span style="color: #aa5500">&#39;Etter:&#39;</span>, verdier)
+</pre></div>
+<p>
+Forventet resultat
+<p>
+
+<!-- code=text typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>Først: [1, 3, 5]
+Etter: [3, 5]
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+
+
+<footer>
+<!-- Here goes a footer -->
+</footer>
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+-->
+
+<!-- deck.goto snippet
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+-->
+
+<!-- deck.hash snippet
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+-->
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+<script src="deck.js/jquery.min.js"></script>
+<script src="deck.js/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+<script src="deck.js/extensions/notes/deck.notes.js"></script>
+
+<!-- From https://github.com/mikeharris100/deck.pointer.js -->
+<script src="deck.js/extensions/pointer/deck.pointer.js"></script>
+
+<!-- From https://github.com/stvnwrgs/presenterview
+<script type="text/javascript" src="deck.js/extensions/presenterview/deck.presenterview.js"></script> -->
+
+<!-- From https://github.com/nemec/deck.annotate.js
+<script type="text/javascript" src="deck.js/extensions/deck.annotate.js/deck.annotate.js"></script>
+-->
+
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+
+
+</body>
+</html>

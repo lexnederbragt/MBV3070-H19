@@ -2,9 +2,9 @@
 
 * * * * *
 
-**Written by Karin Lagesen**
+**Written by Karin Lagesen, modifed by Lex Nederbragt**
 
-Note: we are using the interactive shell here, as in the previous exercise. 
+Note: we are using the interactive shell here, as in the previous exercise.
 
 Note: if you want to repeat something that you have already typed in, try the arrow buttons on your keyboard.
 
@@ -30,7 +30,7 @@ So you could put that data into a list like this:
 at_content = [0.5, 0.4, 0.3, 0.8, 0.6]
 ```
 
-### Sorting a list 
+### Sorting a list
 
 A list can be sorted in place, like this:
 
@@ -64,7 +64,7 @@ Question: would you use append or extend in this situation? Can you explain the 
 
 ## Sequence methods
 
-Lists and strings are both what we call "sequence types". These are types where the order of elements are important. These can be manipulated using the same methods. 
+Lists and strings are both what we call "sequence types". These are types where the order of elements are important. These can be manipulated using the same methods.
 
 ### Indices
 
@@ -115,18 +115,79 @@ print(at_content[2:])
 
 and so on.
 
-### Task: Slicing 
+### Task: Slicing
 
-Create a list called newlist which contains the numbers below: 
+Create a list called newlist which contains the numbers below:
 
 [0.5, 0.6, 0.8, 0.4, [0.1, 0.2]]
 
 1. Get python to print the list that is inside the list.
 2. Get python to print last element of the list inside the list.
 
+### Stepping Through a List
+
+What does the following program print?
+
+```Python
+element = 'fluorine'
+print(element[::2])
+print(element[::-1])
+```
+
+1.  If we write a slice as `low:high:stride`, what does `stride` do?
+2.  What expression would select all of the even-numbered items from a collection?
+
+### Slice Bounds
+
+What does the following program print?
+
+```Python
+element = 'lithium'
+print(element[0:20])
+print(element[-1:3])
+```
+
+### Sort and Sorted
+
+What do these two programs print?
+In simple terms, explain the difference between `sorted(letters)` and `letters.sort()`.
+
+```Python
+# Program A
+letters = list('gold')
+result = sorted(letters)
+print('letters is', letters, 'and result is', result)
+```
+
+```Python
+# Program B
+letters = list('gold')
+result = letters.sort()
+print('letters is', letters, 'and result is', result)
+```
+
+<!--
+## Solution
+Program A prints
+~~~
+letters is ['g', 'o', 'l', 'd'] and result is ['d', 'g', 'l', 'o']
+~~~
+{: .python}
+Program B prints
+~~~
+letters is ['d', 'g', 'l', 'o'] and result is None
+~~~
+{: .python}
+`sorted(letters)` returns a sorted copy of the list `letters` (the original
+list `letters` remains unchanged), while `letters.sort()` sorts the list
+`letters` in-place and does not return anything.
+{: .solution}
+{: .challenge}
+-->
+
 ### The in operator
 
-We can figure out if an element is in a sequence typed object, i.e. list or string with the in operator. 
+We can figure out if an element is in a sequence typed object, i.e. list or string with the in operator.
 
 Let's make a string and figure out whether certain things are in the string:
 
@@ -214,7 +275,7 @@ codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", "AAC":"N", "CGA":"R", "CAG":"Q" 
 ```
 Dictionaries are very good for storing data where the relationship between elements matter. In this case, the important thing is the relationship between the codon and the amino acid. The order of the codons do not matter.
 
-So, let's manipulate this dictionary a bit. 
+So, let's manipulate this dictionary a bit.
 
 ### Lookup
 
@@ -258,7 +319,7 @@ As you can see the new codon is in there. Let's redo the test, just to make sure
 print("CCG" in codon_table)
 ```
 
-###Keys and values
+### Keys and values
 
 We can access all the keys and the values of a dictionary using the keys() and the values() methods:
 
@@ -297,7 +358,6 @@ stop = mrna.____("UAA")
 print(mrna[_____:stop])
 ```
 
-Use notepad to create the completed script. Copy-paste one line at the time into the interpreter to run it. 
 
 ### Task: CG frequency
 
@@ -308,6 +368,3 @@ Define the DNA string CGCTACGGACGTAGCCAGCGA.
 Create a script that will calculate the percent of CG dinucleotides in the string. Note, a string that contains N nucleotides, contains N-1 dinucleotides.
 
 Hint: look at how we calculated AT content in the lecture, and the exercise in the previous section.
-
-
-Previous: [Variable types](0_Variables_Types.md)
