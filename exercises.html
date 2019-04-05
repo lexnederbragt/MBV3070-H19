@@ -244,7 +244,7 @@ you use to represent each of the following?
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec3">Exercise 3: What Happens When </h2>
+<h2 id="___sec3">Exercise 3: What happens when </h2>
 
 <ul>
 <p><li> Explain in simple terms the order of operations in the following program:</li>
@@ -307,16 +307,37 @@ Write Python statements to print out the answers to the following.
 <section class="slide">
 
 <p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec5">Exercise 5: Uses for dictionaries in bioinformatics </h2>
+
+<p>
+What uses can you think about for Python dictionaries in Bioinformatics?
+
+<ul>
+<p><li> first think for yourself</li>
+<p><li> pair with a neighbour and discuss your ideas</li>
+<p><li> then we'll collect your thoughts with the group</li>
+</ul>
+<p>
+
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
 <!-- <a href="http://swcarpentry.github.io/python-novice-gapminder/11-lists/" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/11-lists/</tt></a> -->
 <!-- used as exam exercise in 2017 -->
 
 <p>
 <!-- --- begin exercise --- -->
 
-<h2 id="___sec5">Exercise 5: Gj&#248;r ferdig koden: lister </h2>
+<h2 id="___sec6">Exercise 6: Gj&#248;r ferdig koden: lister </h2>
 
 <p>
-Bytt ut <code>____</code> med riktig python kode slik at det forventet resultat oppn&#229;s. Alle linjer med python kode fra oppgaven skal v&#230;re en del av svaret ditt. Du skal ikke legge til noen flere linjer eller bytte p&#229; rekkef&#248;lge av linjene.
+Bytt ut <code>____</code> i programmet under med riktig python kode slik at det forventet resultat oppn&#229;s. Alle linjer med python kode fra oppgaven skal v&#230;re en del av svaret ditt. Du skal ikke legge til noen flere linjer eller bytte p&#229; rekkef&#248;lge av linjene.
 
 <p>
 <b style="font-weight: bold">The code below can be loaded into a codecell with</b> <code>%load code/list_blank.py</code>
@@ -332,12 +353,196 @@ verdier = verdier[____]
 <span style="color: #0000aa">print</span>(<span style="color: #aa5500">&#39;Etter:&#39;</span>, verdier)
 </pre></div>
 <p>
-Forventet resultat
+Forventet resultat:
 <p>
 
 <!-- code=text typeset with pygments style "autumn" -->
 <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>Først: [1, 3, 5]
 Etter: [3, 5]
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<h1 id="___sec7">Week 2 </h1>
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- from <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec8">Exercise 7: Reversing a String </h2>
+
+<p>
+Fill in the blanks in the program below so that it prints "nit"
+(the reverse of the original character string "tin").
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>original = <span style="color: #aa5500">&quot;tin&quot;</span>
+result = ____
+<span style="color: #0000aa">for</span> char <span style="color: #0000aa">in</span> original:
+    result = ____
+<span style="color: #0000aa">print</span>(result)
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- modified from <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec9">Exercise 8: Summarising DNA strings </h2>
+
+<p>
+Fill in the blanks in each of the programs below to produce the indicated result.
+
+<p>
+<b style="font-weight: bold">a)</b>
+Total length of the DNA strings in the list: <code>[&quot;ACG&quot;, &quot;TAATG&quot;, &quot;CCGA&quot;]</code> should give <code>12</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>total = <span style="color: #009999">0</span>
+<span style="color: #0000aa">for</span> dna <span style="color: #0000aa">in</span> [<span style="color: #aa5500">&quot;ACG&quot;</span>, <span style="color: #aa5500">&quot;TAATG&quot;</span>, <span style="color: #aa5500">&quot;CCGA&quot;</span>]:
+    ____ = ____ + <span style="color: #00aaaa">len</span>(dna)
+<span style="color: #0000aa">print</span>(total)
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<b style="font-weight: bold">b)</b>
+List of dna lengths: <code>[&quot;ACG&quot;, &quot;TAATG&quot;, &quot;CCGA&quot;]</code> should give <code>[3, 5, 4]</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>lengths = ____
+<span style="color: #0000aa">for</span> dna <span style="color: #0000aa">in</span> [<span style="color: #aa5500">&quot;ACG&quot;</span>, <span style="color: #aa5500">&quot;TAATG&quot;</span>, <span style="color: #aa5500">&quot;CCGA&quot;</span>]:
+    lengths.____(____)
+<span style="color: #0000aa">print</span>(lengths)
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<b style="font-weight: bold">c)</b>
+Concatenate all DNAs: <code>[&quot;ACG&quot;, &quot;TAATG&quot;, &quot;CCGA&quot;]</code> should give <code>[&quot;ACGTAATGCCGA&quot;]</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>result = ____
+<span style="color: #0000aa">for</span> ____ <span style="color: #0000aa">in</span> ____:
+    ____
+<span style="color: #0000aa">print</span>(result)
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<b style="font-weight: bold">d)</b>
+Create an acronym: ["red", "green", "blue"] should give "RGB".
+Write the whole program
+
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- from <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec10">Exercise 9: Cumulative Sum </h2>
+
+<p>
+Reorder and properly indent the lines of code below
+so that they print a list with the <em>cumulative sum</em> ('running sum') of data. The result should be <code>[1, 3, 5, 10]</code>.
+
+<p>
+<b style="font-weight: bold">The code below can be loaded into a codecell with</b> <code>%load code/cumul.py</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>cumulative.append(<span style="color: #00aaaa">sum</span>)
+<span style="color: #0000aa">for</span> number <span style="color: #0000aa">in</span> data:
+cumulative = []
+<span style="color: #00aaaa">sum</span> += number
+<span style="color: #00aaaa">sum</span> = <span style="color: #009999">0</span>
+<span style="color: #0000aa">print</span>(cumulative)
+data = [<span style="color: #009999">1</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">5</span>]
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- inspired by <a href="http://third-bit.com/2017/10/16/exercise-types.html" target="_self"><tt>http://third-bit.com/2017/10/16/exercise-types.html</tt></a> -->
+<!-- see also 07_dna_seq_analysis/fix_error_function.do.txt -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec11">Exercise 10: Reorder code </h2>
+
+<p>
+Reorganise the code and indent the lines where necessary so that it gives the desired output
+
+<p>
+<b style="font-weight: bold">The code below can be loaded into a codecell with</b> <code>%load code/posneg.py</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000aa">else</span>:
+<span style="color: #0000aa">for</span> v <span style="color: #0000aa">in</span> values:
+<span style="color: #0000aa">if</span> v &gt; <span style="color: #009999">0</span>:
+<span style="color: #0000aa">print</span>(<span style="color: #aa5500">&quot;There were&quot;</span>, num_pos, <span style="color: #aa5500">&quot;positive and&quot;</span>, num_neg, <span style="color: #aa5500">&quot;negative values&quot;</span>)
+negative += <span style="color: #009999">1</span>
+negative = <span style="color: #009999">0</span>
+positive += <span style="color: #009999">1</span>
+positive = <span style="color: #009999">0</span>
+values = [<span style="color: #009999">1</span>, -<span style="color: #009999">2</span>, <span style="color: #009999">3</span>, <span style="color: #009999">4</span>, -<span style="color: #009999">5</span>, -<span style="color: #009999">6</span>, <span style="color: #009999">7</span>]
+</pre></div>
+<p>
+Desired output:
+<p>
+
+<!-- code=text typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>There were 4 positive values and 3 negative values
 </pre></div>
 <p>
 <!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)

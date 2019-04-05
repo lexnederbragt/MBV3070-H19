@@ -1,0 +1,2 @@
+from metakernel import register_ipython_magics
+register_ipython_magics()

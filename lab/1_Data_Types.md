@@ -196,6 +196,9 @@ teststring = "AUGUAGGGAUGG"
 print("A" in teststring)
 print("AUG" in teststring)
 ```
+
+The result is either `True` or `False`, both if which are Boolean values. We'll meet so-called *conditional statements* that result in Boolean values (True or False) many times throughout the course.
+
 Question: can you find out if there were any Ts in this string? If there are none, what does that tell you?
 
 ### Concatenation
@@ -256,7 +259,7 @@ Given the DNA string "CGAGATGGCAGCACGAGCACAGGA", do the following:
 
 A python dictionary is a collection of key, value pairs. The key is a way to name the data, and the value is the data itself.
 
-Today we are going to create a dictionary that contains part of the genetic code. We are going to take this table here and create a dictonary from it:
+Today we are going to create a dictionary that contains part of the genetic code. We are going to take this table here and create a dictionary from it:
 
 ```
 ATA                I
@@ -366,5 +369,3 @@ CpG islands are regions of sequence that contain higher than expected number of 
 Define the DNA string CGCTACGGACGTAGCCAGCGA.
 
 Create a script that will calculate the percent of CG dinucleotides in the string. Note, a string that contains N nucleotides, contains N-1 dinucleotides.
-
-Hint: look at how we calculated AT content in the lecture, and the exercise in the previous section.

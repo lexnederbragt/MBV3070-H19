@@ -12,6 +12,29 @@
 !split
 # #include "EXDIR/01_scientific_calculator/Variables11.do.txt"
 
+!split
+===== Exercise: Uses for dictionaries in bioinformatics =====
+What uses can you think about for Python dictionaries in Bioinformatics?
+
+* first think for yourself
+* pair with a neighbour and discuss your ideas
+* then we'll collect your thoughts with the group
+
 
 !split
 # #include "EXDIR/02_bacterial_growth_analysis/liste_blank.do.txt"
+
+!split
+======= Week 2 =======
+
+!split
+# #include "EXDIR/07_dna_seq_analysis/reverse_string.do.txt"
+
+!split
+# #include "EXDIR/07_dna_seq_analysis/faded_looping_strings.do.txt"
+
+!split
+# #include "EXDIR/07_dna_seq_analysis/parson_cumsum.do.txt"
+
+!split
+# #include "EXDIR/07_dna_seq_analysis/loop_if_parsons01.do.txt"
