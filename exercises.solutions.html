@@ -1,0 +1,1082 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+
+<title></title>
+
+<!-- Bootstrap style: bootswatch_readable -->
+<link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:64px;      /* fixed header height for style bootswatch_readable */
+  margin:-64px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('Week 1', 1, None, '___sec0'),
+              ('Exercise 1: Arithmetic with Different Types',
+               2,
+               None,
+               '___sec1'),
+              ('Exercise 2: variables and types', 2, None, '___sec2'),
+              ('Exercise 3: What happens when', 2, None, '___sec3'),
+              ('Exercise 4: Use of functions', 2, None, '___sec4'),
+              ('Exercise 5: Uses for dictionaries in bioinformatics',
+               2,
+               None,
+               '___sec5'),
+              ('Exercise 6: Gjør ferdig koden: lister', 2, None, '___sec6'),
+              ('Week 2', 1, None, '___sec7'),
+              ('Exercise 7: Reversing a String', 2, None, '___sec8'),
+              ('Exercise 8: Summarising DNA strings', 2, None, '___sec9'),
+              ('Exercise 9: Cumulative Sum', 2, None, '___sec10'),
+              ('Exercise 10: Reorder code', 2, None, '___sec11'),
+              ('Week 3', 1, None, '___sec12'),
+              ('Exercise 11: There Are Many Ways To Import Libraries',
+               2,
+               None,
+               '___sec13'),
+              ('Exercise 12: Locating the Right Module', 2, None, '___sec14'),
+              ('Exercise 13: Definition and use of dunctions',
+               2,
+               None,
+               '___sec15'),
+              ('Exercise 14: Find the first', 2, None, '___sec16')]}
+end of tocinfo -->
+
+<body>
+
+    
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+<h1 id="___sec0" class="anchor">Week 1 </h1>
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- after <a href="https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec1" class="anchor">Exercise 1: Arithmetic with Different Types </h2>
+
+<p>
+Which of the following will print <code>2.0</code>?
+Note: there may be more than one right answer.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>first <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+second <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;1&quot;</span>
+third <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;1.1&quot;</span>
+</pre></div>
+<ul>
+<li> <code>first + float(second)</code></li>
+<li> <code>float(second) + float(third)</code></li>
+<li> <code>first + int(third)</code></li>
+<li> <code>first + int(float(third))</code></li>
+<li> <code>int(first) + int(float(third))</code></li>
+<li> <code>2.0 * second</code></li>
+</ul>
+
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_1">
+
+<ul>
+<li> <code>first + float(second)</code></li>
+<li> <code>first + int(float(third))</code></li>
+</ul>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- after <a href="https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec2" class="anchor">Exercise 2: variables and types </h2>
+
+<p>
+What type of value (integer, floating point number, or character string) would
+you use to represent each of the following?
+
+<ol>
+<li> Number of days since the start of the year.</li>
+<li> A lab specimen's name.</li>
+<li> A lab specimen's age.</li>
+<li> Current population of a city.</li>
+<li> Average population density of a country.</li>
+</ol>
+
+<!-- --- begin answer of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_2_1" style="font-size: 80%;"></a>
+<b>Answer.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_2_1">
+
+<ol>
+<li> int</li>
+<li> str</li>
+<li> int</li>
+<li> int</li>
+<li> float</li>
+</ol>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- after <a href="https://swcarpentry.github.io/python-novice-gapminder/04-built-in" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/04-built-in</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec3" class="anchor">Exercise 3: What happens when </h2>
+
+<ul>
+<li> Explain in simple terms the order of operations in the following program:</li>
+
+<ul>
+    <li> when does the addition happen</li>
+    <li> when does the subtraction happen</li>
+    <li> when is each function called, etc.</li>
+</ul>
+
+<li> What is the final value of <code>radiance</code>?</li>
+</ul>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>radiance <span style="color: #666666">=</span> <span style="color: #666666">1.0</span>
+radiance <span style="color: #666666">=</span> <span style="color: #008000">max</span>(<span style="color: #666666">2.1</span>, <span style="color: #666666">2.0</span> <span style="color: #666666">+</span> <span style="color: #008000">min</span>(radiance, <span style="color: #666666">1.1</span> <span style="color: #666666">*</span> radiance <span style="color: #666666">-</span> <span style="color: #666666">0.5</span>))
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_3_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_3_1">
+
+<ol>
+<li> Order of operations
+
+<ol type="a"></li>
+   <li> <code>1.1 * radiance = 1.1</code></li>
+   <li> <code>1.1 - 0.5 = 0.6</code></li>
+   <li> <code>min(randiance, 0.6) = 0.6</code></li>
+   <li> <code>2.0 + 0.6 = 2.6</code></li>
+   <li> <code>max(2.1, 2.6) = 2.6</code></li>
+</ol>
+
+<li> At the end, <code>radiance = 2.6</code></li>
+</ol>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec4" class="anchor">Exercise 4: Use of functions </h2>
+
+<p>
+Write Python statements to print out the answers to the following.
+
+<ol>
+<li> 3.8 rounded to the nearest integer.</li>
+<li> 4.483847 rounded to one decimal place.</li>
+<li> Convert 3.8 to an integer format using <code>int()</code>, assign the value to a variable, and print out it&#8217;s value.</li>
+<li> Convert the answer to the previous question to a string and assign it to a new variable, print out the value.</li>
+<li> Convert the answer to the previous question to a float and assign it to a new variable, print out the value.</li>
+<li> Do you notice anything about the answer to the last question?</li>
+<li> Take the square of the answer to the previous question, assign it to a new variable, print out the value.</li>
+</ol>
+
+<!-- --- begin answer of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_4_1" style="font-size: 80%;"></a>
+<b>Answer.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_4_1">
+
+<ol>
+<li> 4</li>
+<li> 4.5</li>
+<li> 3</li>
+<li> 3</li>
+<li> 3.0</li>
+<li> The number is now 3.0, while we started with 3.8</li>
+</ol>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_4_3" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_4_3">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># 1.</span>
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #008000">round</span>(<span style="color: #666666">3.8</span>))
+
+<span style="color: #408080; font-style: italic"># 2.</span>
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #008000">round</span>(<span style="color: #666666">4.483847</span>, <span style="color: #666666">1</span>))
+
+<span style="color: #408080; font-style: italic"># 3</span>
+x <span style="color: #666666">=</span> <span style="color: #008000">int</span>(<span style="color: #666666">3.8</span>)
+<span style="color: #008000; font-weight: bold">print</span>(x)
+
+<span style="color: #408080; font-style: italic"># 4</span>
+y <span style="color: #666666">=</span> <span style="color: #008000">str</span>(x)
+<span style="color: #008000; font-weight: bold">print</span>(y)
+
+<span style="color: #408080; font-style: italic"># 5</span>
+z <span style="color: #666666">=</span> <span style="color: #008000">float</span>(y)
+<span style="color: #008000; font-weight: bold">print</span>(z)
+
+<span style="color: #408080; font-style: italic"># 6</span>
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;The number is now 3.0, while we started with 3.8&#39;</span>)
+
+<span style="color: #408080; font-style: italic"># 7</span>
+w <span style="color: #666666">=</span> z<span style="color: #666666">**2</span>
+<span style="color: #008000; font-weight: bold">print</span>(z)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec5" class="anchor">Exercise 5: Uses for dictionaries in bioinformatics </h2>
+
+<p>
+What uses can you think about for Python dictionaries in Bioinformatics?
+
+<ul>
+<li> first think for yourself</li>
+<li> pair with a neighbour and discuss your ideas</li>
+<li> then we'll collect your thoughts with the group</li>
+</ul>
+
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- <a href="http://swcarpentry.github.io/python-novice-gapminder/11-lists/" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/11-lists/</tt></a> -->
+<!-- used as exam exercise in 2017 -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec6" class="anchor">Exercise 6: Gj&#248;r ferdig koden: lister </h2>
+
+<p>
+Bytt ut <code>____</code> i programmet under med riktig python kode slik at det forventet resultat oppn&#229;s. Alle linjer med python kode fra oppgaven skal v&#230;re en del av svaret ditt. Du skal ikke legge til noen flere linjer eller bytte p&#229; rekkef&#248;lge av linjene.
+
+<p>
+<b>The code below can be loaded into a codecell with</b> <code>%load code/list_blank.py</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>verdier <span style="color: #666666">=</span> ____
+verdier<span style="color: #666666">.</span>____(<span style="color: #666666">1</span>)
+verdier<span style="color: #666666">.</span>____(<span style="color: #666666">3</span>)
+verdier<span style="color: #666666">.</span>____(<span style="color: #666666">5</span>)
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;Først:&#39;</span>, verdier)
+verdier <span style="color: #666666">=</span> verdier[____]
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;Etter:&#39;</span>, verdier)
+</pre></div>
+<p>
+Forventet resultat:
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>Først: [1, 3, 5]
+Etter: [3, 5]
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_6_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_6_1">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>verdier <span style="color: #666666">=</span> []
+verdier<span style="color: #666666">.</span>append(<span style="color: #666666">1</span>)
+verdier<span style="color: #666666">.</span>append(<span style="color: #666666">3</span>)
+verdier<span style="color: #666666">.</span>append(<span style="color: #666666">5</span>)
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;Først:&#39;</span>, verdier)
+verdier <span style="color: #666666">=</span> verdier[<span style="color: #666666">1</span>:]
+<span style="color: #408080; font-style: italic"># eller verdier = verdier[1:3]</span>
+<span style="color: #408080; font-style: italic"># eller  verdier = verdier[1::]</span>
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;Etter:&#39;</span>, verdier)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<h1 id="___sec7" class="anchor">Week 2 </h1>
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- from <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec8" class="anchor">Exercise 7: Reversing a String </h2>
+
+<p>
+Fill in the blanks in the program below so that it prints "nit"
+(the reverse of the original character string "tin").
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>original <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;tin&quot;</span>
+result <span style="color: #666666">=</span> ____
+<span style="color: #008000; font-weight: bold">for</span> char <span style="color: #AA22FF; font-weight: bold">in</span> original:
+    result <span style="color: #666666">=</span> ____
+<span style="color: #008000; font-weight: bold">print</span>(result)
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_7_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_7_1">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>original <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;tin&quot;</span>
+result <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>
+<span style="color: #008000; font-weight: bold">for</span> char <span style="color: #AA22FF; font-weight: bold">in</span> original:
+    result <span style="color: #666666">=</span> char <span style="color: #666666">+</span> result
+<span style="color: #008000; font-weight: bold">print</span>(result)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- modified from <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec9" class="anchor">Exercise 8: Summarising DNA strings </h2>
+
+<p>
+Fill in the blanks in each of the programs below to produce the indicated result.
+
+<p>
+<b>a)</b>
+Total length of the DNA strings in the list: <code>[&quot;ACG&quot;, &quot;TAATG&quot;, &quot;CCGA&quot;]</code> should give <code>12</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>total <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+<span style="color: #008000; font-weight: bold">for</span> dna <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&quot;ACG&quot;</span>, <span style="color: #BA2121">&quot;TAATG&quot;</span>, <span style="color: #BA2121">&quot;CCGA&quot;</span>]:
+    ____ <span style="color: #666666">=</span> ____ <span style="color: #666666">+</span> <span style="color: #008000">len</span>(dna)
+<span style="color: #008000; font-weight: bold">print</span>(total)
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_8_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_8_1">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>total <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+<span style="color: #008000; font-weight: bold">for</span> dna <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&quot;ACG&quot;</span>, <span style="color: #BA2121">&quot;TAATG&quot;</span>, <span style="color: #BA2121">&quot;CCGA&quot;</span>]:
+    total <span style="color: #666666">=</span> total <span style="color: #666666">+</span> <span style="color: #008000">len</span>(dna)
+<span style="color: #008000; font-weight: bold">print</span>(total)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<b>b)</b>
+List of dna lengths: <code>[&quot;ACG&quot;, &quot;TAATG&quot;, &quot;CCGA&quot;]</code> should give <code>[3, 5, 4]</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>lengths <span style="color: #666666">=</span> ____
+<span style="color: #008000; font-weight: bold">for</span> dna <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&quot;ACG&quot;</span>, <span style="color: #BA2121">&quot;TAATG&quot;</span>, <span style="color: #BA2121">&quot;CCGA&quot;</span>]:
+    lengths<span style="color: #666666">.</span>____(____)
+<span style="color: #008000; font-weight: bold">print</span>(lengths)
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_8_2" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_8_2">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>lengths <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> dna <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&quot;ACG&quot;</span>, <span style="color: #BA2121">&quot;TAATG&quot;</span>, <span style="color: #BA2121">&quot;CCGA&quot;</span>]:
+    lengths<span style="color: #666666">.</span>append(<span style="color: #008000">len</span>(dna))
+<span style="color: #008000; font-weight: bold">print</span>(lengths)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<b>c)</b>
+Concatenate all DNAs: <code>[&quot;ACG&quot;, &quot;TAATG&quot;, &quot;CCGA&quot;]</code> should give <code>[&quot;ACGTAATGCCGA&quot;]</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>result <span style="color: #666666">=</span> ____
+<span style="color: #008000; font-weight: bold">for</span> ____ <span style="color: #AA22FF; font-weight: bold">in</span> ____:
+    ____
+<span style="color: #008000; font-weight: bold">print</span>(result)
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_8_3" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_8_3">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>dnas <span style="color: #666666">=</span> [<span style="color: #BA2121">&quot;ACG&quot;</span>, <span style="color: #BA2121">&quot;TAATG&quot;</span>, <span style="color: #BA2121">&quot;CCGA&quot;</span>]
+result <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>
+<span style="color: #008000; font-weight: bold">for</span> dna <span style="color: #AA22FF; font-weight: bold">in</span> dnas:
+    result <span style="color: #666666">=</span> result <span style="color: #666666">+</span> dna
+<span style="color: #008000; font-weight: bold">print</span>(result)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<b>d)</b>
+Create an acronym: ["red", "green", "blue"] should give "RGB".
+Write the whole program
+
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_8_4" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_8_4">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>acronym <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>
+<span style="color: #008000; font-weight: bold">for</span> word <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #BA2121">&quot;red&quot;</span>, <span style="color: #BA2121">&quot;green&quot;</span>, <span style="color: #BA2121">&quot;blue&quot;</span>]:
+    acronym <span style="color: #666666">=</span> acronym <span style="color: #666666">+</span> word[<span style="color: #666666">0</span>]<span style="color: #666666">.</span>upper()
+<span style="color: #008000; font-weight: bold">print</span>(acronym)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- from <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/" target="_self"><tt>https://swcarpentry.github.io/python-novice-gapminder/12-for-loops/</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec10" class="anchor">Exercise 9: Cumulative Sum </h2>
+
+<p>
+Reorder and properly indent the lines of code below
+so that they print a list with the <em>cumulative sum</em> ('running sum') of data. The result should be <code>[1, 3, 5, 10]</code>.
+
+<p>
+<b>The code below can be loaded into a codecell with</b> <code>%load code/cumul.py</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>cumulative<span style="color: #666666">.</span>append(<span style="color: #008000">sum</span>)
+<span style="color: #008000; font-weight: bold">for</span> number <span style="color: #AA22FF; font-weight: bold">in</span> data:
+cumulative <span style="color: #666666">=</span> []
+<span style="color: #008000">sum</span> <span style="color: #666666">+=</span> number
+<span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+<span style="color: #008000; font-weight: bold">print</span>(cumulative)
+data <span style="color: #666666">=</span> [<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">2</span>,<span style="color: #666666">5</span>]
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_9_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_9_1">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000">sum</span> <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+data <span style="color: #666666">=</span> [<span style="color: #666666">1</span>,<span style="color: #666666">2</span>,<span style="color: #666666">2</span>,<span style="color: #666666">5</span>]
+cumulative <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> number <span style="color: #AA22FF; font-weight: bold">in</span> data:
+    <span style="color: #008000">sum</span> <span style="color: #666666">+=</span> number
+    cumulative<span style="color: #666666">.</span>append(<span style="color: #008000">sum</span>)
+<span style="color: #008000; font-weight: bold">print</span>(cumulative)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- inspired by <a href="http://third-bit.com/2017/10/16/exercise-types.html" target="_self"><tt>http://third-bit.com/2017/10/16/exercise-types.html</tt></a> -->
+<!-- see also 07_dna_seq_analysis/fix_error_function.do.txt -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec11" class="anchor">Exercise 10: Reorder code </h2>
+
+<p>
+Reorganise the code and indent the lines where necessary so that it gives the desired output
+
+<p>
+<b>The code below can be loaded into a codecell with</b> <code>%load code/posneg.py</code>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">else</span>:
+<span style="color: #008000; font-weight: bold">for</span> v <span style="color: #AA22FF; font-weight: bold">in</span> values:
+<span style="color: #008000; font-weight: bold">if</span> v <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>:
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;There were&quot;</span>, num_pos, <span style="color: #BA2121">&quot;positive and&quot;</span>, num_neg, <span style="color: #BA2121">&quot;negative values&quot;</span>)
+negative <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+negative <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+positive <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+positive <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+values <span style="color: #666666">=</span> [<span style="color: #666666">1</span>, <span style="color: #666666">-2</span>, <span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">-5</span>, <span style="color: #666666">-6</span>, <span style="color: #666666">7</span>]
+</pre></div>
+<p>
+Desired output:
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>There were 4 positive values and 3 negative values
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_10_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_10_1">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>values <span style="color: #666666">=</span> [<span style="color: #666666">1</span>, <span style="color: #666666">-2</span>, <span style="color: #666666">3</span>, <span style="color: #666666">4</span>, <span style="color: #666666">-5</span>, <span style="color: #666666">-6</span>, <span style="color: #666666">7</span>]
+positive <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+negative <span style="color: #666666">=</span> <span style="color: #666666">0</span>
+<span style="color: #008000; font-weight: bold">for</span> v <span style="color: #AA22FF; font-weight: bold">in</span> values:
+    <span style="color: #008000; font-weight: bold">if</span> v <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>:
+        positive <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+    <span style="color: #008000; font-weight: bold">else</span>:
+        negative <span style="color: #666666">+=</span> <span style="color: #666666">1</span>
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;There were&quot;</span>, num_pos, <span style="color: #BA2121">&quot;positive and&quot;</span>, num_neg, <span style="color: #BA2121">&quot;negative values&quot;</span>)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<h1 id="___sec12" class="anchor">Week 3 </h1>
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec13" class="anchor">Exercise 11: There Are Many Ways To Import Libraries </h2>
+
+<p>
+Match the following print statements with the appropriate library calls.
+
+<p>
+Print commands:
+
+<ol>
+<li> <code>print(&quot;sin(pi/2) =&quot;,sin(pi/2))</code></li>
+<li> <code>print(&quot;sin(pi/2) =&quot;,m.sin(m.pi/2))</code></li>
+<li> <code>print(&quot;sin(pi/2) =&quot;,math.sin(math.pi/2))</code></li>
+</ol>
+
+Library calls:
+
+<ol>
+<li> <code>from math import sin,pi</code></li>
+<li> <code>import math</code></li>
+<li> <code>import math as m</code></li>
+<li> <code>from math import *</code></li>
+</ol>
+
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_11_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_11_1">
+
+<ol>
+<li> Library calls 1 and 4. In order to directly refer to <code>sin</code> and <code>pi</code> without
+   the library name as prefix, you need to use the <code>from ... import ...</code>
+   statement. Whereas library call 1 specifically imports the two functions
+   <code>sin</code> and <code>pi</code>, library call 4 imports all functions in the <code>math</code> module.</li>
+<li> Library call 3. Here <code>sin</code> and <code>pi</code> are referred to with a shortened library
+   name <code>m</code> instead of <code>math</code>. Library call 3 does exactly that using the
+   <code>import ... as ...</code> syntax - it creates an alias for <code>math</code> in the form of
+   the shortened name <code>m</code>.</li>
+<li> Library call 2. Here <code>sin</code> and <code>pi</code> are referred to with the regular library
+   name <code>math</code>, so the regular <code>import ...</code> call suffices.</li>
+</ol>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- from <a href="http://swcarpentry.github.io/python-novice-gapminder/06-libraries/index.html" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/06-libraries/index.html</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec14" class="anchor">Exercise 12: Locating the Right Module </h2>
+
+<p>
+You want to select a random character from a string:
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>bases <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;ACTTGCTTGAC&#39;</span>
+</pre></div>
+<ol>
+<li> Which <a href="https://docs.python.org/3/library/" target="_self">standard library</a> module could help you?</li>
+<li> Which function would you select from that module? Are there alternatives?</li>
+<li> Try to write a program that uses the function.</li>
+</ol>
+
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_12_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_12_1">
+
+<p>
+The <a href="https://docs.python.org/3/library/random.html" target="_self">random module</a> seems like it could help you.
+
+<p>
+The string has 11 characters, each having a positional index from 0 to 10.
+You could use <code>random.randrange</code> function (or the alias <code>random.randint</code>
+if you find that easier to remember) to get a random integer between 0 and
+10, and then pick out the character at that position:
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">random</span> <span style="color: #008000; font-weight: bold">import</span> randrange
+
+random_index <span style="color: #666666">=</span> randrange(<span style="color: #008000">len</span>(bases))
+<span style="color: #008000; font-weight: bold">print</span>(bases[random_index])
+</pre></div>
+<p>
+or more compactly:
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">random</span> <span style="color: #008000; font-weight: bold">import</span> randrange
+
+<span style="color: #008000; font-weight: bold">print</span>(bases[randrange(<span style="color: #008000">len</span>(bases))])
+</pre></div>
+<p>
+Perhaps you found the <code>random.sample</code> function? It allows for slightly
+less typing:
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">random</span> <span style="color: #008000; font-weight: bold">import</span> sample
+
+<span style="color: #008000; font-weight: bold">print</span>(sample(bases, <span style="color: #666666">1</span>)[<span style="color: #666666">0</span>])
+</pre></div>
+<p>
+There's also other functions you could use, but with more convoluted
+code as a result.
+
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- from <a href="http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec15" class="anchor">Exercise 13: Definition and use of dunctions </h2>
+
+<p>
+Answer without running the program below: What does program print? How can you correct it?
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">report</span>(pressure):
+    <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;pressure is&#39;</span>, pressure)
+
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;calling&#39;</span>, report, <span style="color: #666666">22.5</span>)
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_13_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_13_1">
+
+<p>
+
+<!-- code=text (!bc pycod -t) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>calling &lt;function report at 0x7fd128ff1bf822.5
+</pre></div>
+<p>
+A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;calling&quot;</span>)
+report(<span style="color: #666666">22.5</span>)
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- !split -->
+
+<p>
+<!-- from <a href="http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec16" class="anchor">Exercise 14: Find the first </h2>
+
+<p>
+Fill in the blanks to create a function that takes a list of numbers as an argument
+and returns the first negative value in the list.
+What does your function do if the list is empty?
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">first_negative</span>(values):
+    <span style="color: #008000; font-weight: bold">for</span> v <span style="color: #AA22FF; font-weight: bold">in</span> ____:
+        <span style="color: #008000; font-weight: bold">if</span> ____:
+            <span style="color: #008000; font-weight: bold">return</span> ____
+</pre></div>
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_14_1" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_14_1">
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">first_negative</span>(values):
+    <span style="color: #008000; font-weight: bold">for</span> v <span style="color: #AA22FF; font-weight: bold">in</span> values:
+        <span style="color: #008000; font-weight: bold">if</span> v<span style="color: #666666">&lt;0</span>:
+            <span style="color: #008000; font-weight: bold">return</span> v
+</pre></div>
+<p>
+If an empty list is passed to this function, it returns <code>None</code>:
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>my_list <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">print</span>(first_negative(my_list))
+</pre></div>
+<p>
+
+<!-- code=text (!bc pycod -t) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>None
+</pre></div>
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

@@ -552,6 +552,141 @@ Desired output:
 </section>
 
 
+<section class="slide">
+
+<h1 id="___sec12">Week 3 </h1>
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec13">Exercise 11: There Are Many Ways To Import Libraries </h2>
+
+<p>
+Match the following print statements with the appropriate library calls.
+
+<p>
+Print commands:
+
+<ol>
+<p><li> <code>print(&quot;sin(pi/2) =&quot;,sin(pi/2))</code></li>
+<p><li> <code>print(&quot;sin(pi/2) =&quot;,m.sin(m.pi/2))</code></li>
+<p><li> <code>print(&quot;sin(pi/2) =&quot;,math.sin(math.pi/2))</code></li>
+</ol>
+<p>
+
+Library calls:
+
+<ol>
+<p><li> <code>from math import sin,pi</code></li>
+<p><li> <code>import math</code></li>
+<p><li> <code>import math as m</code></li>
+<p><li> <code>from math import *</code></li>
+</ol>
+<p>
+
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- from <a href="http://swcarpentry.github.io/python-novice-gapminder/06-libraries/index.html" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/06-libraries/index.html</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec14">Exercise 12: Locating the Right Module </h2>
+
+<p>
+You want to select a random character from a string:
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>bases = <span style="color: #aa5500">&#39;ACTTGCTTGAC&#39;</span>
+</pre></div>
+<ol>
+<p><li> Which <a href="https://docs.python.org/3/library/" target="_self">standard library</a> module could help you?</li>
+<p><li> Which function would you select from that module? Are there alternatives?</li>
+<p><li> Try to write a program that uses the function.</li>
+</ol>
+<p>
+
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- from <a href="http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec15">Exercise 13: Definition and use of dunctions </h2>
+
+<p>
+Answer without running the program below: What does program print? How can you correct it?
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000aa">def</span> <span style="color: #00aa00">report</span>(pressure):
+    <span style="color: #0000aa">print</span>(<span style="color: #aa5500">&#39;pressure is&#39;</span>, pressure)
+
+<span style="color: #0000aa">print</span>(<span style="color: #aa5500">&#39;calling&#39;</span>, report, <span style="color: #009999">22.5</span>)
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
+<section class="slide">
+
+<p>
+<!-- from <a href="http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html" target="_self"><tt>http://swcarpentry.github.io/python-novice-gapminder/14-writing-functions/index.html</tt></a> -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec16">Exercise 14: Find the first </h2>
+
+<p>
+Fill in the blanks to create a function that takes a list of numbers as an argument
+and returns the first negative value in the list.
+What does your function do if the list is empty?
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "autumn" -->
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #0000aa">def</span> <span style="color: #00aa00">first_negative</span>(values):
+    <span style="color: #0000aa">for</span> v <span style="color: #0000aa">in</span> ____:
+        <span style="color: #0000aa">if</span> ____:
+            <span style="color: #0000aa">return</span> ____
+</pre></div>
+<p>
+<!-- removed !bsol ... !esol environment (because of the command-line option --without_solutions)
+ -->
+<p>
+<!-- --- end exercise --- -->
+</section>
+
+
 
 
 <footer>

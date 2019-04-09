@@ -6,6 +6,8 @@ ipynb-*-src.tar.gz
 .*_html_file_collection
 .DS_Store
 tmp_preprocess__*
+tmp_mako__*
 tmp_exercises.html
+*_tmp.html
 .ipynb_checkpoints/
 __pycache__/
