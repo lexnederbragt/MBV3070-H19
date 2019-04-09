@@ -1,6 +1,7 @@
 DO_FILES   := $(shell ls lab/[0-9]*.do.txt 2>/dev/null)
 TARGETS    := $(subst .do.txt,.ipynb, ${DO_FILES})
-TARGETS    += exercises.html
+TARGETS    += exercises.html slides/hemoglobin.html
+TARGETS    += exercises.solutions.html
 
 EXDIR      := /Users/alexajo/github/cse-exercises/src
 
@@ -18,14 +19,22 @@ test:
 lab/%.ipynb: lab/%.do.txt lab/%.md
 	doconce format ipynb $< --markdown
 
-exercises.html : exercises.do.txt
+%.html : %.do.txt
 	doconce format html $< \
 	--pygments_html_style=autumn --keep_pygments_html_bg \
 	SLIDE_TYPE=deck SLIDE_THEME=swiss \
 	--preprocess_include_subst -i ${preprocess_include_subst} \
 	--without_solutions --without_answers --without_hints \
 	--skip_inline_comments ${DOCONCE_PARAMS} && \
-	doconce slides_html exercises.html deck --html_slide_theme=swiss \
+	doconce slides_html $*.html deck --html_slide_theme=swiss \
 	${DOCONCE_PARAMS}	&& \
-	mv exercises.html tmp_exercises.html
-	awk '{if(NR==1&&$$0=="\\"){}else{print $0}}' tmp_exercises.html > exercises.html
+	mv $*.html $*_tmp.html
+	awk '{if(NR==1&&$$0=="\\"){}else{print $0}}' $*_tmp.html > $@
+
+
+%.solutions.html: %.do.txt
+	doconce format html $< \
+	${DOCONCE_PARAMS} \
+	--preprocess_include_subst -i ${preprocess_include_subst} \
+	--html_style=bootswatch_readable --skip_inline_comments \
+	--html_output=$*.solutions
