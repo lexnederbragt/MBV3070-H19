@@ -1,5 +1,5 @@
 === Reading in the genome ===
-We already know how to a fasta file. This time, we use genomic DNA, not RNA
+We already know how to a fasta file. This time, we use genomic DNA, not RNA.
 
 !bc pycod
 filename = 'data/NC_000913_E_coli_K12.fasta'
@@ -25,7 +25,32 @@ seq = 'A' * 10 + 'C' * 10 + 'G' * 10 + 'T' * 10
 seq = 3 * seq
 print(seq)
 !ec
-Now we split it into 10 base windows
+
+Now we split it into 10 base windows.
+We can us the `range(start, stop, step)` command to construct a loop for the indices:
+
+!bc pycod
+length = len(seq)
+window = 10
+for i in range(0, length, window):
+    print(i)
+!ec
+
+This givs us the starting index. The final index is the starting index + the length of the window. Let's check we now get the right indices:
+
+* from 0 to 10 (not including)
+* from 10 to 20 (not including)
+* from 20 to 30 (not including)
+* etc
+
+!bc pycod
+length = len(seq)
+window = 10
+for i in range(0, length, window):
+    print(i, i + window)
+!ec
+
+Now we can slice the dna sequence:
 
 !bc pycod
 length = len(seq)
@@ -33,7 +58,8 @@ window = 10
 for i in range(0, length, window):
     print(i, i + window, seq[i: i + window])
 !ec
-Or 100 bp windows.
+
+What if we do 100 bp windows?
 
 !bc pycod
 length = len(seq)
@@ -44,8 +70,10 @@ for i in range(0, length, window):
 
 === Creating non-overlapping windows, DNA ===
 
+We have the basic code, let's adjust it for our genome. We'll test for the first 10 windows only here
+
 !bc pycod
-length = len(genome)
+length = 10000 # would normally use len(genome)
 window = 100
 for i in range(0, length, window):
     segment = genome[i: i + window]
@@ -53,7 +81,8 @@ for i in range(0, length, window):
 !ec
 
 === GC percentage ===
-From lab
+
+Now we can start developing code for calculating the GC% for each segment. We have seen this before in one of the exercises:
 
 !bc pycod
 dna = "ACGT"
@@ -63,6 +92,8 @@ gc = (g + c)*100/len(dna)
 print(gc)
 print(round(gc))
 !ec
+
+For simplicity, we will round off the percentage to whole integers.
 
 === Wrap this in a function ===
 
@@ -80,7 +111,7 @@ dna = "ACGT"
 print(perc_gc(dna))
 !ec
 
-=== Use function for genome ===
+=== Use our function for the genome ===
 
 !bc pycod
 length = len(genome)
@@ -89,83 +120,105 @@ for i in range(0, length, window):
     segment = genome[i: i + window]
     print(perc_gc(segment))
 !ec
-We want to collect the percentages so we can plot a histogram og their frequencies
+
+We want to collect the percentages so we can plot a histogram og their frequencies. We'll try a list of percentages first.
 
 !bc pycod
 length = len(genome)
 window = 100
-gcs = []
+GCs = []
 for i in range(0, length, window):
     segment = genome[i: i + window]
     gc = perc_gc(segment)
-    gcs.append(gc)
+    GCs.append(gc)
 !ec
+
+Let's plot this! We use the `hist` (histogram) function from `matplotlib`:
 
 !bc pycod
 import matplotlib.pyplot as plt
-plt.hist(gcs)
+plt.hist(GCs)
 plt.show()
 !ec
-With more resolution
+
+With more resolution:
 
 !bc pycod
-plt.hist(gcs, bins = 100)
+plt.hist(GCs, bins = 100)
 plt.show()
 !ec
 
 === Use dictionary instead ===
+
 Here is a way to make a line plot of the frequencies. There are better ways, but this illustrates the principle with fairly easy code. First, we replace the list with a dictionary:
 
-!bc pycod
+!bc pycod -t
 length = len(genome)
 window = 100
-gcs = {}
+GCs = {}
 for i in range(0, length, window):
     segment = genome[i: i + window]
     gc = perc_gc(segment)
-    gcs[gc] = gcs[gc] + 1
+    GCs[gc] = GCs[gc] + 1
 !ec
-We can set up the dictionary to have all possible keys (gc percentages), with `0` for all values
+
+Hmm, this does not work as the dictionary is empty and we try to increase a non exitsing key + value combination.
+
+We can set up the dictionary to have all possible keys (gc percentages), with `0` for all values:
 
 !bc pycod
-gcs = {}
+GCs = {}
 for i in range(0,100):
-    gcs[i] = 0
-gcs
+    GCs[i] = 0
+GCs
 !ec
+
 Now we can fill the dictionary:
 
 !bc pycod
-length = len(genome)
-window = 100
-gcs = {}
-for i in range(0,100):
-    gcs[i] = 0
 for i in range(0, length, window):
     segment = genome[i: i + window]
     gc = perc_gc(segment)
-    gcs[gc] += 1
+    GCs[gc] += 1
+!ec
+
+The full program than becomes:
+
+!bc pycod
+length = len(genome)
+window = 100
+GCs = {}
+for i in range(0,100):
+    GCs[i] = 0
+for i in range(0, length, window):
+    segment = genome[i: i + window]
+    gc = perc_gc(segment)
+    GCs[gc] += 1
 !ec
 
 !bc pycod
-gcs
+GCs
 !ec
 
 === Plotting ===
 
+Now we can make a line plot with keys on the `x` axis and values on the `y`:
+
 !bc pycod
-plt.plot(gcs.keys(), gcs.values(), '-')
+plt.plot(GCs.keys(), GCs.values(), '-')
 plt.show()
 !ec
 
+Adding axis labels:
+
 !bc pycod
-plt.plot(gcs.keys(), gcs.values(), '-')
+plt.plot(GCs.keys(), GCs.values(), '-')
 plt.xlabel("Percentage GC in 100 bp window")
 plt.ylabel("Count")
 plt.show()
 !ec
 
-=== Wrap parts in a function ===
+=== Wrap all parts in a function ===
 
 !bc pycod
 def get_genome(filename):
@@ -190,63 +243,80 @@ print(identifier, len(genome))
 def get_gc_freq(genome, window):
     """Creates a dictionary with frequency of %GC for each window in genome"""
     length = len(genome)
-    gcs = {}
+    GCs = {}
     for i in range(0,100):
-        gcs[i] = 0
+        GCs[i] = 0
     for i in range(0, length, window):
         segment = genome[i: i + window]
         gc = perc_gc(segment)
-        gcs[gc] += 1
-    return(gcs)
+        GCs[gc] += 1
+    return(GCs)
+!ec
 
+The main program becomes now very short!
 
+!bc pycod
+# load genome
+filename = 'data/NC_000913_E_coli_K12.fasta'
+identifier, genome = get_genome(filename)
+print(identifier, len(genome))
+
+# get GC frequencies
 window = 100
-gcs = get_gc_freq(genome, window)
-plt.plot(gcs.keys(), gcs.values(), '-')
+GCs = get_gc_freq(genome, window)
+
+# plot
+plt.plot(GCs.keys(), GCs.values(), '-')
 plt.xlabel("Percentage GC in 100 bp window")
 plt.ylabel("Count")
 plt.show()
 !ec
 
+Let's try the two other genomes in the `data` folder:
+
 !bc pycod
 filename2 = 'data/AKVW01.1_Rhodobacter_sphaeroides.fasta'
 id2, genome2 = get_genome(filename2)
 print(id2, len(genome2))
-gcs2 = get_gc_freq(genome2, window)
-plt.plot(gcs2.keys(), gcs2.values(), '-')
+GCs2 = get_gc_freq(genome2, window)
+plt.plot(GCs2.keys(), GCs2.values(), '-')
 plt.xlabel("Percantage GC in 100 bp window")
 plt.ylabel("Count")
 plt.show()
 !ec
 
+Can we plot two datasets together?
+
 !bc pycod
-plt.plot(gcs.keys(), gcs.values(), '-')
-plt.plot(gcs2.keys(), gcs2.values(), '-')
+plt.plot(GCs.keys(), GCs.values(), '-')
+plt.plot(GCs2.keys(), GCs2.values(), '-')
 plt.xlabel("Percantage GC in 100 bp window")
 plt.ylabel("Count")
 plt.show()
 !ec
+
+What about the third dataset?
 
 !bc pycod
 filename3 = 'data/AL844501.2_Plasmodium_falciparum.fasta'
 id3, genome3 = get_genome(filename3)
 print(id3, len(genome3))
-gcs3 = get_gc_freq(genome3, window)
-plt.plot(gcs.keys(), gcs.values(), '-')
-plt.plot(gcs2.keys(), gcs2.values(), '-')
-plt.plot(gcs3.keys(), gcs3.values(), '-')
+GCs3 = get_gc_freq(genome3, window)
+plt.plot(GCs.keys(), GCs.values(), '-')
+plt.plot(GCs2.keys(), GCs2.values(), '-')
+plt.plot(GCs3.keys(), GCs3.values(), '-')
 plt.xlabel("Percantage GC in 100 bp window")
 plt.ylabel("Count")
 plt.show()
 !ec
 
-=== Scale Malaria data ===
+=== Scaling the Malaria data ===
 
 !bc pycod
-gcs3 = get_gc_freq(genome3[0:7000000], window)
-plt.plot(gcs.keys(), gcs.values(), '-')
-plt.plot(gcs2.keys(), gcs2.values(), '-')
-plt.plot(gcs3.keys(), gcs3.values(), '-')
+GCs3 = get_gc_freq(genome3[0:7000000], window)
+plt.plot(GCs.keys(), GCs.values(), '-')
+plt.plot(GCs2.keys(), GCs2.values(), '-')
+plt.plot(GCs3.keys(), GCs3.values(), '-')
 plt.xlabel("Percantage GC in 100 bp window")
 plt.ylabel("Count")
 plt.show()
@@ -255,13 +325,19 @@ plt.show()
 === Add legend ===
 
 !bc pycod
-gcs3 = get_gc_freq(genome3[0:7000000], window)
-plt.plot(gcs.keys(), gcs.values(), '-', label = "E. coli")
-plt.plot(gcs2.keys(), gcs2.values(), '-', label = "R. sphaeroides")
-plt.plot(gcs3.keys(), gcs3.values(), '-', label = "P. falciparum")
+GCs3 = get_gc_freq(genome3[0:7000000], window)
+plt.plot(GCs.keys(), GCs.values(), '-', label = "E. coli")
+plt.plot(GCs2.keys(), GCs2.values(), '-', label = "R. sphaeroides")
+plt.plot(GCs3.keys(), GCs3.values(), '-', label = "P. falciparum")
 plt.xlabel("Percantage GC in 100 bp window")
 plt.ylabel("Count")
 plt.legend()
 plt.show()
 !ec
-The references used for alignment were E. coli K12 substr. MG1655 (GenBank NC_000913.2), R. sphaeroides 2.4.1 with plasmids (GenBank AKVW01000000), P. falciparum (Malaria parasite) chromosome 1 (GenBank https://www.ncbi.nlm.nih.gov/nuccore/LR131290.1), and Human assembly 19/GRCh37 (GenBank GCA_000001405.1).
+
+_The data_
+
+The references used for alignment were
+* *E. coli K12 substr. MG1655* "GenBank NC_000913.2":"https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2"
+* *R. sphaeroides 2.4.1* chromosome 1 "GenBank AKVW01000000":"https://www.ncbi.nlm.nih.gov/nuccore/AKVW01000001.1"
+* *P. falciparum* (Malaria parasite) chromosome 1, "GenBank LR131290.1":"https://www.ncbi.nlm.nih.gov/nuccore/LR131290.1"
