@@ -1,14 +1,5 @@
 # Python 1: Data Types: Lists, Sequence methods and Dictionaries
 
-* * * * *
-
-**Written by Karin Lagesen, modifed by Lex Nederbragt**
-
-Note: we are using the interactive shell here, as in the previous exercise.
-
-Note: if you want to repeat something that you have already typed in, try the arrow buttons on your keyboard.
-
-
 One of the useful features of Python are its compound data types. The main two are lists and dictionaries.
 
 ## Lists
@@ -366,6 +357,6 @@ print(mrna[_____:stop])
 
 CpG islands are regions of sequence that contain higher than expected number of CpG (CG) dinucleotides (this is a C followed by a G, i.e. the substring CG). CpG islands are found near or in 40% of all promoters in mammalian genomes. We will now create a script that will allow us to calculate the CG frequency in a given string.
 
-Define the DNA string CGCTACGGACGTAGCCAGCGA.
+Define the DNA string `CGCTACGGACGTAGCCAGCGA`.
 
 Create a script that will calculate the percent of CG dinucleotides in the string. Note, a string that contains N nucleotides, contains N-1 dinucleotides.

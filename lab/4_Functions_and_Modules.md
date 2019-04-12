@@ -107,7 +107,7 @@ The keyword for defining a function is *def*. After that we have the function na
 
 NOTE: any variables defined in the function is not available outside of it. Any results that is created in it must be returned to the outside using the return statement.
 
-Run the script, using hbb.fsa as the fasta dna input file, translationtable.txt as the translation table input file, and then name the output what you feel like. The output file should not already exist in the directory that you are in, but the input file should. 
+Run the script, using hbb.fna as the fasta dna input file, translationtable.txt as the translation table input file, and then name the output what you feel like. The output file should not already exist in the directory that you are in, but the input file should. 
 
 
 ## Using it as a module
@@ -140,6 +140,6 @@ This script takes a fasta file, and does formatting on it. Not incredibly useful
 
 What happens here is that Python goes into the translate_module file and gets the functions that we specified, and uses that inside of this script. We get at the function by using the import statement. 
 
-Try running it, using the hbb.fsa file as input.
+Try running it, using the hbb.fna file as input.
 
 

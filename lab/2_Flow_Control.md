@@ -5,7 +5,7 @@ For some exercises, the code is commented. Comments begin with a # sign, and any
 
 ## Boolean expressions
 
-A basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of the ways of comparing things are similar to those found in other languages.
+One basic element of programming is to be able to compare things, to see if they are equal or if one is larger or smaller than another. Many of the ways of comparing things are similar to those found in other languages.
 
 ```Python
 a = 1
@@ -57,9 +57,6 @@ print(beatle in beatles or not len(beatles) >3)  # is "John" in beatles, or not 
 
 If statements are a way to select which parts of a piece of code that should be run depending on a condition, something that turns out to be true or false. An if statement consists of one if, zero or more elifs and maybe one else. Look at the if statement below, and figure out which parts of the code that would be run, and what would be printed in the end.
 
-To do the following part, exit the interactive shell by using Ctrl-z, and then pressing enter. Use Notepad++ to write things into a file, save it under a name that you choose (remember to have the file ending with .py), and then run it with 'python27 yourchosenfilename.py'. To run only one section of a program (parts of the code in a file), comment out what you don't want to run. Do that by putting a # in front of any lines that should not be run.
-
-
 ```Python
 i = 4
 sign = "zero"
@@ -84,11 +81,9 @@ Note, Python uses **indentation** to delimit code blocks. The indentation above 
 
 ### Task: GCdecider.py - Figuring out if a DNA string has more or less than 50 % GC content.
 
-Use the slides from last week, and look at the exercises from last week too.
-
 The goal for this task is to figure out if a piece of DNA contains more than 50% GCs or not. This basically means counting the number of Gs and Cs and figuring out if these together make up more than 50% of the number of nucleotides in the string.
 
-Below is skeleton script that will do this. Save this in a file that you will name GCdecider.py. Figure out what each line of code should do, and fill in the missing text. Try to run it, does it work?
+Below is skeleton script that will do this. Copy this cell and edit your copy: determine what each line of code should do, and fill in the missing text. Try to run it, does it work?
 
 ```Python
 ___ = "ATGGCATGGCATGGC"
@@ -101,34 +96,6 @@ else:
     print("GC content is below 50%")
 ```
 
-## Getting input from the command line
-
-Above, the text string you calculated the GC content on was writtien into the script, this is often called "hard coding" something into it. Let's say you want to try to calculate the GC content of another string. You could then change the script, but it would be a lot easier if you could do that without changing the script. You cand do that by using a special list that is called "sys.argv"
-
-Create a script that is called "sys-test.py". Put the following content into it:
-
-```Python
-import sys
-print(sys.argv)
-for element in sys.argv:
-    print(element)
-print(sys.argv[1])
-```
-Run the commands shown below on the command line:
-
-  * python27 sys-test.py 1
-  * python27 sys-test first second
-  * python27 sys-test.py 1 2 3 4
-  * python27 sys-test.py
-
-Question: can you figure out why the last one fails?
-
-Can you now try to figure out how to change your GCdecider script so that you can do the following:
-
-  * python27 GCdecider.py ATGGCCGGAGGGAGCCGGA
-
-Hint: you need to include the first and the last line of the sys-test script.
-
 ## For Loops with lists
 
 **for** loops in python are used to iterate over collections of things (they can be used for much more, but for now this definition will do).
@@ -136,7 +103,7 @@ Hint: you need to include the first and the last line of the sys-test script.
 Let's start with a very simple list, and see how **for** behaves. To do this part, go back to the interactive shell.
 
 ```Python
-forlist = [1, 2 ,3,"a", 5, 9, "c"]
+forlist = [1, 2 , 3, "a", 5, 9, "c"]
 for elem in forlist:
     print(elem)
 ```
@@ -199,20 +166,17 @@ We can now use this to translate a protein.
 
 ## Translate proteins
 
-For this part, use Notepad++ and run your script on the command line.
-
-Last week we translated proteins manually. Now, we can do it a bit more efficiently. First, let's define a dictionary which can translate between them, and a DNA string to translate:
+When you have a DNA string and a table of which codons translate to which amino acids, you can translate DNA to  protein manually. With Python, we can do it a bit more efficiently. First, let's define a dictionary which can translate between them, and a DNA string to translate:
 
 ```Python
-import sys
 codon_table = {"ATA":"I", "ATG":"M", "ACA":"T", \
                "AAC":"N", "CGA":"R", "CAG":"Q", "TGA": "*"}
-dna = sys.argv[1]
 ```
 
-First, define a new variable that will contain the protein string. Then we need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. We use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string.
+Then, define a new variable that will contain the protein string. We now need a list of numbers that we can use to slice the string with. Next, we use a for loop to iterate over triplets of the string. We use each triplet as a key in the dictionary, and add the resulting amino acid to the protein string (concatenate them using +). Finally, print the string.
 
 ```Python
+dna = ''
 protein = ""
 dnalen = len(dna)
 numbers = range(0, dnalen, 3)  # start, stop, step size
@@ -223,12 +187,12 @@ for index in numbers:
 print(protein)
 ```
 
-Try running this script with this string: ATGCAGAACATA
+Try running this script with this DNA sequence: `ATGCAGAACATA`
 
 
 ## Task: Stop at stop codon.
 
-Let's say you have a different DNA string, ACACAGCGAAACTGAACAATG.
+Let's say you have a different DNA string, `ACACAGCGAAACTGAACAATG`.
 
 First, try running the script above with this string instead of the other one.
 
