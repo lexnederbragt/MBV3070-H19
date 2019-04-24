@@ -37,4 +37,5 @@ lab/%.ipynb: lab/%.do.txt lab/%.md
 	${DOCONCE_PARAMS} \
 	--preprocess_include_subst -i ${preprocess_include_subst} \
 	--html_style=bootswatch_readable --skip_inline_comments \
-	--html_output=$*.solutions
+	--html_output=$*.solutions && \
+	rsync -av $@ /Users/alexajo/current/teaching/2019/MBV3070_V19/exercises.solutions
