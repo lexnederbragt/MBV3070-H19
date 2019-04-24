@@ -7,7 +7,7 @@ Note: you have to save the file in the same folder that your notebook is in.
 
 ### Fasta file
 
-The seqeunce below is the mRNA sequence for hemoglobin subunit B. Save it in a file called `hbb.fna`: Select `New` from the top right of the window, then `Text File`. Paste the sequence below and save it under the right name. `fna` stands for 'fasta nucleic acid', where 'fasta' refers to the "fasta file format":"https://en.wikipedia.org/wiki/FASTA_format".
+The sequence below is the mRNA sequence for hemoglobin subunit B. Save it in a file called `hbb.fna`: Select `New` from the top right of the window, then `Text File`. Paste the sequence below and save it under the right name. `fna` stands for 'fasta nucleic acid', where 'fasta' refers to the "fasta file format":"https://en.wikipedia.org/wiki/FASTA_format".
 
 ```
 >gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA
