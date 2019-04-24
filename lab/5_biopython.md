@@ -15,7 +15,7 @@ help(Seq)
 
 Now scroll through the help. Find the method that is named `__init__`. This method is the one that is run every time you create a Seq, and in this one you will find which kinds of data that you need to have to create one. This means that every Seq will have these set, i.e. have something there.
 
-Question: what kinds of data do you have to have to create a Seq?  
+**Question:** what kinds of data do you have to have to create a Seq?  
 
 Everything you see in the help is a method. As you can see, there are lots of methods that are available. However, you should only use the ones without one or two underscores in the beginning.  
 
@@ -33,7 +33,7 @@ Now, use the following methods on the my_seq seq: `my_seq.transcribe()`, `my_seq
 
 Next, create an mRNA string instead. Make sure you use Us instead of Ts, and use the `unambigous_rna` alphabet. Try out the various methods again.
 
-Question: Can you find some methods that work with DNA, but not mRNA?
+**Question:** Can you find some methods that work with DNA, but not mRNA?
 
 ### We can use normal string methods on Seq
 
@@ -47,7 +47,7 @@ Figure out how to do the following:
 - what the first letter is
 - all of the sequence, except the first and last letter
 
-Question: can you see a difference in the results between the results from the first two and the last?  
+**Question:** can you see a difference in the results between the results from the first two and the last?  
 
 ### Creating SeqRecord objects
 
@@ -60,7 +60,7 @@ from Bio.SeqRecord import SeqRecord
 help(SeqRecord)
 
 ```
-Question: can you figure out what kind of data you need to have to create a SeqRecord?
+**Question:** can you figure out what kind of data you need to have to create a SeqRecord?
 
 As you can see, many of the methods are simply the same methods as for Seq.
 
@@ -107,13 +107,15 @@ fh.close()
 
 First, add `print(gbk)` at the bottom of the file, then save and run as `python read_gbk data/macaca.gbk`.
 
-Question: can you figure out what the id of this sequence is?
-Question: can you figure out which species this sequence is from?
+**Questions:**
+
+* can you figure out what the id of this sequence is?
+* can you figure out which species this sequence is from?
 
 Second, remove the line specified above, add `print(gbk.id)`, save and run.  
 Third, remove the line specified above, add `print(gbk.annotations)`, save and run.  
 
-Question: can you figure out what kind of thing you printed out? You should see something with curly brackets, with elements inside with colons in between. Hint: you used them quite extensively when working with translation tables.
+**Question:** can you figure out what kind of thing you printed out? You should see something with curly brackets, with elements inside with colons in between. Hint: you used them quite extensively when working with translation tables.
 
 Fourth, remove the line specified above, add `print(gbk.annotations["organism"])`, save and run.  
 
@@ -132,7 +134,7 @@ As you saw with the script above, you can do that by accessing the annotations o
 
 We first need a genbank file to work with, and here we will use the file [mb.gbk](../data/mb.gbk). Have a look at this file.
 
-Question: how many sequences does this genbank file contain?
+**Question:** how many sequences does this genbank file contain?
 
 Next, save the following in a script file named `name_with_organism.py`
 
@@ -151,7 +153,7 @@ fh.close()
 
 Run it, (`python name_with_organism.py data/mb.gbk`) and you will see the ids of the sequences in the `mb.gbk` file printed on screen.
 
-Question: does this confirm many sequences you found in the gbk file?  
+**Question:** does this confirm many sequences you found in the gbk file?  
 
 Try running it with the macaca file too.
 
@@ -163,7 +165,7 @@ As you can see, these are now just strings. Strings can be added together.
 
 In this case, we have two words in our string, the genus name and the species name. We will only use the species name.
 
-Question: In a string with two words, what do you use to get at only the last word?  
+**Question:** In a string with two words, what do you use to get at only the last word?  
 
 We are now going to create a new id for each entry. This can be done by doing this:
 

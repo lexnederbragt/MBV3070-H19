@@ -106,8 +106,10 @@ print(len(lines))
 fh.close()
 ```
 
-Question: How many entries does it contain?   
-Question: Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
+**Questions:**
+
+* How many entries does it contain?   
+* Can you tell whether the table is tab separated, or if there are just spaces in between the entries?  
 
 Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value.
 
@@ -131,11 +133,11 @@ print(codon_table)
 
 But note: you will see that you actually also get the first line of the file in here - this is no codon-amino acid pair.
 
-Question: How do you skip the first line when passing through the input file lines? Hint: this involves slicing.   
+**Question:** How do you skip the first line when passing through the input file lines? Hint: this involves slicing.   
 
 Repeat the above code without the first line, and see what you get.
 
-Question: how would you iterate over the dictionary and show all codon-amino acid pairs?   
+**Question:** how would you iterate over the dictionary and show all codon-amino acid pairs?   
 
 ## Reading in a fasta file
 
@@ -143,7 +145,7 @@ We now have a codon to amino acid mapping dictionary. Remember that the file `hb
 
 First, we need to read in the file. Create a new codecell with a code to read the content of the `hbb.fna` file, skips the first line and removes the newlines so that you end up with the DNA sequence as one string in a variable called `mRNA`.
 
-Question: after we have translated the DNA string, we will want to print it out to a new file, with the original heading. What would you need to change to your program so we could store the heading for later?
+**Question:** after we have translated the DNA string, we will want to print it out to a new file, with the original heading. What would you need to change to your program so we could store the heading for later?
 
 ## Translate to protein
 
@@ -161,8 +163,10 @@ for index in _______:
     protein = _______ + aa
 print(protein)
 ```
-Question: what are we subtracting from the length of the mRNA? What is the consequence of this?
-Question: what happens in the three lines inside the for loop?
+**Questions:**
+
+* what are we subtracting from the length of the mRNA? What is the consequence of this?
+* what happens in the three lines inside the for loop?
 
 ## Printing the results to file.
 
@@ -177,7 +181,7 @@ for index in numbers:
 print(output)
 ```
 
-Question: can you identify where in the code the fasta description line comes from?
+**Question:** can you identify where in the code the fasta description line comes from?
 
 So, now we have the output we want, and we can print it to a file. We first open it, then write to it, and then close it again. Again, remove any print statements. `faa` indicates 'fasta amino acid'.
 

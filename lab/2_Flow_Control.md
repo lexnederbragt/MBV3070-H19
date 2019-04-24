@@ -72,9 +72,10 @@ else:
 print(sign)
 ```
 
-Question: what is printed at the end when this piece of code is run?
+**Questions:** 
 
-Question: figure out what you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"?
+* what is printed at the end when this piece of code is run?
+* figure out what you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"?
 
 Note, Python uses **indentation** to delimit code blocks. The indentation above is NOT just to make things look pretty - it tells Python what the body of the if-statement is. This is true whenever we create any code blocks.
 

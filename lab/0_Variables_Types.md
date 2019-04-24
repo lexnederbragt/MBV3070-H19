@@ -82,7 +82,7 @@ Variables can be thought of being labels on values - you can move the label onto
 ```Python
 print(b)
 ```
-Question: what happened when you typed in b, without assigning a value to b first?
+**Question:** what happened when you typed in b, without assigning a value to b first?
 
 ## Strings are immutable
 
@@ -140,4 +140,4 @@ gc_count = _ + _
 print("GC count: ", ____)
 ```
 
-Question: How much GC did the sequence have?
+**Question:** How much GC did the sequence have?

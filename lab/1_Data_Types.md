@@ -47,11 +47,11 @@ at_content.append(add_items)
 print(at_content)
 ```
 
-Question: what happened here?
+**Question:** what happened here?
 
 Create a new list, at_content2, with the same numbers as in at_content. Try doing the same as above with extend instead of append. What happens?
 
-Question: would you use append or extend in this situation? Can you explain the difference between the two?
+**Question:** would you use append or extend in this situation? Can you explain the difference between the two?
 
 ## Sequence methods
 
@@ -172,7 +172,7 @@ print("AUG" in teststring)
 
 The result is either `True` or `False`, both if which are Boolean values. We'll meet so-called *conditional statements* that result in Boolean values (True or False) many times throughout the course.
 
-Question: can you find out if there were any Ts in this string? If there are none, what does that tell you?
+**Question:** can you find out if there were any Ts in this string? If there are none, what does that tell you?
 
 ### Concatenation
 
@@ -194,7 +194,7 @@ text2 = "Crick"
 print(text1 + text2)
 ```
 
-Question: what would you do to the strings above to introduce a space between Watson and Crick?
+**Question:** what would you do to the strings above to introduce a space between Watson and Crick?
 
 ### Length, minimum and maximums
 
