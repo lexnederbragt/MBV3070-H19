@@ -2,9 +2,7 @@
 
 We are now going to explore the Biopython package a bit.
 
-
 ### Working with Seqs
-
 
 Note: for now we are working in the interactive shell.
 
@@ -51,7 +49,6 @@ Figure out how to do the following:
 
 Question: can you see a difference in the results between the results from the first two and the last?  
 
-
 ### Creating SeqRecord objects
 
 SeqRecords hold not only the Seq, but also metadata.
@@ -86,22 +83,20 @@ protein_record = SeqRecord(Seq("MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF",
 
 You will now try to access all of the data that is stored in this SeqRecord. Hint: to get to the id, you would type in `protein_record.id`.
 
-
 ### Using SeqIO
 
 First, from now on we are working in a script file. So, the code below goes in a file that you save and then run with the command line in a Terminal window.
 
-Second, go to this page [the genbank file macaca.gbk](macaca.gbk). This file contains only one genbank entry - we are going to have a look at it.
+Second, go to this page [the genbank file macaca.gbk](../data/macaca.gbk). This file contains only one genbank entry - we are going to have a look at it.
 
-Take the code shown below, and save it in a file. We are going to explore the genbank file by gradually expanding on this script.
-
+Take the code shown below, and save it in a file called `read_gbk.py`. We are going to explore the genbank file by gradually expanding on this script.
 
 ```Python
 import sys
 from Bio import SeqIO # Have to import the module to have access to it.
 
 fh = open(sys.argv[1], "r")
-gbk = SeqIO.parse(fh, "genbank").next()
+gbk = next(SeqIO.parse(fh, "genbank")) # 'next' retrieves the actual record data
 fh.close()
 
 # Below here you type in the things I specify
@@ -110,7 +105,7 @@ fh.close()
 
 ```
 
-First, add `print(gbk)` at the bottom of the file, then save and run.
+First, add `print(gbk)` at the bottom of the file, then save and run as `python read_gbk data/macaca.gbk`.
 
 Question: can you figure out what the id of this sequence is?
 Question: can you figure out which species this sequence is from?
@@ -118,17 +113,26 @@ Question: can you figure out which species this sequence is from?
 Second, remove the line specified above, add `print(gbk.id)`, save and run.  
 Third, remove the line specified above, add `print(gbk.annotations)`, save and run.  
 
-Question: can you figure out what kind of thing you printed out? You should see something with curly brackets, with elements inside with colons inbetween. Hint: you used them quite extensively when working with translation tables.
+Question: can you figure out what kind of thing you printed out? You should see something with curly brackets, with elements inside with colons in between. Hint: you used them quite extensively when working with translation tables.
 
 Fourth, remove the line specified above, add `print(gbk.annotations["organism"])`, save and run.  
 
 ### Add organism name to fasta description line
 
-Our goal now is to create a script so that it can read a genbank file, access the organism name and add it to the fasta description name, and then print this out in fasta format.  As you saw with the script above, you can do that by accessing the annotations of the genbank record.
+Our goal now is to create a script so that it can
+
+* read a genbank file
+* access the organism name
+* add the name to the fasta description name
+* then print this out in fasta format.
+
+As you saw with the script above, you can do that by accessing the annotations of the genbank record.
 
 #### Reading in files
 
-We first need a genbank file to work with, and here we will use the file [mb.gbk](mb.gbk).
+We first need a genbank file to work with, and here we will use the file [mb.gbk](../data/mb.gbk). Have a look at this file.
+
+Question: how many sequences does this genbank file contain?
 
 Next, save the following in a script file named `name_with_organism.py`
 
@@ -145,9 +149,9 @@ for record in SeqIO.parse(fh, "genbank"):
 fh.close()
 ```
 
-Run it, (`python name_with_organism.py mb.gbk`) and you will see the ids of the sequences in the `mb.gbk` file printed on screen.
+Run it, (`python name_with_organism.py data/mb.gbk`) and you will see the ids of the sequences in the `mb.gbk` file printed on screen.
 
-Question: how many sequences are there in that gbk file?  
+Question: does this confirm many sequences you found in the gbk file?  
 
 Try running it with the macaca file too.
 
@@ -170,14 +174,14 @@ We are now going to create a new id for each entry. This can be done by doing th
    record.id = species_name + "_" + record.id
 ```
 
-Add a print statement inside the for loop after you have assigned a new value to record.id, so that you get to see what this is.
+Add a print statement inside the for loop after you have assigned a new value to `record.id`, so that you get to see what this is.
 
 
 #### Writing out files
 
 We are now going to write this out to file. We now need to also have an out file open.
 
-Look at this example and figure out which portions of this you need in your own script:
+Look at this example and figure out which portions of this you need in your own script. The example *only* converts from genbank to fasta format without changing the id.
 
 ```Python
 from Bio import SeqIO
@@ -192,6 +196,7 @@ fh.close()
 fo.close()
 
 ```
+Use the correct elements and adjust the command given to run the script.
 
 Congratulations, you have now created your own custom conversion script!
 

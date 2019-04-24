@@ -1,16 +1,14 @@
 # Reading and Writing files
 
-## Files we need
-
-Note: you have to save the file in the same folder that your notebook is in.
-
 
 ### Fasta file
 
-The sequence below is the mRNA sequence for hemoglobin subunit B. Save it in a file called `hbb.fna`: Select `New` from the top right of the window, then `Text File`. Paste the sequence below and save it under the right name. `fna` stands for 'fasta nucleic acid', where 'fasta' refers to the "fasta file format":"https://en.wikipedia.org/wiki/FASTA_format".
+The sequence below is the mRNA sequence for hemoglobin subunit B. Save it in a file called `hbb.fna`: Select `New` from the top right of the window, then `Text File`. Paste the sequence below and save it under the right name. _Note_: you have to save the file in the same folder that your notebook is in.
+
+`fna` stands for 'fasta nucleic acid', where 'fasta' refers to the "fasta file format":"https://en.wikipedia.org/wiki/FASTA_format".
 
 ```
->gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB), mRNA
+>gi|28302128|ref|NM_000518.4| Homo sapiens hemoglobin, beta (HBB)
 ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGA
 GGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGC
 AGGCTGCTGGTGGTCTACCCTTGGACCCAGAGGTTCTTTGAGTCCTTTGGGGATCTGTCCACTCCTGATG
@@ -24,7 +22,7 @@ GGGGGATATTATGAAGGGCCTTGAGCATCTGGATTCTGCCTAATAAAAAACATTTATTTTCATTGC
 
 ### Codon translation file.
 
-Save this file as `translationtable.txt`.
+Save data below in a file called `translationtable.txt`.
 
 ```
 codon	amino_acid
@@ -94,10 +92,9 @@ TAC     Y
 TAT     Y
 ```
 
-
 We are now going to see how we can read and write to files.
 
-## Creating a codon table
+## Creating a codon table dictionary
 
 We are now going to read in the `translationtable.txt` file, and create a dictionary from it.
 
@@ -114,7 +111,7 @@ Question: Can you tell whether the table is tab separated, or if there are just 
 
 Next, we are going to use a for loop to read in all the entries into a dictionary, with the codons as the key, and the amino acid as the value.
 
-In a new codecell, use the previous program without the `print` staements, and add the following code:
+In a new codecell, use the previous program without the `print` statements, and add the following code:
 
 ```Python
 codon_table = {}
@@ -146,32 +143,13 @@ We now have a codon to amino acid mapping dictionary. Remember that the file `hb
 
 First, we need to read in the file. Create a new codecell with a code to read the content of the `hbb.fna` file, skips the first line and removes the newlines so that you end up with the DNA sequence as one string in a variable called `mRNA`.
 
-
-<!--
-```Python
-mRNA = "" # create empty string to contain the mRNA
-for line __ lines[__]:
-	text = line.replace(____, __)
-	mRNA = mRNA + ____
-print(mRNA)
-```
-
-```Python
-mRNA = "" # create empty string to contain the mRNA
-for line in lines[1:]:
-	text = line.replace("\n","")
-	mRNA = mRNA + text
-print(mRNA)
-```
--->
-
 Question: after we have translated the DNA string, we will want to print it out to a new file, with the original heading. What would you need to change to your program so we could store the heading for later?
 
-## Translate proteins
+## Translate to protein
 
 Now we have the translation table, and the mRNA. Now we are going to translate it to protein. What we do here is to slice the mRNA into codons and use them to look up the amino acid in the codon table. Then, we stick that onto the string that contains the protein.
 
-The program below has some underscores in it that has to be replaced. A lot of this are things you saw in the previous exercises. Figure out what goes instead of the underscore, copy the code into a new codecell and finihs it.
+The program below has some underscores in it that has to be replaced. A lot of this are things you saw in the previous exercises. Figure out what goes instead of the underscore, copy the code into a new codecell and finish it.
 
 ```Python
 protein = ""
@@ -191,13 +169,14 @@ Question: what happens in the three lines inside the for loop?
 Last, but not least, let's get this output to file. Let's first figure out how to get it nicely formatted. In this case, in our file we should have a header line followed by the amino acids, 60 per line.
 
 ```Python
-output = lines[0] # we first add the header from the mRNA file
+output = lines[0]
 proteinlen = len(protein)
 numbers = range(0, proteinlen, 60)  # start, stop, step size
 for index in numbers:
     output = output + protein[index:index+60] + "\n"
 print(output)
 ```
+
 Question: can you identify where in the code the fasta description line comes from?
 
 So, now we have the output we want, and we can print it to a file. We first open it, then write to it, and then close it again. Again, remove any print statements. `faa` indicates 'fasta amino acid'.

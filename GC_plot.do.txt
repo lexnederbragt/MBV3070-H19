@@ -1,3 +1,5 @@
+_NOTE used in https://lexnederbragt.github.io/python-novice-MBV3070-H19/15-develop/index.html._
+
 === Reading in the genome ===
 We already know how to a fasta file. This time, we use genomic DNA, not RNA.
 

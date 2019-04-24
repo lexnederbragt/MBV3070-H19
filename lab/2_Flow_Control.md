@@ -198,4 +198,4 @@ First, try running the script above with this string instead of the other one.
 
 As you might see, you now get a stop codon in the code.
 
-Figure out how you can use an if statement inside of the loop to skip over the stop codon. Hint: instead of focusing on what you do if you see that stop codon, focus on what you do if a codon is not a stop codon.
+Figure out how you can use an if statement inside of the loop to skip over the stop codon, or, for a more challenging exercise, how to stop after the stop codon. Hint: instead of focusing on what you do if you see that stop codon, focus on what you do if a codon is not a stop codon.

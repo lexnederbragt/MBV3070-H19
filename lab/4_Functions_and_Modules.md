@@ -10,9 +10,14 @@ So far we have used Jupyter notebooks to write Python code. We will now show how
 
 When modularising code, first, you will create module script file. You will then use this script as a script itself. Second, you will create a new script, where you import and use the script you just created.
 
-NOTE: you are supposed to fill in some code for each function. Hint: you should have most of this code from exercises done previously.
+The keyword for defining a function is *def*. After that we have the function name followed by any arguments in parenthesis. After that comes the code that the function performs. Input to the function is available in the arguments passed to it.
 
-The following code can be found in a script file named `translate_module.py`
+The code below can be found in a script file named `translate_module.py`. You are supposed to fill in some of the code for each function. Hint: you should have most of this code from exercises done previously.
+
+NOTE: any variables defined in the function are not available outside of it. Any results that is created in it must be returned to the outside using the `return` statement.
+
+Run the script, using `hbb.fna` you created in `3_Reading_and_Writing_files` as the fasta dna input file, `translationtable.txt` as the translation table input file, and then name the output what you feel like. The output file should not already exist in the directory that you are in, but the input file should.
+
 
 ```Python
 import sys
@@ -105,12 +110,6 @@ if __name__ == "__main__":
     fo.close()
 
 ```
-The keyword for defining a function is *def*. After that we have the function name followed by any arguments in parenthesis. After that comes the code that the function performs. Input to the function is available in the arguments passed to it.
-
-NOTE: any variables defined in the function are not available outside of it. Any results that is created in it must be returned to the outside using the return statement.
-
-Run the script, using `hbb.fna` as the fasta dna input file, `translationtable.txt` as the translation table input file, and then name the output what you feel like. The output file should not already exist in the directory that you are in, but the input file should.
-
 
 ## Using it as a module
 
