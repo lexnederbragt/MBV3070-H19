@@ -305,7 +305,7 @@ print(codon_table.values())
 ```
 ## Finding out more
 
-All python data types like lists, strings and dictionaries have help documentation available in the interpreter. Try typing in
+All python data types like lists, strings and dictionaries have help documentation available. Try typing in
 
 ```Python
 help(dict)

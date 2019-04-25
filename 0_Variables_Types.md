@@ -1,6 +1,5 @@
 # Python 0: Variable Types (with focus on String and String methods)
 
-* * * * *
 
 There are many different kinds of programming languages. The language we are using today is python, which is an interpreted language. This means that we can write in code and it will be executed right away.
 
@@ -10,12 +9,9 @@ NOTE: a line anywhere in python that is preceded with a # is a comment and is ig
 
 ## How to do these exercises
 
-In this exercise you will see python code in gray boxes. Try typing it in in the notebook, and see what happens. You will also see some questions being asked through the exercise, try to answer those while you are working through them. These questions will either be gone through during the exercise, or at the beginning of the next exercise.
-
+In this exercise you will see python code in code cells. Try running it in in the notebook, and see what happens. You will also see some questions being asked through the exercise, try to answer those while you are working through them. These questions will either be gone through during the exercise, or at the beginning of the next exercise.
 
 ## Getting started
-
-Open a new Jupyter notebook and give it an appropriate name
 
 Let's start very simply with some calculations:
 
@@ -35,11 +31,6 @@ Strings can actually be added together.
 Questions:
 * Remove the space in Ada. What happens?  
 * Replace the `+` with a comma. What happens?
-
-## Python as a calculator
-We are first going to use python as a simple calculator. Look at the operators that was shown for numbers at the lecture and test all of them.
-
-## FIXME add suitable exercise
 
 # String methods
 
@@ -129,7 +120,7 @@ print(string + str(number))
 
 Let's say you have the string `"AGACTGAGGT"`. We would like to know how much GC there is in this string.
 
-Below there is some partially complete code that will calculate this value. Copy the code into notepad, fill in the underscores, and copy-paste it into the python interpreter window.
+Below there is some partially complete code that will calculate this value. Copy the code into a new cell, fill in the underscores, and try to run it.
 
 ```Python
 DNA = ___
