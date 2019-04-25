@@ -87,7 +87,7 @@ You will now try to access all of the data that is stored in this SeqRecord. Hin
 
 First, from now on we are working in a script file. So, the code below goes in a file that you save and then run with the command line in a Terminal window.
 
-Second, go to this page [the genbank file macaca.gbk](../data/macaca.gbk). This file contains only one genbank entry - we are going to have a look at it.
+Second, go to this page [the genbank file macaca.gbk](data/macaca.gbk). This file contains only one genbank entry - we are going to have a look at it.
 
 Take the code shown below, and save it in a file called `read_gbk.py`. We are going to explore the genbank file by gradually expanding on this script.
 
@@ -132,7 +132,7 @@ As you saw with the script above, you can do that by accessing the annotations o
 
 #### Reading in files
 
-We first need a genbank file to work with, and here we will use the file [mb.gbk](../data/mb.gbk). Have a look at this file.
+We first need a genbank file to work with, and here we will use the file [mb.gbk](data/mb.gbk). Have a look at this file.
 
 **Question:** how many sequences does this genbank file contain?
 
