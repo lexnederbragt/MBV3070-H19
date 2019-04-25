@@ -1,4 +1,4 @@
-DO_FILES   := $(shell ls lab/[0-9]*.do.txt 2>/dev/null)
+DO_FILES   := $(shell ls [0-9]*.do.txt 2>/dev/null)
 TARGETS    := $(subst .do.txt,.ipynb, ${DO_FILES})
 TARGETS    += exercises.html slides/hemoglobin.html
 TARGETS    += exercises.solutions.html
@@ -16,7 +16,7 @@ all: ${TARGETS}
 test:
 	@echo ${TARGETS}
 
-lab/%.ipynb: lab/%.do.txt lab/%.md
+%.ipynb: %.do.txt %.md
 	doconce format ipynb $< --markdown
 
 %.html : %.do.txt
