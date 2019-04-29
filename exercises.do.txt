@@ -1,6 +1,17 @@
 ======= Week 1 =======
 
 !split
+===== Last session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide1.png, width=1600]
+
+!split
+===== This session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide2.png, width=1600]
+
+
+!split
 # #include "EXDIR/01_scientific_calculator/typeconversion01.do.txt"
 
 !split
