@@ -36,6 +36,16 @@ What uses can you think about for Python dictionaries in Bioinformatics?
 # #include "EXDIR/02_bacterial_growth_analysis/liste_blank.do.txt"
 
 !split
+===== PC Lab exercises =====
+
+* Work on PC or your own laptop
+* Log in to _jupyterhub.uio.no_, folder MBV3070
+* Notebooks:
+    * 0_Variables_Types.ipynb
+    * 1_Data_Types.ipynb
+
+
+!split
 ======= Week 2 =======
 
 !split
