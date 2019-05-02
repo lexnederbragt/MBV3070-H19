@@ -10,7 +10,6 @@ FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide1.png, width=
 
 FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide2.png, width=1600]
 
-
 !split
 # #include "EXDIR/01_scientific_calculator/typeconversion01.do.txt"
 
@@ -48,6 +47,18 @@ What uses can you think about for Python dictionaries in Bioinformatics?
 !split
 ======= Week 2 =======
 
+
+!split
+===== Last session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide2.png, width=1600]
+
+
+!split
+===== This session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide3.png, width=1600]
+
 !split
 # #include "EXDIR/07_dna_seq_analysis/reverse_string.do.txt"
 
@@ -59,6 +70,18 @@ What uses can you think about for Python dictionaries in Bioinformatics?
 
 !split
 # #include "EXDIR/07_dna_seq_analysis/loop_if_parsons01.do.txt"
+
+!split
+===== Last session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide3.png, width=1600]
+
+
+!split
+===== This session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide4.png, width=1600]
+
 
 !split
 ===== Sickle cell anemia =====
