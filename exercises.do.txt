@@ -140,14 +140,14 @@ Write a program that
 
 
 !split
-======= Week 3 =======
-
-!split
 # #include "EXDIR/01_scientific_calculator/import_alias.do.txt"
 
 !split
 # #include "EXDIR/02_bacterial_growth_analysis/random_base.do.txt"
 
+
+!split
+======= Week 3 =======
 
 !split
 # #include "EXDIR/06_inheritance/function_call.do.txt"
