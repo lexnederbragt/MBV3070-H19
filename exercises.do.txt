@@ -145,6 +145,15 @@ Write a program that
 !split
 # #include "EXDIR/02_bacterial_growth_analysis/random_base.do.txt"
 
+!split
+===== PC Lab exercises =====
+
+* Work on PC or your own laptop
+* Log in to _jupyterhub.uio.no_, folder MBV3070
+* Notebooks:
+    * 2_Flow_Control.ipynb
+    * 3_Reading_and_Writing_files.ipynb
+
 
 !split
 ======= Week 3 =======
@@ -154,3 +163,14 @@ Write a program that
 
 !split
 # #include "EXDIR/07_dna_seq_analysis/find_first.do.txt"
+
+
+
+!split
+===== PC Lab exercises =====
+
+* Work on PC or your own laptop
+* Log in to _jupyterhub.uio.no_, folder MBV3070
+* Notebooks:
+    * 4_Functions_and_Modules.ipynb
+    * 5_biopython.ipynb
