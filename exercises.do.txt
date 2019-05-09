@@ -159,6 +159,18 @@ Write a program that
 ======= Week 3 =======
 
 !split
+===== Last session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide4.png, width=1600]
+
+
+!split
+===== This session =====
+
+FIGURE: [cheat_sheet/Python_3_Beginners_Reference_Cheat_Sheet/Slide5.png, width=1600]
+
+
+!split
 # #include "EXDIR/06_inheritance/function_call.do.txt"
 
 !split
