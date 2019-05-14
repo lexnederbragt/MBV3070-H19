@@ -22,7 +22,7 @@ Run the script, using `hbb.fna` you created in `3_Reading_and_Writing_files` as 
 ```Python
 import sys
 
-def read_fasta(lines):
+def join_lines(lines):
     # Input: a list containing the lines found
     # in the file, i.e. the results from
     # fh.readlines() in Part 1
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     # And we use the read_fasta function to
     # convert the contents of the file into
     # one long string
-    sequence = read_fasta(fastalines)
+    sequence = join_lines(fastalines)
 
     # Part 2: Here we read in a translation table,
     # and make a dictionary out of it.
@@ -128,7 +128,7 @@ fh.close()
 # Now, using the lines above as input, do the following:
 
 header = fastalines[0]
-sequence = translate_module.read_fasta(fastalines)
+sequence = translate_module.join_lines(fastalines)
 fastastring = translate_module.create_fasta_string(header, sequence)
 print(fastastring)
 

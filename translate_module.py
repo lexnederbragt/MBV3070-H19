@@ -1,6 +1,6 @@
-import sys
+join_lines(import sys
 
-def read_fasta(lines):
+def join_lines(lines):
     # Input: a list containing the lines found
     # in the file, i.e. the results from
     # fh.readlines() in Part 1
@@ -49,9 +49,9 @@ if __name__ == "__main__":
     # fasta header stored
     header = fastalines[0]
     # And we use the read_fasta function to
-    # convert the contents of the file into
-    # one long string
-    sequence = read_fasta(fastalines)
+    # convert the remaining contents
+    # of the file into one long string
+    sequence = join_lines(fastalines[1:])
 
     # Part 2: Here we read in a translation table,
     # and make a dictionary out of it.
