@@ -1,8 +1,13 @@
 DO_FILES   := $(shell ls [0-9]*.do.txt 2>/dev/null)
 TARGETS    := $(subst .do.txt,.ipynb, ${DO_FILES})
-TARGETS    += exercises.html
-TARGETS    += exercises.solutions.html
 
+# slides used during live coding labs
+TARGETS    += exercises.html exercises.solutions.html
+
+# same, but exercises only, shared with the students
+TARGETS    +=  extra_exercises.solutions.html
+
+# (re) using exercises developed for BIOS1100 and the corresponding book
 EXDIR      := /Users/alexajo/github/cse-exercises/src
 
 # variable to generate all sustitutions of variables in the doconce files

@@ -1,3 +1,3 @@
-This directory contains python exercises for the class MBV3070 at the Univeristy Of Oslo.
+This directory contains python exercises for the class MBV3070 at the University Of Oslo.
 
-Exercises draw heavily on the python classes supplied by Software Carpentry.
+Modified after material developed by [Karin Lagesen](https://github.com/karinlag/MBV3070) for the same course.

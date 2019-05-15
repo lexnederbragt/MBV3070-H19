@@ -12,3 +12,5 @@ tmp_exercises.html
 .ipynb_checkpoints/
 __pycache__/
 exercises.solutions.html
+extra_exercises.solutions.html
+to_folk_uio_no.sh
