@@ -167,6 +167,7 @@ print(protein)
 
 * what are we subtracting from the length of the mRNA? What is the consequence of this?
 * what happens in the three lines inside the for loop?
+* why is there a `-2` in the second line? Is there a way to avoid having to use this?
 
 ## Printing the results to file.
 

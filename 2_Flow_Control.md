@@ -72,7 +72,7 @@ else:
 print(sign)
 ```
 
-**Questions:** 
+**Questions:**
 
 * what is printed at the end when this piece of code is run?
 * figure out what you need to change in order for this piece of code to print out "Sign must be zero" and "Have an nice day"?
@@ -142,6 +142,11 @@ With the range command, we can create a list of numbers that we can use in for l
 ```Python
 numbers = range(10)
 print(numbers)
+```
+In order to see the actual list of numbers we need to use the `list()` function:
+
+```Python
+print(list(numbers))
 ```
 
 With this way of writing it, range will produce numbers from 0 to the number in the parenthesis.
